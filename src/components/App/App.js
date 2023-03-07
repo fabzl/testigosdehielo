@@ -1,20 +1,51 @@
 import './App.css'
+import styled from 'styled-components'
+
+import A1 from '../../img/A1.svg'
+import A2 from '../../img/A2.svg'
+import A3 from '../../img/A3.svg'
+import A4 from '../../img/A4.svg'
+import A5 from '../../img/A5.svg'
+import B1 from '../../img/B1.svg'
+import B2 from '../../img/B2.svg'
+import B3 from '../../img/B3.svg'
+import B4 from '../../img/B4.svg'
+import B5 from '../../img/B5.svg'
+
+import Juncal from '../../img/juncal-nor-oriente.jpg'
+
+
+
 
 function App() {
+
+
   return (
     <div>
-      <h1>Testigos de Hielo</h1>
-      <p>Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.</p>
-  <h2>1. Cambio climático:</h2>
-  <p>Qué es, efectos del cambio climático a nivel mundial y nacional.
-<ul>
-  <li>
-    Términos importantes: clima y atmósfera.
-  </li>
-  <li>
-    Imágenes e infografía asociada: gráfico concentración de gases en la atmósfera
-  </li>
-</ul>
+      <div className='wrapMain'>  
+        <h1 className="mainTitle">Testigos de Hielo</h1>
+        <img className="mainBg" src={Juncal} alt="Juncal Nor Oriente"/>
+     </div>
+
+     <div className='wrapQuote'>  
+     <p>Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.</p>
+    </div>
+  
+    <h2 className='sticky-text top-1'>1. Cambio climático:</h2>
+    <p>Qué es, efectos del cambio climático a nivel mundial y nacional.
+    <ul>
+      <li>
+        Términos importantes: clima y atmósfera.
+      </li>
+      <li>
+        Imágenes e infografía asociada: gráfico concentración de gases en la atmósfera
+      </li>
+    </ul>
+
+     <img src={A1} alt="Testigos de hielo"/>
+    
+
+    
 De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas” (https://www.un.org/es/climatechange/what-is-climate-change)
 
 
@@ -39,16 +70,33 @@ Esquema explicativo del balance de energía generado por los gases de efecto inv
 El cambio climático es una variación de las condiciones ambientales del planeta, ocasionado directa o indirectamente por la actividad humana, el cual está alterando la composición de la atmósfera. Manifestándose en un aumento de las temperaturas medias y alteraciones del clima a escala mundial.
 El clima es un estado característico propio de una zona en un largo periodo de tiempo, incluyendo aspectos como la temperatura, precipitaciones, humedad y viento. Mientras que la atmósfera está formada por una mezcla de gases y participa en la regulación del clima.
 </p>
-<h2>2. Variabilidad e historia del clima:</h2>
+<h2 className='sticky-text top-2'>2. Variabilidad e historia del clima:</h2>
 <p>
 
 </p>
-<h2>3.Importancia de la montaña como reserva hídrica
+<h2 className='sticky-text top-3'>3.Importancia de la montaña como reserva hídrica
 </h2>
 <p>
 rol de los glaciares e importancia del agua.
-- Términos importantes: glaciares, reserva natural de agua y agua dulce.
--  Imágenes e infografía asociada: viaje por la cuenca del Aconcagua (3D), mapa de glaciares y redes hídricas de la zona, video de la expedición.
+<ul>
+  <li>
+  Términos importantes: glaciares, reserva natural de agua y agua dulce.
+  </li>
+  <li>
+Imágenes e infografía asociada: viaje por la cuenca del Aconcagua (3D), mapa de glaciares y redes hídricas de la zona, video de la expedición.
+</li>
+</ul>
+
+     <img src={A2} alt="Gases de Efecto Invernadero"/>
+     <img src={A3} alt="Precipitaciones y Sequia"/>
+     <img src={A4} alt="Importancia de la Montana como reserva hidrica"/>
+     <img src={A5} alt="Calentamiento Global"/>
+     <img src={B1} alt="Precipitaciones Anuales sobre el glaciar juncal sur"/>
+     <img src={B2} alt="Concentracion de Dioxido de carbono en"/>
+     <img src={B3} alt="Variacion de Precipitaciones en la Región de Valparaiso"/>
+     <img src={B4} alt="Olas de Calor de la Zona central de Chile"/>
+     <img src={B5} alt="Anomalias de la Temperatura a escala global"/>
+
 
 En el presente las consecuencias del proceso de cambio climático son más tangibles que nunca, las que hemos observado concretamente en nuestro territorio. En Chile (y en gran parte de Sudamérica) hemos estado experimentando uno de los periodos de sequías jamás visto a escala histórica (Morales et al., 2020; Bustos et al., 2015), presentándose un déficit importante en la cubierta de nieve para los últimos años que alcanzó un 34% de la cobertura de nieve, respecto al periodo promedio entre 2000 y 2021, en la cuenca del río Aconcagua que surte directamente de agua a la región de Valparaíso (IANIGLA-CONICET y (CR)²; web Observatorio de Nieve en los Andes de Argentina y Chile). Esta condición extrema ha acarreado nefastas consecuencias, como incendios forestales y urbanos, que han afectado directamente a los habitantes de ciudades densamente pobladas como la ciudad de Valparaíso (Sapiains y otros., 2019).
 
@@ -70,7 +118,7 @@ Ilustración del ciclo del agua. Fuente: Servicio Geológico de Estados Unidos (
 
 </p>
 
-<h2>4. Glaciología: definición de glaciología, que estudia y cómo se estudia, además de la importancia de esta ciencia.
+<h2 className='sticky-text top-4'>4. Glaciología: definición de glaciología, que estudia y cómo se estudia, además de la importancia de esta ciencia.
 </h2>
 <p> - Imágenes e infografía asociada: videos de la expedición, imagen testigo asociada a eventos históricos, imagen ciclo del agua.
 
@@ -83,7 +131,7 @@ Los estudios en terreno incluyen normalmente expediciones en condiciones muy adv
 
 Trabajo en terreno de un grupo de glaciólogos que están determinando las tasas de derretimiento de verano en una zona de ablación del glaciar Juncal Norte (Fuente propia).
 </p>
-<h2>5. Qué son los testigos de hielos y para qué sirven.
+<h2 className='sticky-text top-5'>5. Qué son los testigos de hielos y para qué sirven.
 </h2>
 <p>
 Imágenes e infografía asociada: video del laboratorio, infografía del testigo del hielo con fotografías de alta resolución de un testigo.
@@ -129,7 +177,7 @@ Fotografía de una sección de testigo de hielo del Norte de Chile, representand
 Ejemplo de infografía de un testigo de hielo de la Antártica relacionado a eventos históricos. Fuente: British Antarctic Survey (https://www.bas.ac.uk/)
 
 </p>
-<h2>6. Modelamiento del futuro (presente próximo siglo)
+<h2 className='sticky-text top-6'>6. Modelamiento del futuro (presente próximo siglo)
 </h2>
 <p>Los efectos del cambio climático descritos hasta ahora continuaran en el futuro, a no ser que se tomen medidas urgentes en cuanto a la forma de usar los recursos naturales (Rojas et al., 2019; IPCC, 2021). De esta forma sabemos que las precipitaciones disminuirán entre un 5% y un 15% en la zona centro y sur de Chile (Stehr et al., 2019), lo que inevitablemente repercutirá en la perdida de masa glaciar a lo largo de Chile. En la zona central se proyecta una perdida de masa de hielo de entre un 12% y 37% (Glaciar Universidad) (Escanilla-Minchel et al., 2020) dependiendo de las decisiones socio-políticas que se lleguen a tomar en el futuro. El IPCC (2021) ha fijado como meta un calentamiento no superior a 1.5°C para el presente siglo, de manera de evitar efectos irreversibles en nuestro ambiente debido al cambio climático. Si esta meta se cumple, los efectos del cambio climático, podrián ser moderados pero no desapareceran. Las simulaciones, muestran que en todos los escenarios la precipitación de la zona central disminuirá y la temperatura aumentará (como efectos tangibles del cambio climático). 
   

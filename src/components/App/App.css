@@ -1,3 +1,19 @@
+.wrapQuote {
+
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-style: italic oblique;
+  color: #666;
+  max-width: 60vw;
+  text-align: center;
+  margin:  auto;
+  height: 50vh;
+  padding-top: 30vh;
+  font-size: 2rem;
+
+}
+
+
 .App {
   text-align: center;
   font-family: 'Oswald', sans-serif;
@@ -30,6 +46,83 @@
 .App-link {
   color: #61dafb;
 }
+
+H2 , H1 {
+  
+ color:#7fbfea;
+ font-family: 'Oswald', sans-serif;
+ text-transform: uppercase; 
+ font-weight: 800;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mainBg {
+  position: absolute;
+  width:auto;
+  height: 100%;
+  top: 0px;
+}
+.wrapMain {
+ /*  border: 2vw solid white;
+  box-sizing: border-box; */
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+} 
+.mainTitle { 
+  color: white;
+  text-align: center;
+  font-size: 12vw;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+  padding: 0;
+  margin:0;
+/*   border: #61dafb 1px solid; */
+}
+
+H1 {
+  width: 60%;
+  z-index: 2;
+}
+
+.sticky-text {
+  position: sticky;
+ 
+}
+
+.top-1 {
+  height: 1.5em;
+  background-color: antiquewhite;
+  top:0;
+}
+.top-2 {
+  top: 1.5em;
+  height: 1.5em;
+}
+.top-3 {
+  top: 3em;
+  height: 1.5em;
+}
+.top-4 {
+  top: 4.5em;
+  height: 1.5em;
+}
+.top-5 {
+  border-top: 6em;
+  height: 1.5em;
+}
+.top-6 {
+  top: 7.5em;
+  height: 1.5em;
+}
+
 
 @keyframes App-logo-spin {
   from {
