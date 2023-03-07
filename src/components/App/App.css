@@ -1,3 +1,9 @@
+.audioguide-logo {
+  height: 54px;
+  margin:  auto;
+  padding-left: 20vw;
+  padding-right: 54px;
+}
 .wrapQuote {
 
   text-align: center;
@@ -44,7 +50,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #7fbfea;
 }
 
 H2 , H1 {
@@ -53,6 +59,7 @@ H2 , H1 {
  font-family: 'Oswald', sans-serif;
  text-transform: uppercase; 
  font-weight: 800;
+ z-index: 999;
 }
 
 body {
@@ -60,6 +67,7 @@ body {
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color:#282c34;
 }
 
 .mainBg {
@@ -91,36 +99,36 @@ H1 {
   width: 60%;
   z-index: 2;
 }
-
+p { 
+  max-width: 80vw;
+  margin: 0 auto;
+}
 .sticky-text {
   position: sticky;
- 
+  padding: 20px;
+  background-color: #FFFAC9;
+  top:0;
 }
 
 .top-1 {
-  height: 1.5em;
-  background-color: antiquewhite;
-  top:0;
+  background-color: #FFFAC9;
 }
 .top-2 {
-  top: 1.5em;
-  height: 1.5em;
+ 
+  background-color: #61dafb;
+ 
+  color:#FFF;
 }
 .top-3 {
-  top: 3em;
-  height: 1.5em;
+ 
 }
 .top-4 {
-  top: 4.5em;
-  height: 1.5em;
+ 
 }
 .top-5 {
-  border-top: 6em;
-  height: 1.5em;
+
 }
 .top-6 {
-  top: 7.5em;
-  height: 1.5em;
 }
 
 
