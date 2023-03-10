@@ -62,6 +62,10 @@ H2 , H1 {
  z-index: 999;
 }
 
+svg {
+  font-family: 'Oswald', sans-serif;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -112,25 +116,37 @@ p {
 
 .top-1 {
   background-color: #FFFAC9;
+  color:#EE7555;
 }
 .top-2 {
  
-  background-color: #61dafb;
+  background-color: #3e81c3;
  
   color:#FFF;
 }
 .top-3 {
+  background-color: #E73D2F;
  
+  color:#FFF;
 }
 .top-4 {
+  background-color: #549BD4;
  
+  color:#FFF;
 }
 .top-5 {
-
+  background-color: #61dafb;
+ 
+  color:#FFF;
 }
 .top-6 {
+  background-color: #61dafb;
+ 
+  color:#549BD4;
 }
-
+.wrapperSection {
+  margin-bottom: 25vh;
+}
 
 @keyframes App-logo-spin {
   from {

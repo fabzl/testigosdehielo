@@ -65,21 +65,21 @@
 	.st59{clip-path:url(#SVGID_18_);}
 	.st60{clip-path:url(#SVGID_20_);fill:#FFF7C8;}
 	.st61{fill:#1D1D1B;}
-	.st62{font-family:'Roboto-Regular';}
+	.st62{font-family:'Roboto';font-weight:600;}
 	.st63{font-size:50px;}
 	.st64{letter-spacing:-1;}
 	.st65{letter-spacing:1;}
-	.st66{font-family:'Oswald-SemiBold';}
+	.st66{font-family:'Oswald';font-weight:700;}
 	.st67{font-size:80px;}
 	.st68{letter-spacing:-2;}
 	.st69{font-size:70px;}
-	.st70{font-family:'Roboto-Bold';}
+	.st70{font-family:'Roboto';font-weight:700;}
 	.st71{letter-spacing:-3;}
-	.st72{font-family:'Roboto-Black';}
+	.st72{font-family:'Roboto';font-weight:900;}
 	.st73{clip-path:url(#SVGID_2_);fill:#1D1D1B;}
 	.st74{font-size:60px;}
 	.st75{fill:#E6BE8B;}
-	.st76{font-family:'Oswald-Bold';}
+	.st76{font-family:'Oswald';font-weight:900;}
 	.st77{font-size:300px;}
 	.st78{letter-spacing:-10;}
 	.st79{letter-spacing:-4;}

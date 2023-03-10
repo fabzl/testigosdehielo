@@ -120,18 +120,18 @@
 	.st113{clip-path:url(#SVGID_59_);fill:#201215;}
 	.st114{clip-path:url(#SVGID_59_);fill:none;stroke:#000000;stroke-width:2.254;stroke-miterlimit:10;}
 	.st115{clip-path:url(#SVGID_59_);fill:none;stroke:#000000;stroke-width:2.393;stroke-miterlimit:10;}
-	.st116{font-family:'Roboto-Regular';}
+	.st116{font-family:'Roboto';font-weight:800;}
 	.st117{font-size:50px;}
-	.st118{font-family:'Roboto-Black';}
+	.st118{font-family:'Roboto';font-weight:800;}
 	.st119{fill:#FFFFFF;}
 	.st120{fill:#ED6C53;}
-	.st121{font-family:'Oswald-Bold';}
+	.st121{font-family:'Oswald';font-weight:900;}
 	.st122{font-size:300px;}
 	.st123{letter-spacing:-2;}
 	.st124{letter-spacing:-4;}
 	.st125{letter-spacing:-1;}
 	.st126{letter-spacing:1;}
-	.st127{font-family:'Oswald-SemiBold';}
+	.st127{font-family:'Oswald';font-weight:600;}
 	.st128{font-size:80px;}
 	.st129{letter-spacing:-3;}
 	.st130{fill:#C0C172;}
@@ -141,7 +141,7 @@
 	.st134{fill:#84CCD6;}
 	.st135{fill:#EE7555;}
 	.st136{font-size:60px;}
-	.st137{font-family:'Roboto-Bold';}
+	.st137{font-family:'Roboto';font-weight:900;}
 </style>
 <g>
 	<defs>

@@ -38,20 +38,20 @@
 	.st32{fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:4.9786,4.9786;}
 	.st33{fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:5.0152,5.0152;}
 	.st34{fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:4.9829,4.9829;}
-	.st35{font-family:'Roboto-Black';}
+	.st35{font-family:'Roboto';font-weight:900;}
 	.st36{font-size:30px;}
-	.st37{font-family:'Roboto-Regular';}
+	.st37{font-family:'Roboto';font-weight:600;}
 	.st38{font-size:32px;}
-	.st39{font-family:'Oswald-Bold';}
+	.st39{font-family:'Oswald';font-weight:900;}
 	.st40{font-size:230px;}
-	.st41{font-family:'Oswald-Light';}
+	.st41{font-family:'Oswald';font-weight:300;}
 	.st42{font-size:100px;}
 	.st43{font-size:50px;}
 	.st44{letter-spacing:9;}
 	.st45{letter-spacing:8;}
-	.st46{font-family:'Oswald-SemiBold';}
+	.st46{font-family:'Oswald';font-weight:700;}
 	.st47{font-size:40px;}
-	.st48{font-family:'Roboto-Bold';}
+	.st48{font-family:'Roboto';font-weight:900;}
 </style>
 <g id="fondo">
 	<rect class="st0" width="8503.9" height="4053.5"/>

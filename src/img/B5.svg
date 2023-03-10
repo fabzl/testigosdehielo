@@ -46,19 +46,19 @@
 	.st40{fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:5.0092,5.0092;}
 	.st41{fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:5.0122,5.0122;}
 	.st42{fill:none;stroke:#000000;stroke-width:1.5;stroke-miterlimit:10;stroke-dasharray:4.9677,4.9677;}
-	.st43{font-family:'Roboto-Black';}
+	.st43{font-family:'Roboto';font-weight:900;}
 	.st44{font-size:30px;}
-	.st45{font-family:'Roboto-Regular';}
+	.st45{font-family:'Roboto';font-weight:500;}
 	.st46{fill:none;}
-	.st47{font-family:'Oswald-SemiBold';}
+	.st47{font-family:'Oswald';font-weight:700;}
 	.st48{font-size:50px;}
 	.st49{font-size:40px;}
-	.st50{font-family:'Oswald-Bold';}
+	.st50{font-family:'Oswald';font-weight:900;}
 	.st51{font-size:230px;}
-	.st52{font-family:'Oswald-Light';}
+	.st52{font-family:'Oswald';font-weight:300;}
 	.st53{font-size:100px;}
 	.st54{font-size:32px;}
-	.st55{font-family:'Roboto-Bold';}
+	.st55{font-family:'Roboto';font-weight:900;}
 </style>
 <g id="fondo">
 	<rect class="st0" width="8503.9" height="4053.5"/>

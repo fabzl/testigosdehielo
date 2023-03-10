@@ -49,14 +49,14 @@
 	.st43{fill:#CF261A;}
 	.st44{fill:#FCDAAD;}
 	.st45{fill:#E73331;}
-	.st46{font-family:'Oswald-Bold';}
+	.st46{font-family:'Oswald';font-weight:900;}
 	.st47{font-size:300px;}
 	.st48{fill:none;}
-	.st49{font-family:'Roboto-Bold';}
+	.st49{font-family:'Roboto';font-weight:900;}
 	.st50{font-size:60px;}
-	.st51{font-family:'Roboto-Regular';}
+	.st51{font-family:'Roboto';font-weight:600;}
 	.st52{font-size:50px;}
-	.st53{font-family:'Oswald-SemiBold';}
+	.st53{font-family:'Oswald';font-weight:600;}
 	.st54{font-size:80px;}
 	.st55{font-size:70px;}
 	.st56{fill:none;stroke:#000000;stroke-width:5.7908;stroke-miterlimit:10;}
