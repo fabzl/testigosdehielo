@@ -3,8 +3,10 @@ import styled from 'styled-components'
 import {Waypoint} from 'react-waypoint';
 import React from 'react'
 //import ReactPlayer from 'react-player'
-import ReactPlayer from 'react-player/lazy'
+//import ReactPlayer from 'react-player/lazy'
 import ReactAudioPlayer from 'react-audio-player';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Footer from './Footer';
 
 import A1 from '../../img/A1.svg'
 import A2 from '../../img/A2.svg'
@@ -28,7 +30,19 @@ const AudioPlayer = styled.div`
   margin: 40px 0;
 `
 
+
 function App() {
+  
+  const onSectionEnter = (nombre) => {
+    console.log("section ",nombre )
+    performRedirect(nombre)
+  }
+
+  const performRedirect = (nombre) => {
+   
+//    const { history } = this.props;
+   // history.push("/"+nombre)
+  }
 
   return (
     <div>
@@ -43,7 +57,7 @@ function App() {
   {/* wrapper 1  */}
     <div className="wrapperSection wrapper-1">
     <Waypoint
-            onEnter={console.log("W IN 1")}
+            onEnter={onSectionEnter(1)}
             onLeave={console.log("W OUT 1")}
           />
     <h2 className='sticky-text top-1'>1. Cambio climático</h2>
@@ -55,27 +69,24 @@ function App() {
         />
     </AudioPlayer>
 
-    <p>Qué es, efectos del cambio climático a nivel mundial y nacional.
-    </p>
-    <img src={A2} alt="Gases de Efecto Invernadero"/>
-
     <p>De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas” (https://www.un.org/es/climatechange/what-is-climate-change)</p>
     <p>Gráfico de concentración en partes por millón (ppm) de moléculas de dióxido de carbono en la atmósfera global entre el año 0 y el año 2022 de la era actual. Fuente: https://ourworldindata.org/atmospheric-concentrations. </p>
     <p>Gráfico concentración de gases de efecto invernadero a escala global,  desde el año 1750 a 2022. Fuente: Gráfico de elaboración propia basado en los datos de: https://ourworldindata.org/atmospheric-concentrations</p>
     <p>La quema de combustibles fósiles genera emisiones de gases de efecto invernadero que actúan como una manta que envuelve a la Tierra, atrapando el calor del sol y elevando las temperaturas (https://www.un.org/es/climatechange/what-is-climate-change)</p>
     <p>Esquema explicativo del balance de energía generado por los gases de efecto invernadero en la atmósfera. Fuente: http://antarctica.cl/divulgacion/ 
     El cambio climático es una variación de las condiciones ambientales del planeta, ocasionado directa o indirectamente por la actividad humana, el cual está alterando la composición de la atmósfera. Manifestándose en un aumento de las temperaturas medias y alteraciones del clima a escala mundial.</p>
+
+    <img src={A2} alt="Gases de Efecto Invernadero"/>
     <p>El clima es un estado característico propio de una zona en un largo periodo de tiempo, incluyendo aspectos como la temperatura, precipitaciones, humedad y viento. Mientras que la atmósfera está formada por una mezcla de gases y participa en la regulación del clima.</p>
 </div>
  
-
  {/* wrapper 2  */}
  <div className="wrapperSection wrapper-2">
    <Waypoint
-         onEnter={console.log("W IN 2")}
+         onEnter={onSectionEnter(2)}
          onLeave={console.log("W OUT 2")}
        />
-    <h2 className='sticky-text top-2'>2. Variabilidad e historia del clima</h2>
+      <h2 className='sticky-text top-2'>2. Variabilidad e historia del clima</h2>
 
     <AudioPlayer>
     <img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide"/>
@@ -109,7 +120,7 @@ function App() {
  {/* wrapper 3  */}
  <div className="wrapperSection wrapper-3">
  <Waypoint
-         onEnter={console.log("W IN 3")}
+         onEnter={onSectionEnter(3)}
          onLeave={console.log("W OUT 3")}
        />
   <h2 className='sticky-text top-3'>3.Importancia de la montaña como reserva hídrica</h2>
@@ -150,7 +161,7 @@ Ilustración del ciclo del agua. Fuente: Servicio Geológico de Estados Unidos (
  {/* wrapper 4  */}
  <div className="wrapperSection wrapper-4">
  <Waypoint
-         onEnter={console.log("W IN 4")}
+         onEnter={onSectionEnter(4)}
          onLeave={console.log("W OUT 4")}
        />
 <h2 className='sticky-text top-4'>4. Glaciología: que estudia y cómo se estudia, además de la importancia de esta ciencia.
@@ -177,7 +188,7 @@ La glaciología es una disciplina científica encargada de estudiar los glaciare
 {/* wrapper 5  */}
 <div className="wrapperSection wrapper-5">
  <Waypoint
-         onEnter={console.log("W IN 5")}
+         onEnter={onSectionEnter(5)}
          onLeave={console.log("W OUT 5")}
        />
 
@@ -232,7 +243,7 @@ Ejemplo de infografía de un testigo de hielo de la Antártica relacionado a eve
 {/* wrapper 6  */}
 <div className="wrapperSection wrapper-6">
  <Waypoint
-         onEnter={console.log("W IN 6")}
+         onEnter={onSectionEnter(6)}
          onLeave={console.log("W OUT 6")}
        />
 <h2 className='sticky-text top-6'>6. Modelamiento del futuro (presente próximo siglo)</h2>
@@ -262,7 +273,7 @@ Ejemplo de infografía de un testigo de hielo de la Antártica relacionado a eve
 
      <img src={B4} alt="Olas de Calor de la Zona central de Chile"/>
 
-
+     <Footer></Footer>
     </div>
   )
 }
