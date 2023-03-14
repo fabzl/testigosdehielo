@@ -1,3 +1,46 @@
+.burger {
+  position: fixed;
+  top:30px;
+  right:30px;
+  z-index: 999;
+  width: 80px;
+  height: 80px;
+}
+.nav-links {
+ list-style-type: none;
+ position: fixed;
+ top:0;
+ left:0;
+ margin: 0;
+ width: 100vw;
+ padding: 0;
+ height: 100vh;
+ z-index: 998;
+ 
+}
+.nav-links li {
+  width: 100vw;
+  height: 16.6%;
+  display: flex;
+  justify-content:center;
+}
+
+.nav-links li a {
+  margin: 0;
+  text-decoration: none; 
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+ -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 800;
+  font-size: 3vh;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+
+
+}
+
 .audioguide-logo {
   height: 54px;
   margin:  auto;
@@ -59,7 +102,7 @@ H2 , H1 {
  font-family: 'Oswald', sans-serif;
  text-transform: uppercase; 
  font-weight: 800;
- z-index: 999;
+ z-index: 995;
 }
 
 svg {
@@ -92,7 +135,7 @@ body {
   text-align: center;
   font-size: 12vw;
   position: sticky;
-  top: 0px;
+  top: 150px;
   width: 100%;
   padding: 0;
   margin:0;
@@ -101,7 +144,7 @@ body {
 
 H1 {
   width: 60%;
-  z-index: 2;
+  z-index: 900;
 }
 p { 
   max-width: 80vw;
@@ -110,9 +153,12 @@ p {
 .sticky-text {
   position: sticky;
   padding: 20px;
+  padding-top: 50px;
   background-color: #FFFAC9;
   top:0;
+  height:70px;
 }
+
 
 .top-1 {
   background-color: #FFFAC9;
@@ -140,9 +186,41 @@ p {
   color:#FFF;
 }
 .top-6 {
+  background-color: #F29074;
+ 
+  color:#FFF;
+}
+
+
+.top-1 a {
+  background-color: #FFFAC9;
+  color:#EE7555;
+}
+.top-2 a {
+ 
+  background-color: #3e81c3;
+ 
+  color:#FFF;
+}
+.top-3 a {
+  background-color: #E73D2F;
+ 
+  color:#FFF;
+}
+.top-4 a {
+  background-color: #549BD4;
+ 
+  color:#FFF;
+}
+.top-5 a{
   background-color: #61dafb;
  
-  color:#549BD4;
+  color:#FFF;
+}
+.top-6 a{
+  background-color: #F29074;
+ 
+  color:#FFF;
 }
 .wrapperSection {
   margin-bottom: 25vh;
