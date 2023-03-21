@@ -42,24 +42,32 @@ display:flex;
 justify-content:space-between;
 user-select: none;
 `
-const BackToMain = styled.a`
+const BackToMain = styled.div`
 padding:20px;
 width: 40vw;
 background-color: #7fbfea;
 margin: 40px 0;
+a {
 color:#FFF;
+text-decoration: none;
+}
 text-align:center;
 font-family: 'Oswald', sans-serif;
 text-transform: uppercase; 
 font-weight: 800;
 font-size: 1.5rem;
 `
-const NextSection = styled.a`
+const NextSection = styled.div`
 padding:20px;
 width: 40vw;
 background-color: #7fbfea;
 margin: 40px 0;
-color:#FFF;
+a {
+	color:#FFF;
+	text-decoration: none;
+	}
+
+
 text-align:center;
 font-family: 'Oswald', sans-serif;
 text-transform: uppercase; 
@@ -74,20 +82,52 @@ class App extends React.Component {
 			count: 0,
 			rootURL: window.location.href,
 			activeSection: 0,
-			activeclassname:"active",
-			totalSections: 6, 
+			nextSection: 1,
+			totalSections: 6,
 			menuVisible: false,
+			nextSectionURL:"/",
+			shouldHideIntro: false,
+			shouldHideEndMenu: true,
 
 		};
 	}
+// here are the main urls for the project
+	routerBoy = (num) => {
+		
+		switch (num) {
+			case 1: 
+			return "/CAMBIO-CLIMATICO-1";
+			case 2: 
+			return "/VARIABILIDAD-E-HISTORIA-DEL-CLIMA-2" ;
+			case 3: 
+			return "/IMPORTANCIA-DE-LA-MONTANA-COMO-RESERVA-HIDRICA-3" ;
+			case 4: 
+			return "/GLACIOLOGIA:-QUE-ESTUDIA-Y-COMO-SE-ESTUDIA-ADEMAS-DE-LA-IMPORTANCIA-DE-ESTA-CIENCIA-4" ;
+			case 5: 
+			return "/QUE-SON-LOS-TESTIGOS-DE-HIELOS-Y-PARA-QUE-SIRVEN-5";
+			case 6: 
+			return "/MODELAMIENTO-DEL-FUTURO-PRESENTE-PROXIMO-SIGLO-6";
+		   default: 
+		   return "/";
+		   
+			}
+		 } 
+
+
 
 	
 	onClickBackToMain = () => {
-
+		return (
+				Route.path="/"
+				)
 	  };
 
 	  onClickNextSection = () => {
-	
+		let currentSection = this.state.activeSection
+		let nextSection = currentSection+1;
+		console.log("onClickNextSection", nextSection,this.routerBoy(nextSection));
+		this.setState({ activeSection : nextSection })
+
 	  };
 
 	
@@ -98,6 +138,18 @@ class App extends React.Component {
 			this.setState({ menuVisible : false })
 		}
 	  };
+
+	  SectionIntro = () => {
+		useEffect(() => {
+			window.scrollTo(0, 0);
+		}, []);
+
+		return (
+				this.Section1()
+
+			);
+		};
+
 
 	Section1 = () => {
 		useEffect(() => {
@@ -408,6 +460,10 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+
+			{
+			this.state.activeSection===1 ? null : <div>
+
 				<div className='wrapMain'>
 					<h1 className="mainTitle">Testigos de Hielo</h1>
 					<img className="mainBg" src={Juncal} alt="Juncal Nor Oriente" />
@@ -421,7 +477,7 @@ class App extends React.Component {
 					<img src={EyeMenu}  alt="Testigos de hielo" />
 				</a>
 		
-			
+				</div>}
 				
 
 					
@@ -429,33 +485,39 @@ class App extends React.Component {
 					<BrowserRouter>
 					{this.state.menuVisible && <div>
 					<ul className="nav-links">
-					<li className='top-1'><NavLink onClick={this.handleClick} to="/CAMBIO-CLIMATICO-1" activeclassname="active">1.Cambio Climático</NavLink></li>
-					<li className='top-2'><NavLink onClick={this.handleClick} to="/VARIABILIDAD-E-HISTORIA-DEL CLIMA-2" activeclassname="active">2. Variabilidad e historia del Clima</NavLink></li>
-					<li className='top-3'><NavLink onClick={this.handleClick} to="/IMPORTANCIA-DE-LA-MONTANA-COMO-RESERVA-HÍDRICA-3" activeclassname="active">3.Importancia de la Montaña como reserva Hídrica</NavLink></li>
-					<li className='top-4'><NavLink onClick={this.handleClick} to="/GLACIOLOGÍA:-QUE-ESTUDIA-Y-CÓMO-SE-ESTUDIA, ADEMÁS-DE-LA-IMPORTANCIA-DE-ESTA-CIENCIA-4" activeclassname="active">4. Glaciología: que estudia y cómo se estudia.</NavLink></li>
-					<li className='top-5'><NavLink onClick={this.handleClick} to="/QUE-SON-LOS-TESTIGOS-DE-HIELOS Y-PARA-QUE-SIRVEN-5" activeclassname="active">5. Qué son los testigos de hielos y para qué sirven</NavLink></li>
-					<li className='top-6'><NavLink onClick={this.handleClick} to="/MODELAMIENTO-DEL-FUTURO- PRESENTE-PROXIMO-SIGLO-6" activeclassname="active">6. Modelamiento del futuro (presente próximo siglo)</NavLink></li>
+					<li className='top-1'><NavLink onClick={this.handleClick} to={this.routerBoy(1)} activeclassname="active">1.Cambio Climático</NavLink></li>
+					<li className='top-2'><NavLink onClick={this.handleClick}to={this.routerBoy(2)} activeclassname="active">2. Variabilidad e historia del Clima</NavLink></li>
+					<li className='top-3'><NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.Importancia de la Montaña como reserva Hídrica</NavLink></li>
+					<li className='top-4'><NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4. Glaciología: que estudia y cómo se estudia.</NavLink></li>
+					<li className='top-5'><NavLink onClick={this.handleClick} to={this.routerBoy(5)} activeclassname="active">5. Qué son los testigos de hielos y para qué sirven</NavLink></li>
+					<li className='top-6'><NavLink onClick={this.handleClick} to={this.routerBoy(6)} activeclassname="active">6. Modelamiento del futuro (presente próximo siglo)</NavLink></li>
 				</ul>
 				</div>}
 					
 				<Routes>
 				
-				<Route exact path="/" element={<div><this.Section1 /><this.Section2 /><this.Section3 /><this.Section4 /><this.Section5 /><this.Section6 /></div>} />
-                    <Route exact path="/CAMBIO-CLIMATICO-1" element={<this.Section1 />} />
-                    <Route exact path="/VARIABILIDAD-E-HISTORIA-DEL CLIMA-2" element={<this.Section2 />} />
-                    <Route exact path="/IMPORTANCIA-DE-LA-MONTANA-COMO-RESERVA-HÍDRICA-3" element={<this.Section3 />} />
-                    <Route exact path="/GLACIOLOGÍA:-QUE-ESTUDIA-Y-CÓMO-SE-ESTUDIA, ADEMÁS-DE-LA-IMPORTANCIA-DE-ESTA-CIENCIA-4" element={<this.Section4 />} />
-                    <Route exact path="/QUE-SON-LOS-TESTIGOS-DE-HIELOS Y-PARA-QUE-SIRVEN-5" element={<this.Section5 />} />
-                   <Route exact path="/MODELAMIENTO-DEL-FUTURO- PRESENTE-PROXIMO-SIGLO-6" element={<this.Section6 />} />
+				<Route exact path="/" element={<this.SectionIntro />} />
+                    <Route exact path={this.routerBoy(1)} element={<this.Section1 />} />
+                    <Route exact path={this.routerBoy(2)} element={<this.Section2 />} />
+                    <Route exact path={this.routerBoy(3)} element={<this.Section3 />} />
+                    <Route exact path={this.routerBoy(4)} element={<this.Section4 />} />
+                    <Route exact path={this.routerBoy(5)} element={<this.Section5 />} />
+                    <Route exact path={this.routerBoy(6)} element={<this.Section6 />} />
                 </Routes>
 
-
+			
+				<EndNav>
+					<BackToMain onClick={this.onClickBackToMain}>
+						<NavLink to="/" >Volver al Menu Principal</NavLink>
+					</BackToMain>
+					<NextSection onClick={this.onClickNextSection}>
+						<NavLink to={this.routerBoy(this.state.activeSection+1)} >Ir a la siguiente sección</NavLink>
+					</NextSection>
+				</EndNav>
+			
 				</BrowserRouter>
 				
-				<EndNav>
-					<BackToMain onClick={this.onClickBackToMain}>Volver al Menu Principal</BackToMain>
-					<NextSection onClick={this.onClickNextSection}>Ir a la siguiente sección</NextSection>
-				</EndNav>
+				
 
 
 				<Footer>
