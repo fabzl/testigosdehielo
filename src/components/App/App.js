@@ -24,7 +24,6 @@ import TestAudio from '../../audios/test.mp3'
 import AudioGuideLogo from '../../img/audioguide.svg'
 
 import EyeMenu from '../../img/menu_eye.svg'
-import EyeClose from '../../img/menu_eye_close.svg'
 
 import React, { useState, useEffect } from 'react';
 
@@ -80,13 +79,13 @@ class App extends React.Component {
 		super(props);
 		this.state = {
 			count: 0,
-			rootURL: window.location.href,
-			activeSection: 1,
+			rootURL: "/",
+			activeSection: 0,
 			nextSection: 1,
 			totalSections: 6,
 			menuVisible: false,
 			nextSectionURL:"/",
-			endNavVisible: false,
+			endNavVisible: true,
 
 		};
 	}
@@ -122,11 +121,22 @@ class App extends React.Component {
 	  };
 
 	  onClickNextSection = () => {
+		
+		// añade una section , si es mayor que el total de Secciones . vuelve al inicio. 
 		let currentSection = this.state.activeSection
-		let nextSection = currentSection+1;
+		
+		let nextSection;
 
-		console.log("onClickNextSection", nextSection,this.routerBoy(nextSection));
-		this.setState({ activeSection : nextSection })
+		if(nextSection > this.state.totalSections) {
+			nextSection = currentSection+1;
+		}else {
+			nextSection = 1;
+		}
+
+		
+		this.setState({ activeSection : nextSection }, () => {
+			this.setLocation();		
+ 		})
 
 	  }; 	
 
@@ -176,9 +186,9 @@ class App extends React.Component {
 
 		useEffect(() => {
 			window.scrollTo(0, 0);
-			if (this.state.activeSection >= 1 ) {
-				this.setState({ endNavVisible : true }) 
-			} 
+
+			this.setLocation();
+
 		}, []);
 		
 
@@ -195,7 +205,7 @@ class App extends React.Component {
 					
 					<ReactAudioPlayer src={TestAudio}
 						controls
-						autoPlay
+						
 
 					/>
 				</AudioPlayer>
@@ -216,6 +226,8 @@ class App extends React.Component {
 	Section2 = () => {
 		useEffect(() => {
 			window.scrollTo(0, 0);
+			this.setLocation();
+
 		}, []);
 
 		return (
@@ -231,7 +243,7 @@ class App extends React.Component {
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
 						controls
-						autoPlay
+						
 					/>
 				</AudioPlayer>
 				
@@ -266,6 +278,8 @@ class App extends React.Component {
 	Section3 = () => {
 		useEffect(() => {
 			window.scrollTo(0, 0);
+			this.setLocation();
+
 		}, []);
 
 		return (
@@ -281,7 +295,7 @@ class App extends React.Component {
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
 						controls
-						autoPlay
+						
 					/>
 				</AudioPlayer>
 
@@ -321,6 +335,8 @@ class App extends React.Component {
 	Section4 = () => {
 		useEffect(() => {
 			window.scrollTo(0, 0);
+			this.setLocation();
+
 		}, []);
 
 		return (
@@ -337,7 +353,7 @@ class App extends React.Component {
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
 						controls
-						autoPlay
+						
 					/>
 				</AudioPlayer>
 
@@ -357,6 +373,8 @@ class App extends React.Component {
 	Section5 = () => {
 		useEffect(() => {
 			window.scrollTo(0, 0);
+			this.setLocation();
+
 		}, []);
 
 		return (
@@ -372,7 +390,7 @@ class App extends React.Component {
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
 						controls
-						autoPlay
+						
 					/>
 				</AudioPlayer>
 				<img src={A1} alt="Testigos de hielo" />
@@ -424,6 +442,8 @@ class App extends React.Component {
 	Section6 = () => {
 		useEffect(() => {
 			window.scrollTo(0, 0);
+			this.setLocation();
+
 		}, []);
 
 		
@@ -439,7 +459,7 @@ class App extends React.Component {
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
 						controls
-						autoPlay
+						
 					/>
 				</AudioPlayer>
 				<p>Los efectos del cambio climático descritos hasta ahora continuaran en el futuro, a no ser que se tomen medidas urgentes en cuanto a la forma de usar los recursos naturales (Rojas et al., 2019; IPCC, 2021). De esta forma sabemos que las precipitaciones disminuirán entre un 5% y un 15% en la zona centro y sur de Chile (Stehr et al., 2019), lo que inevitablemente repercutirá en la perdida de masa glaciar a lo largo de Chile. En la zona central se proyecta una perdida de masa de hielo de entre un 12% y 37% (Glaciar Universidad) (Escanilla-Minchel et al., 2020) dependiendo de las decisiones socio-políticas que se lleguen a tomar en el futuro. El IPCC (2021) ha fijado como meta un calentamiento no superior a 1.5°C para el presente siglo, de manera de evitar efectos irreversibles en nuestro ambiente debido al cambio climático. Si esta meta se cumple, los efectos del cambio climático, podrián ser moderados pero no desapareceran. Las simulaciones, muestran que en todos los escenarios la precipitación de la zona central disminuirá y la temperatura aumentará (como efectos tangibles del cambio climático).</p>
@@ -465,18 +485,78 @@ class App extends React.Component {
 		);
 	};
 
+	// apaga y prende la navegacion por seccion
+	hideEndNavMenu =() => {
+		if (this.state.activeSection <= 1 
+			) {
+				this.setState({ endNavVisible : false })
+				console.log("endNav: ", this.state.endNavVisible)
+		
+	}
+		if(this.state.rootURL === this.routerBoy(1)) {
+			this.setState({ endNavVisible : true })
+		}
+	
+}
 
-
+	// funcion de principal de routeo para useffect
+	// se ejecuta para todas las Secciones
 	setLocation = () => {
-		const rootElement = document.getElementById("root");
-		// const root = createRoot(rootElement);
-		console.log("setLocartion ", rootElement, this.state.rootURL)
+
+		//Tomo la URL
+		const fullURL = window.location.href;
+		
+		// tmb la divido con un regex y tomo el reglon final.
+		const bits = fullURL.split("/");
+		let theBit = bits[bits.length-1]
+		
+		// si es home la asigno como /
+
+		if( theBit === "") {
+			theBit = "/"
+		}
+
+		// seteamos el estado del Root y esperamos para seguir .
+		this.setState({rootURL: theBit }, () => {
+
+			
+				// nos informa de estado actualizado
+				console.log("section: ", this.state.activeSection,"root: " ,this.state.rootURL,
+				)
+			
+				// verifica si la url base es distinta al indice que tiene y corrige el valor. 
+				 if( "/"+this.state.rootURL !== this.routerBoy(this.state.activeSection)
+					){
+
+					const sectionNum = Number( this.state.rootURL.replace(/\D/g,''));
+				
+						// si la navegacion es mas q el total se vuelve a 1 
+					if(this.state.activeSection >= this.state.totalSections) {
+						sectionNum = 1;
+						
+					}
+					
+					this.setState({ activeSection : sectionNum }, () => {
+
+						console.log("sectionNum reseted to ", this.state.activeSection)
+						// esconde la nav
+						this.hideEndNavMenu();
+
+					 })
+					}
+
+
+		})
+
+		
+
+
 	}
 
 	onSectionEnter = (nombre) => {
 	//	console.log("section ", nombre)
 	//	this.performRedirect(nombre)
-	//	this.setLocation()
+	
 	}
 	
 	onSectionLeave = (numero) => {
@@ -498,11 +578,6 @@ class App extends React.Component {
 				<a className="burger" onClick={this.handleClick}>	
 					<img src={EyeMenu}  alt="Testigos de hielo" />
 				</a>
-		
-
-
-					
-				
 					<BrowserRouter>
 					{this.state.menuVisible && <div>
 					<ul className="nav-links">
@@ -526,7 +601,7 @@ class App extends React.Component {
                     <Route exact path={this.routerBoy(6)} element={<this.Section6 />} />
                 </Routes>
 
-				{ this.state.endNavVisible && 
+				{ this.state.rootURL !== "/" && 
 				<EndNav>
 					<BackToMain onClick={this.onClickBackToMain}>
 						<NavLink to="/" >Volver al Menu Principal</NavLink>
