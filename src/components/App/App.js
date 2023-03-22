@@ -176,7 +176,9 @@ class App extends React.Component {
 
 		useEffect(() => {
 			window.scrollTo(0, 0);
-			{ this.state.activeSection > 1 ? null :   	this.setState({ endNavVisible : true }) }
+			if (this.state.activeSection >= 1 ) {
+				this.setState({ endNavVisible : true }) 
+			} 
 		}, []);
 		
 
@@ -190,8 +192,11 @@ class App extends React.Component {
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
-					<ReactAudioPlayer url={TestAudio}
+					
+					<ReactAudioPlayer src={TestAudio}
 						controls
+						autoPlay
+
 					/>
 				</AudioPlayer>
 
@@ -224,8 +229,9 @@ class App extends React.Component {
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
-					<ReactAudioPlayer url={TestAudio}
+					<ReactAudioPlayer src={TestAudio}
 						controls
+						autoPlay
 					/>
 				</AudioPlayer>
 				
@@ -273,8 +279,9 @@ class App extends React.Component {
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
-					<ReactAudioPlayer url={TestAudio}
+					<ReactAudioPlayer src={TestAudio}
 						controls
+						autoPlay
 					/>
 				</AudioPlayer>
 
@@ -328,8 +335,9 @@ class App extends React.Component {
 				</h2>
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
-					<ReactAudioPlayer url={TestAudio}
+					<ReactAudioPlayer src={TestAudio}
 						controls
+						autoPlay
 					/>
 				</AudioPlayer>
 
@@ -362,8 +370,9 @@ class App extends React.Component {
 				<h2 className='sticky-text top-5'>5. Qué son los testigos de hielos y para qué sirven</h2>
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
-					<ReactAudioPlayer url={TestAudio}
+					<ReactAudioPlayer src={TestAudio}
 						controls
+						autoPlay
 					/>
 				</AudioPlayer>
 				<img src={A1} alt="Testigos de hielo" />
@@ -428,8 +437,9 @@ class App extends React.Component {
 				<h2 className='sticky-text top-6'>6. Modelamiento del futuro (presente próximo siglo)</h2>
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
-					<ReactAudioPlayer url={TestAudio}
+					<ReactAudioPlayer src={TestAudio}
 						controls
+						autoPlay
 					/>
 				</AudioPlayer>
 				<p>Los efectos del cambio climático descritos hasta ahora continuaran en el futuro, a no ser que se tomen medidas urgentes en cuanto a la forma de usar los recursos naturales (Rojas et al., 2019; IPCC, 2021). De esta forma sabemos que las precipitaciones disminuirán entre un 5% y un 15% en la zona centro y sur de Chile (Stehr et al., 2019), lo que inevitablemente repercutirá en la perdida de masa glaciar a lo largo de Chile. En la zona central se proyecta una perdida de masa de hielo de entre un 12% y 37% (Glaciar Universidad) (Escanilla-Minchel et al., 2020) dependiendo de las decisiones socio-políticas que se lleguen a tomar en el futuro. El IPCC (2021) ha fijado como meta un calentamiento no superior a 1.5°C para el presente siglo, de manera de evitar efectos irreversibles en nuestro ambiente debido al cambio climático. Si esta meta se cumple, los efectos del cambio climático, podrián ser moderados pero no desapareceran. Las simulaciones, muestran que en todos los escenarios la precipitación de la zona central disminuirá y la temperatura aumentará (como efectos tangibles del cambio climático).</p>
