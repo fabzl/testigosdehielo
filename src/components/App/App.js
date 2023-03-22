@@ -33,6 +33,9 @@ const AudioPlayer = styled.div`
   width: 100%;
   background-color: #f1f3f4;
   margin: 40px 0;
+  position: sticky;
+  top:140px;
+
 `
 const EndNav = styled.div`
 width: 100%;
@@ -181,7 +184,6 @@ class App extends React.Component {
 
 	Section1 = () => {
 		
-		
 
 
 		useEffect(() => {
@@ -200,6 +202,11 @@ class App extends React.Component {
 				/>
 				<h2 className='sticky-text top-1'>1. Cambio climático</h2>
 
+				
+
+				<p>De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas” (https://www.un.org/es/climatechange/what-is-climate-change)</p>
+				
+				
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					
@@ -209,8 +216,7 @@ class App extends React.Component {
 
 					/>
 				</AudioPlayer>
-
-				<p>De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas” (https://www.un.org/es/climatechange/what-is-climate-change)</p>
+				
 				<p>Gráfico de concentración en partes por millón (ppm) de moléculas de dióxido de carbono en la atmósfera global entre el año 0 y el año 2022 de la era actual. Fuente: https://ourworldindata.org/atmospheric-concentrations. </p>
 				<p>Gráfico concentración de gases de efecto invernadero a escala global,  desde el año 1750 a 2022. Fuente: Gráfico de elaboración propia basado en los datos de: https://ourworldindata.org/atmospheric-concentrations</p>
 				<p>La quema de combustibles fósiles genera emisiones de gases de efecto invernadero que actúan como una manta que envuelve a la Tierra, atrapando el calor del sol y elevando las temperaturas (https://www.un.org/es/climatechange/what-is-climate-change)</p>
@@ -239,6 +245,10 @@ class App extends React.Component {
 					/>
 				<h2 className='sticky-text top-2'>2. Variabilidad e historia del clima</h2>
 
+			
+				
+				<p>Uno de los efectos más tangibles del cambio climático en nuestra región, se está observando en la disminución de precipitaciones y el aumento de fenómenos extremos como sequías extensas y eventos de lluvias intensas. Estos fenómenos se encuentran asociados a procesos naturales como la corriente del Niño/a, pero desde inicios del siglo XX se ha observado una clara relación con el incremento de la concentración de gases de efecto invernadero, que ha modificado los patrones de circulación atmosférica (Morales et al., 2020).</p>
+
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
@@ -246,8 +256,8 @@ class App extends React.Component {
 						
 					/>
 				</AudioPlayer>
-				
-				<p>Uno de los efectos más tangibles del cambio climático en nuestra región, se está observando en la disminución de precipitaciones y el aumento de fenómenos extremos como sequías extensas y eventos de lluvias intensas. Estos fenómenos se encuentran asociados a procesos naturales como la corriente del Niño/a, pero desde inicios del siglo XX se ha observado una clara relación con el incremento de la concentración de gases de efecto invernadero, que ha modificado los patrones de circulación atmosférica (Morales et al., 2020).</p>
+
+
 				<img src={B3} alt="Variacion de Precipitaciones en la Región de Valparaiso" />
 				<p> Precipitaciones y temperaturas históricas a nivel país, además de la región de Valparaíso (ca. 1400 - presente). Anomalías y tendencias en el clima.</p>
 				<p>Gráfico de la variación de precipitaciones a nivel local en la región de Valparaíso (índice de sequías) desde el año 1750 a 2019. Fuente: elaboración propia basado en datos del “Atlas de Sequía Sudamericano” (Morales et al., 2020; https://sada.cr2.cl/)</p>
@@ -291,6 +301,11 @@ class App extends React.Component {
 				/>
 				<h2 className='sticky-text top-3'>3.Importancia de la montaña como reserva hídrica</h2>
 
+			
+				<p>
+					En Chile el 70% de la población se abastece de agua proveniente de la cordillera (Bórquez et al., 2006), además nuestro país alberga más del 80% de los glaciares existentes de Sudamérica (Barcaza et al., 2017), la Cordillera de Los Andes aloja a gran cantidad de estos glaciares, los cuales son parte importante de las reservas de agua dulce (torres de agua), fundamentales para la vida y el ecosistema. Los glaciares emplazados en la cordillera contribuyen de gran manera a los flujos de agua superficial como subterráneos, llegando a aportar el 67% del agua dulce en años con bajas precipitaciones (Peña and Nazarala, 1987), sin embargo la principal fuente de recarga sigue siendo la precipitación de nieve y lluvia para las cuencas de Chile central. En particular para la región de Valparaíso, la cuenca del Aconcagua, se alimenta entre de fusión de nieve y lluvia (~50%), fuentes glaciares (~30%) y de aguas subterráneas`y formas periglacieres (~20%) (Crespo et al., 2020).
+				</p>
+
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
@@ -299,9 +314,6 @@ class App extends React.Component {
 					/>
 				</AudioPlayer>
 
-				<p>
-					En Chile el 70% de la población se abastece de agua proveniente de la cordillera (Bórquez et al., 2006), además nuestro país alberga más del 80% de los glaciares existentes de Sudamérica (Barcaza et al., 2017), la Cordillera de Los Andes aloja a gran cantidad de estos glaciares, los cuales son parte importante de las reservas de agua dulce (torres de agua), fundamentales para la vida y el ecosistema. Los glaciares emplazados en la cordillera contribuyen de gran manera a los flujos de agua superficial como subterráneos, llegando a aportar el 67% del agua dulce en años con bajas precipitaciones (Peña and Nazarala, 1987), sin embargo la principal fuente de recarga sigue siendo la precipitación de nieve y lluvia para las cuencas de Chile central. En particular para la región de Valparaíso, la cuenca del Aconcagua, se alimenta entre de fusión de nieve y lluvia (~50%), fuentes glaciares (~30%) y de aguas subterráneas`y formas periglacieres (~20%) (Crespo et al., 2020).
-				</p>
 
 				<img src={A4} alt="Importancia de la Montana como reserva hidrica" />
 
@@ -349,6 +361,12 @@ class App extends React.Component {
 				/>
 				<h2 className='sticky-text top-4'>4. Glaciología: que estudia y cómo se estudia, además de la importancia de esta ciencia.
 				</h2>
+
+
+				<p>La glaciología es una disciplina científica encargada de estudiar los glaciares, las glaciaciones y la criósfera en general, a través de monitoreos del comportamiento y formación, realizando mediciones en terreno o mediciones remotas.</p>
+				<p>La criósfera se define como todos los componentes congelados naturales que se encuentran sobre o debajo de la superficie terrestre u oceánicas. Incluyendo nieve, glaciares, casquetes de hielo icebergs, hielo marino, lagos y ríos congelados, además de suelos congelados. Tiene un rol importante en la regulación del clima a escala local y global, influyendo en la hidrología, nubes, precipitaciones y la circulación de la atmósfera y los océanos. El cambio climático está ocasionando una gran pérdida de la criósfera, mediante el derretimiento de grandes extensiones de hielo.
+				</p>
+
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
@@ -357,9 +375,6 @@ class App extends React.Component {
 					/>
 				</AudioPlayer>
 
-				<p>La glaciología es una disciplina científica encargada de estudiar los glaciares, las glaciaciones y la criósfera en general, a través de monitoreos del comportamiento y formación, realizando mediciones en terreno o mediciones remotas.</p>
-				<p>La criósfera se define como todos los componentes congelados naturales que se encuentran sobre o debajo de la superficie terrestre u oceánicas. Incluyendo nieve, glaciares, casquetes de hielo icebergs, hielo marino, lagos y ríos congelados, además de suelos congelados. Tiene un rol importante en la regulación del clima a escala local y global, influyendo en la hidrología, nubes, precipitaciones y la circulación de la atmósfera y los océanos. El cambio climático está ocasionando una gran pérdida de la criósfera, mediante el derretimiento de grandes extensiones de hielo.
-				</p>
 				<p>Componentes de la Criósfera que se estudian comúnmente en los procesos de balance de masa por la glaciología (Fuente: “El Atlas de Glaciares y Aguas Andinos: el impacto del retroceso de los glaciares sobre los recursos hídricos” (Johansen et al., 2019))
 				</p>
 				<p>Los estudios en terreno incluyen normalmente expediciones en condiciones muy adversas, en donde investigadores hombres y mujeres deben exponerse a condiciones ambientales complejas. Una buena preparación de la expedición y buen equipamiento asegura que los científicos puedan trabajar de buena forma en la montaña o regiones polares. Muchas veces las expediciones ocurren en zonas muy remotas (zonas de acumulación de hielo), que deben ser accedidas caminando por largas rutas sobre glaciares o por medios de transporte como helicóptero o avión.
@@ -386,6 +401,9 @@ class App extends React.Component {
 				/>
 
 				<h2 className='sticky-text top-5'>5. Qué son los testigos de hielos y para qué sirven</h2>
+				
+				<p>Los testigos de hielo representan una verdadera diamante de las técnicas científicas, y son una herramienta importante para el estudio glaciar, estos son perforaciones hechas en un glaciar de forma cilíndrica en una capa de hielo o glaciar, realizadas en profundidad desde la superficie. Los glaciares acumulan capas de nieve, que lentamente se transforman en hielo por efecto de la presión y dinámica del glaciar. 
+				</p>
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
@@ -394,7 +412,8 @@ class App extends React.Component {
 					/>
 				</AudioPlayer>
 				<img src={A1} alt="Testigos de hielo" />
-				<p>Los testigos de hielo representan una verdadera diamante de las técnicas científicas, y son una herramienta importante para el estudio glaciar, estos son perforaciones hechas en un glaciar de forma cilíndrica en una capa de hielo o glaciar, realizadas en profundidad desde la superficie. Los glaciares acumulan capas de nieve, que lentamente se transforman en hielo por efecto de la presión y dinámica del glaciar. Cada una de estas capas “captura” las condiciones ambientales del lugar donde el glaciar crece y avanza (temperatura del aire), pero también es un registro único de condiciones ambientales escala global (burbujas de aire que atrapan los gases de la atmósfera), también al ser como una verdadera sábana blanca, los glaciares acumulan impurezas (naturales y generadas por el hombre) que son transportadas desde grandes distancias y que se acumulan con cada nueva precipitación de nieve. Los eventos de erupciones volcánicas son identificados relativamente fácil a lo largo de los testigos de hielo y nos dan una idea de la edad del hielo.
+				<p>
+			Cada una de estas capas “captura” las condiciones ambientales del lugar donde el glaciar crece y avanza (temperatura del aire), pero también es un registro único de condiciones ambientales escala global (burbujas de aire que atrapan los gases de la atmósfera), también al ser como una verdadera sábana blanca, los glaciares acumulan impurezas (naturales y generadas por el hombre) que son transportadas desde grandes distancias y que se acumulan con cada nueva precipitación de nieve. Los eventos de erupciones volcánicas son identificados relativamente fácil a lo largo de los testigos de hielo y nos dan una idea de la edad del hielo.
 
 
 					Fotografía la erupción del volcán Calbuco, año 2015. Fuente: (https://nuestroclima.com/la-erupcion-del-calbuco-en-4k/)
@@ -455,6 +474,8 @@ class App extends React.Component {
 					onLeave={this.onSectionLeave(6)}
 				/>
 				<h2 className='sticky-text top-6'>6. Modelamiento del futuro (presente próximo siglo)</h2>
+	
+				<p>Los efectos del cambio climático descritos hasta ahora continuaran en el futuro, a no ser que se tomen medidas urgentes en cuanto a la forma de usar los recursos naturales (Rojas et al., 2019; IPCC, 2021). De esta forma sabemos que las precipitaciones disminuirán entre un 5% y un 15% en la zona centro y sur de Chile (Stehr et al., 2019), lo que inevitablemente repercutirá en la perdida de masa glaciar a lo largo de Chile. En la zona central se proyecta una perdida de masa de hielo de entre un 12% y 37% (Glaciar Universidad) (Escanilla-Minchel et al., 2020) dependiendo de las decisiones socio-políticas que se lleguen a tomar en el futuro. El IPCC (2021) ha fijado como meta un calentamiento no superior a 1.5°C para el presente siglo, de manera de evitar efectos irreversibles en nuestro ambiente debido al cambio climático. Si esta meta se cumple, los efectos del cambio climático, podrián ser moderados pero no desapareceran. Las simulaciones, muestran que en todos los escenarios la precipitación de la zona central disminuirá y la temperatura aumentará (como efectos tangibles del cambio climático).</p>
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
@@ -462,7 +483,6 @@ class App extends React.Component {
 						
 					/>
 				</AudioPlayer>
-				<p>Los efectos del cambio climático descritos hasta ahora continuaran en el futuro, a no ser que se tomen medidas urgentes en cuanto a la forma de usar los recursos naturales (Rojas et al., 2019; IPCC, 2021). De esta forma sabemos que las precipitaciones disminuirán entre un 5% y un 15% en la zona centro y sur de Chile (Stehr et al., 2019), lo que inevitablemente repercutirá en la perdida de masa glaciar a lo largo de Chile. En la zona central se proyecta una perdida de masa de hielo de entre un 12% y 37% (Glaciar Universidad) (Escanilla-Minchel et al., 2020) dependiendo de las decisiones socio-políticas que se lleguen a tomar en el futuro. El IPCC (2021) ha fijado como meta un calentamiento no superior a 1.5°C para el presente siglo, de manera de evitar efectos irreversibles en nuestro ambiente debido al cambio climático. Si esta meta se cumple, los efectos del cambio climático, podrián ser moderados pero no desapareceran. Las simulaciones, muestran que en todos los escenarios la precipitación de la zona central disminuirá y la temperatura aumentará (como efectos tangibles del cambio climático).</p>
 				<p>  Figura panel superior modelo de las tendencias de precipitaciones (IPCC, 2021) para el mundo en caso de un aumento de 1.5°C, 2°C y 4°C</p>
 				<p>
 					Figura panel superior modelo de las tendencias de temperaturas regionales (IPCC, 2021) para el mundo en caso de un aumento promedio de 1.5°C, 2°C y 4°C de la temperartura.
@@ -527,7 +547,7 @@ class App extends React.Component {
 				// verifica si la url base es distinta al indice que tiene y corrige el valor. 
 				 if( "/"+this.state.rootURL !== this.routerBoy(this.state.activeSection)
 					){
-
+					// obtengo el numero de la URL . 
 					const sectionNum = Number( this.state.rootURL.replace(/\D/g,''));
 				
 						// si la navegacion es mas q el total se vuelve a 1 
