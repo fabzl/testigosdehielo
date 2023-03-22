@@ -81,13 +81,12 @@ class App extends React.Component {
 		this.state = {
 			count: 0,
 			rootURL: window.location.href,
-			activeSection: 0,
+			activeSection: 1,
 			nextSection: 1,
 			totalSections: 6,
 			menuVisible: false,
 			nextSectionURL:"/",
-			shouldHideIntro: false,
-			shouldHideEndMenu: true,
+			endNavVisible: false,
 
 		};
 	}
@@ -125,10 +124,11 @@ class App extends React.Component {
 	  onClickNextSection = () => {
 		let currentSection = this.state.activeSection
 		let nextSection = currentSection+1;
+
 		console.log("onClickNextSection", nextSection,this.routerBoy(nextSection));
 		this.setState({ activeSection : nextSection })
 
-	  };
+	  }; 	
 
 	
 	handleClick = () => {
@@ -145,22 +145,46 @@ class App extends React.Component {
 		}, []);
 
 		return (
-				this.Section1()
+		<div>	
+			<div className='wrapMain'>
+			<h1 className="mainTitle">Testigos de Hielo</h1>
+			<img className="mainBg" src={Juncal} alt="Juncal Nor Oriente" />
+		</div>
 
+		<div className='wrapQuote'>
+			<p>Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.</p>
+		</div> 
+
+		{ this.state.activeSection === 0 ? null :  	this.Section1() }
+		{ this.state.activeSection === 1 ? null :  	this.Section1() }
+		{ this.state.activeSection === 2 ? null :   this.Section2() }
+		{ this.state.activeSection === 3 ? null :   this.Section3() }
+		{ this.state.activeSection === 4 ? null :   this.Section4() }
+		{ this.state.activeSection === 5 ? null :   this.Section5() }
+		{ this.state.activeSection === 6 ? null :  	this.Section6() }
+
+
+			</div>
 			);
 		};
 
 
 	Section1 = () => {
+		
+		
+
+
 		useEffect(() => {
 			window.scrollTo(0, 0);
+			{ this.state.activeSection > 1 ? null :   	this.setState({ endNavVisible : true }) }
 		}, []);
+		
 
 		return (
 			<div className="wrapperSection wrapper-1">
 				<Waypoint
 					onEnter={this.onSectionEnter(1)}
-					onLeave={this.onSectionLeave(1)}
+				//	onLeave={this.onSectionLeave(1)}
 				/>
 				<h2 className='sticky-text top-1'>1. Cambio climático</h2>
 
@@ -194,7 +218,7 @@ class App extends React.Component {
 			<div className="wrapperSection wrapper-2">
 				<Waypoint
 					onEnter={this.onSectionEnter(2)}
-					onLeave={this.onSectionLeave(2)}
+			//		onLeave={this.onSectionLeave(2)}
 					/>
 				<h2 className='sticky-text top-2'>2. Variabilidad e historia del clima</h2>
 
@@ -297,7 +321,8 @@ class App extends React.Component {
 			<div className="wrapperSection wrapper-4">
 				<Waypoint
 					onEnter={this.onSectionEnter(4)}
-					onLeave={this.onSectionLeave(4)}
+					onLeave={this.
+						onSectionLeave(4)}
 				/>
 				<h2 className='sticky-text top-4'>4. Glaciología: que estudia y cómo se estudia, además de la importancia de esta ciencia.
 				</h2>
@@ -330,7 +355,8 @@ class App extends React.Component {
 			<div className="wrapperSection wrapper-5">
 				<Waypoint
 					onEnter={this.onSectionEnter(5)}
-					onLeave={this.onSectionLeave(5)}
+					onLeave={this.
+						onSectionLeave(5)}
 				/>
 
 				<h2 className='sticky-text top-5'>5. Qué son los testigos de hielos y para qué sirven</h2>
@@ -391,6 +417,7 @@ class App extends React.Component {
 			window.scrollTo(0, 0);
 		}, []);
 
+		
 		return (
 
 			<div className="wrapperSection wrapper-6">
@@ -437,21 +464,16 @@ class App extends React.Component {
 	}
 
 	onSectionEnter = (nombre) => {
-		console.log("section ", nombre)
-		this.performRedirect(nombre)
-		this.setLocation()
+	//	console.log("section ", nombre)
+	//	this.performRedirect(nombre)
+	//	this.setLocation()
 	}
+	
 	onSectionLeave = (numero) => {
-		console.log("onSectionLeave");
-		if ( numero < this.totalSections) {
-			this.setState({ activeSection : this.activeSection +1 })
-			console.log("onSectionLeaveIF", this.activeSection );
-		}else{
-			console.log("end")
-		}
+		
+		
 
 	}
-
 	performRedirect = (nombre) => {
 		console.log("perform redirect", nombre, this.props.history)
 		// const { history } = this.props;
@@ -461,24 +483,13 @@ class App extends React.Component {
 		return (
 			<div>
 
-			{
-			this.state.activeSection===1 ? null : <div>
 
-				<div className='wrapMain'>
-					<h1 className="mainTitle">Testigos de Hielo</h1>
-					<img className="mainBg" src={Juncal} alt="Juncal Nor Oriente" />
-				</div>
-
-				<div className='wrapQuote'>
-					<p>Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.</p>
-				</div> 
 
 				<a className="burger" onClick={this.handleClick}>	
 					<img src={EyeMenu}  alt="Testigos de hielo" />
 				</a>
 		
-				</div>}
-				
+
 
 					
 				
@@ -505,7 +516,7 @@ class App extends React.Component {
                     <Route exact path={this.routerBoy(6)} element={<this.Section6 />} />
                 </Routes>
 
-			
+				{ this.state.endNavVisible && 
 				<EndNav>
 					<BackToMain onClick={this.onClickBackToMain}>
 						<NavLink to="/" >Volver al Menu Principal</NavLink>
@@ -514,6 +525,7 @@ class App extends React.Component {
 						<NavLink to={this.routerBoy(this.state.activeSection+1)} >Ir a la siguiente sección</NavLink>
 					</NextSection>
 				</EndNav>
+				}
 			
 				</BrowserRouter>
 				

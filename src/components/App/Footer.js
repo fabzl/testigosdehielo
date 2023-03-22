@@ -160,6 +160,7 @@ const Footer = props => (
    <Content>
 
       <General>
+        
 
         <Links>
 {/*         <Router>
