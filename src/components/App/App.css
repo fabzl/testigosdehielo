@@ -1,11 +1,15 @@
 .burger {
+  
   position: fixed;
   top:30px;
-  right:30px;
-  z-index: 999;
-  width: 80px;
-  height: 80px;
+  left:80vw;
+  z-index: 9999;
+  width: 10vw;
+  max-width: 60px;
+  height: 10vw;
+
 }
+
 .nav-links {
  list-style-type: none;
  position: fixed;
@@ -53,12 +57,14 @@
   font-family: 'Oswald', sans-serif;
   font-style: italic oblique;
   color: #666;
-  max-width: 60vw;
+  max-width: 70vw;
   text-align: center;
   margin:  auto;
   height: 50vh;
-  padding-top: 30vh;
+  padding: 10vh 0;
   font-size: 2rem;
+  position: relative;
+  height: auto;
 
 }
 
@@ -67,6 +73,7 @@
   text-align: center;
   font-family: 'Oswald', sans-serif;
   font-family: 'Roboto', sans-serif;
+  width: 100vw;
 
 }
 
@@ -118,25 +125,54 @@ body {
 }
 
 .mainBg {
-  position: absolute;
+
   width:auto;
-  height: 100%;
-  top: 0px;
+  min-height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+
+
+  
+ 
 }
+
 .wrapMain {
- /*  border: 2vw solid white;
-  box-sizing: border-box; */
-  position: relative;
-  width: 100vw;
+
   height: 100vh;
-} 
+}
+
+.mainBgWrap {
+
+  overflow: hidden;
+  width: 100vw;
+  height:100vh;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+
+.mainWrap {
+
+  z-index: 99999;
+  top:30px;
+  left: 80vw;
+  width: 10vw;
+  min-width: 60px;
+  max-width: 100vh;
+
+}
+
 .mainTitle { 
   color: white;
   text-align: center;
-  font-size: 12vw;
+  font-size: 10vw;
   position: sticky;
   top: 150px;
-  width: 100%;
+  width: 100vw;
   padding: 0;
   margin:0;
 /*   border: #61dafb 1px solid; */
@@ -152,12 +188,14 @@ p {
 }
 .sticky-text {
   position: sticky;
-  padding: 20px;
+  padding: 20px 10vw;
   padding-top: 50px;
   background-color: #FFFAC9;
   top:0;
-  height:70px;
+  min-height:70px;
+  width: 100%;
 }
+
 
 
 .top-1 {

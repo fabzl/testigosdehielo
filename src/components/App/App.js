@@ -161,7 +161,9 @@ class App extends React.Component {
 		<div>	
 			<div className='wrapMain'>
 			<h1 className="mainTitle">Testigos de Hielo</h1>
-			<img className="mainBg" src={Juncal} alt="Juncal Nor Oriente" />
+			<div className='mainBgWrap'>
+				<img className="mainBg" src={Juncal} alt="Juncal Nor Oriente" />
+			</div>
 		</div>
 
 		<div className='wrapQuote'>
@@ -593,11 +595,12 @@ class App extends React.Component {
 		return (
 			<div>
 
-
+			<div className='burgerWrap'>
 
 				<a className="burger" onClick={this.handleClick}>	
 					<img src={EyeMenu}  alt="Testigos de hielo" />
 				</a>
+				</div>
 					<BrowserRouter>
 					{this.state.menuVisible && <div>
 					<ul className="nav-links">
