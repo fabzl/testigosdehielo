@@ -1,3 +1,66 @@
+
+/* Base font size for the document */
+html {
+  font-size: 12px;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+
+/* Styles for screens at least 768px wide */
+@media screen and (max-width: 450px) {
+  /* ... */
+  .sticky-text {
+   
+    padding: 20px 10vw;
+    padding-top: 50px;
+    background-color: #FFFAC9;
+    top:0;
+    min-height:70px;
+    max-width: 60%;
+  }
+}
+
+/* Styles for screens at least 768px wide */
+@media screen and (min-width: 768px) {
+  /* ... */
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Styles for screens at least 992px wide */
+@media screen and (min-width: 992px) {
+  /* ... */
+}
+
+/* Styles for screens at least 1200px wide */
+@media screen and (min-width: 1200px) {
+  /* ... */
+}
+
+
+
+
+
 .burger {
   
   position: fixed;
@@ -20,27 +83,32 @@
  padding: 0;
  height: 100vh;
  z-index: 998;
+ text-align: left;
  
 }
 .nav-links li {
   width: 100vw;
   height: 16.6%;
   display: flex;
-  justify-content:center;
+  justify-content:flex-start;
+  text-align: left;
+
 }
 
 .nav-links li a {
   margin: 0;
   text-decoration: none; 
-  text-align: left;
   font-family: 'Oswald', sans-serif;
  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 800;
-  font-size: 3vh;
+  font-size: 2rem;
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content:flex-start;
+  align-self: center;
+  padding: 30px;
+  text-align: left;
+  flex-direction: column;
 
 
 }
@@ -65,6 +133,7 @@
   font-size: 2rem;
   position: relative;
   height: auto;
+
 
 }
 
@@ -186,6 +255,7 @@ p {
   max-width: 80vw;
   margin: 0 auto;
 }
+
 .sticky-text {
   position: sticky;
   padding: 20px 10vw;

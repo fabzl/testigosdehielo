@@ -162,6 +162,10 @@ const Footer = props => (
       <General>
         
 
+
+
+
+
         <Links>
 {/*         <Router>
       <Route to="/">

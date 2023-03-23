@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import styled from 'styled-components'
 import { Waypoint } from 'react-waypoint';
 //import React from 'react'
@@ -7,7 +7,6 @@ import { Waypoint } from 'react-waypoint';
 import ReactAudioPlayer from 'react-audio-player';
 import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import Footer from './Footer';
-
 import A1 from '../../img/A1.svg'
 import A2 from '../../img/A2.svg'
 import A3 from '../../img/A3.svg'
@@ -512,8 +511,7 @@ class App extends React.Component {
 		if (this.state.activeSection <= 1 
 			) {
 				this.setState({ endNavVisible : false })
-				console.log("endNav: ", this.state.endNavVisible)
-		
+				console.log("endNav: ", this.state.endNavVisible)	
 	}
 		if(this.state.rootURL === this.routerBoy(1)) {
 			this.setState({ endNavVisible : true })
@@ -550,7 +548,7 @@ class App extends React.Component {
 				 if( "/"+this.state.rootURL !== this.routerBoy(this.state.activeSection)
 					){
 					// obtengo el numero de la URL . 
-					const sectionNum = Number( this.state.rootURL.replace(/\D/g,''));
+					let sectionNum = Number( this.state.rootURL.replace(/\D/g,''));
 				
 						// si la navegacion es mas q el total se vuelve a 1 
 					if(this.state.activeSection >= this.state.totalSections) {
@@ -604,12 +602,24 @@ class App extends React.Component {
 					<BrowserRouter>
 					{this.state.menuVisible && <div>
 					<ul className="nav-links">
-					<li className='top-1'><NavLink onClick={this.handleClick} to={this.routerBoy(1)} activeclassname="active">1.Cambio Climático</NavLink></li>
-					<li className='top-2'><NavLink onClick={this.handleClick}to={this.routerBoy(2)} activeclassname="active">2. Variabilidad e historia del Clima</NavLink></li>
-					<li className='top-3'><NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.Importancia de la Montaña como reserva Hídrica</NavLink></li>
-					<li className='top-4'><NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4. Glaciología: que estudia y cómo se estudia.</NavLink></li>
-					<li className='top-5'><NavLink onClick={this.handleClick} to={this.routerBoy(5)} activeclassname="active">5. Qué son los testigos de hielos y para qué sirven</NavLink></li>
-					<li className='top-6'><NavLink onClick={this.handleClick} to={this.routerBoy(6)} activeclassname="active">6. Modelamiento del futuro (presente próximo siglo)</NavLink></li>
+					<li className='top-1'>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(1)} activeclassname="active">1.Cambio Climático</NavLink></li>
+					<li className='top-2'>
+						<NavLink onClick={this.handleClick}to={this.routerBoy(2)} activeclassname="active">2. Variabilidad e historia del Clima</NavLink></li>
+					<li className='top-3'>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.Importancia de la Montaña como reserva Hídrica</NavLink>
+					</li>
+
+					
+					<li className='top-4'>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4. Glaciología: que estudia y cómo se estudia.</NavLink>
+					</li>
+					<li className='top-5'>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(5)} activeclassname="active">5. Qué son los testigos de hielos y para qué sirven</NavLink>
+					</li>
+					<li className='top-6'>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(6)} activeclassname="active">6. Modelamiento del futuro (presente próximo siglo)</NavLink>
+					</li>
 				</ul>
 				</div>}
 					
