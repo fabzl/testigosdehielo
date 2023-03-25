@@ -27,13 +27,39 @@ import EyeMenu from '../../img/menu_eye.svg'
 import React, { useState, useEffect } from 'react';
 
 
+
+const WrapQuote = styled.p`
+text-align: center;
+font-family: 'Oswald', sans-serif;
+font-style: italic;
+color: #666;
+max-width: 70vw;
+text-align: center;
+margin:  auto;
+padding: 10vh 0;
+font-size: 2.5rem;
+position: relative;
+height: auto;
+min-height: 80vh;
+line-height: 200%;
+`
+
+const MainBg = styled.div`
+	background-image:url("${Juncal}");
+	background-position:cover;
+	background-repeat: no-repeat;
+	width:100vw;
+	height:100vh;
+	top:0;
+	position:absolute;
+`
 const AudioPlayer = styled.div`
-  padding:20px;
+  padding:20px 0;
   width: 100%;
   background-color: #f1f3f4;
-  margin: 40px 0;
   position: sticky;
-  top:140px;
+  top:120px;
+  text-align:center;
 
 `
 const EndNav = styled.div`
@@ -156,18 +182,17 @@ class App extends React.Component {
 			window.scrollTo(0, 0);
 		}, []);
 
+
 		return (
 		<div>	
 			<div className='wrapMain'>
 			<h1 className="mainTitle">Testigos de Hielo</h1>
-			<div className='mainBgWrap'>
-				<img className="mainBg" src={Juncal} alt="Juncal Nor Oriente" />
-			</div>
+				<MainBg/>
 		</div>
 
-		<div className='wrapQuote'>
-			<p>Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.</p>
-		</div> 
+		<WrapQuote>
+			Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.
+		</WrapQuote> 
 
 		{ this.state.activeSection === 0 ? null :  	this.Section1() }
 		{ this.state.activeSection === 1 ? null :  	this.Section1() }
@@ -194,27 +219,23 @@ class App extends React.Component {
 
 		}, []);
 		
-
 		return (
 			<div className="wrapperSection wrapper-1">
 				<Waypoint
 					onEnter={this.onSectionEnter(1)}
-				//	onLeave={this.onSectionLeave(1)}
+				//	onLeave={this.onSectdioguideTextionLeave(1)}
 				/>
 				<h2 className='sticky-text top-1'>1. Cambio climático</h2>
-
 				
-
 				<p>De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas” (https://www.un.org/es/climatechange/what-is-climate-change)</p>
 				
-				
+
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					
 					<ReactAudioPlayer src={TestAudio}
 						controls
 						
-
 					/>
 				</AudioPlayer>
 				
@@ -362,6 +383,7 @@ class App extends React.Component {
 				/>
 				<h2 className='sticky-text top-4'>4. Glaciología: que estudia y cómo se estudia, además de la importancia de esta ciencia.
 				</h2>
+
 
 
 				<p>La glaciología es una disciplina científica encargada de estudiar los glaciares, las glaciaciones y la criósfera en general, a través de monitoreos del comportamiento y formación, realizando mediciones en terreno o mediciones remotas.</p>
@@ -610,7 +632,7 @@ class App extends React.Component {
 						<NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.Importancia de la Montaña como reserva Hídrica</NavLink>
 					</li>
 
-					
+
 					<li className='top-4'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4. Glaciología: que estudia y cómo se estudia.</NavLink>
 					</li>

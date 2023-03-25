@@ -1,7 +1,7 @@
 
 /* Base font size for the document */
 html {
-  font-size: 12px;
+  font-size: 8px;
 }
 
 /* Headings */
@@ -25,17 +25,15 @@ p {
 }
 
 
-/* Styles for screens at least 768px wide */
+
 @media screen and (max-width: 450px) {
   /* ... */
-  .sticky-text {
-   
-    padding: 20px 10vw;
-    padding-top: 50px;
-    background-color: #FFFAC9;
-    top:0;
-    min-height:70px;
-    max-width: 60%;
+
+  html {
+    font-size: 10px;
+  }
+  .burger {
+    width: 50px;
   }
 }
 
@@ -43,33 +41,37 @@ p {
 @media screen and (min-width: 768px) {
   /* ... */
   html {
-    font-size: 16px;
+    font-size: 12px;
   }
+
 }
 
 /* Styles for screens at least 992px wide */
 @media screen and (min-width: 992px) {
-  /* ... */
+  html {
+    font-size: 14px;
+  }
 }
 
 /* Styles for screens at least 1200px wide */
 @media screen and (min-width: 1200px) {
   /* ... */
+ 
+    html {
+      font-size: 16px;
+    }
 }
-
-
-
 
 
 .burger {
   
   position: fixed;
-  top:30px;
-  left:80vw;
+  top:20px;
+  right:10px;
   z-index: 9999;
-  width: 10vw;
-  max-width: 60px;
+  width: 80px;
   height: 10vw;
+
 
 }
 
@@ -110,31 +112,26 @@ p {
   text-align: left;
   flex-direction: column;
 
-
 }
 
 .audioguide-logo {
   height: 54px;
   margin:  auto;
-  padding-left: 20vw;
-  padding-right: 54px;
 }
 .wrapQuote {
 
   text-align: center;
   font-family: 'Oswald', sans-serif;
-  font-style: italic oblique;
+  font-style: italic;
   color: #666;
   max-width: 70vw;
   text-align: center;
   margin:  auto;
-  height: 50vh;
   padding: 10vh 0;
-  font-size: 2rem;
+  font-size: 5rem;
   position: relative;
   height: auto;
-
-
+  min-height: 80vh;
 }
 
 
@@ -193,21 +190,6 @@ body {
   color:#282c34;
 }
 
-.mainBg {
-
-  width:auto;
-  min-height: 100vh;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-
-
-  
- 
-}
-
 .wrapMain {
 
   height: 100vh;
@@ -215,12 +197,8 @@ body {
 
 .mainBgWrap {
 
-  overflow: hidden;
   width: 100vw;
   height:100vh;
-  position: absolute;
-  top:0;
-  left:0;
 }
 
 
@@ -240,7 +218,7 @@ body {
   text-align: center;
   font-size: 10vw;
   position: sticky;
-  top: 150px;
+  top: 33%;
   width: 100vw;
   padding: 0;
   margin:0;
@@ -258,12 +236,14 @@ p {
 
 .sticky-text {
   position: sticky;
-  padding: 20px 10vw;
-  padding-top: 50px;
+  padding: 25px 130px 25px 20px;
   background-color: #FFFAC9;
   top:0;
   min-height:70px;
-  width: 100%;
+  font-size: 2.5rem;
+  display: flex; 
+  align-items: center;
+  text-align: center;
 }
 
 
@@ -290,9 +270,9 @@ p {
   color:#FFF;
 }
 .top-5 {
-  background-color: #61dafb;
- 
-  color:#FFF;
+  background-color: #FFF;
+ border: 1px solid #61dafb;
+  color:#61dafb;
 }
 .top-6 {
   background-color: #F29074;
