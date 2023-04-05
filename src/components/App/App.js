@@ -23,6 +23,7 @@ import TestAudio from '../../audios/test.mp3'
 import AudioGuideLogo from '../../img/audioguide.svg'
 
 import EyeMenu from '../../img/menu_eye.svg'
+import { createRoot } from "react-dom/client";
 
 import React, { useState, useEffect } from 'react';
 
@@ -114,9 +115,13 @@ class App extends React.Component {
 			menuVisible: false,
 			nextSectionURL:"/",
 			endNavVisible: true,
+			activeSectionHeaderHeight: 120,
 
 		};
 	}
+
+	
+
 // here are the main urls for the project
 	routerBoy = (num) => {
 		
@@ -138,7 +143,6 @@ class App extends React.Component {
 		   
 			}
 		 } 
-
 
 
 	
@@ -176,6 +180,13 @@ class App extends React.Component {
 			this.setState({ menuVisible : false })
 		}
 	  };
+
+	resizeStickyHeader = () => {
+		
+		const collection = document.getElementsByClassName("sticky-text");
+		console.log("get sticky header",collection);
+
+	}
 
 	  SectionIntro = () => {
 		useEffect(() => {
@@ -545,6 +556,7 @@ class App extends React.Component {
 	// se ejecuta para todas las Secciones
 	setLocation = () => {
 
+
 		//Tomo la URL
 		const fullURL = window.location.href;
 		
@@ -557,6 +569,9 @@ class App extends React.Component {
 		if( theBit === "") {
 			theBit = "/"
 		}
+
+		// para que el header cambie activamente modifico la propiedad. 
+		this.resizeStickyHeader();
 
 		// seteamos el estado del Root y esperamos para seguir .
 		this.setState({rootURL: theBit }, () => {
