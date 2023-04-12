@@ -184,8 +184,10 @@ class App extends React.Component {
 	resizeStickyHeader = () => {
 		
 		const collection = document.getElementsByClassName("sticky-text");
-		console.log("get sticky header",collection);
-
+		console.log("get sticky header heigth",collection[this.state.activeSection].offsetHeight);
+		//collection.log("alto: ",collection[this.state.activeSection].offsetHeight);
+		const targetAudioPlayer = document.getElementsByClassName("wrapper-"+this.state.activeSection);
+	
 	}
 
 	  SectionIntro = () => {
@@ -241,7 +243,7 @@ class App extends React.Component {
 				<p>De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas” (https://www.un.org/es/climatechange/what-is-climate-change)</p>
 				
 
-				<AudioPlayer>
+				<AudioPlayer >
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					
 					<ReactAudioPlayer src={TestAudio}
