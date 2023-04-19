@@ -18,6 +18,16 @@ import B3 from '../../img/B3.svg'
 import B4 from '../../img/B4.svg'
 import B5 from '../../img/B5.svg'
 
+import About from './About';
+import Fotos from './Fotos';
+import Videos from './Videos';
+
+
+import lockupExpo from '../../img/lockup_expo.svg'
+import lockupText from '../../img/lockup_text.svg'
+import logoTestigos from '../../img/testigos_de_hielo_logo.svg'
+
+
 import Juncal from '../../img/juncal-nor-oriente.jpg'
 import TestAudio from '../../audios/test.mp3'
 import AudioGuideLogo from '../../img/audioguide.svg'
@@ -59,7 +69,7 @@ const AudioPlayer = styled.div`
   width: 100%;
   background-color: #f1f3f4;
   position: sticky;
-  top:120px;
+  top:350px;
   text-align:center;
 
 `
@@ -187,19 +197,25 @@ class App extends React.Component {
 		console.log("get sticky header heigth",collection[this.state.activeSection].offsetHeight);
 		//collection.log("alto: ",collection[this.state.activeSection].offsetHeight);
 		const targetAudioPlayer = document.getElementsByClassName("wrapper-"+this.state.activeSection);
-	
+
 	}
+
 
 	  SectionIntro = () => {
 		useEffect(() => {
 			window.scrollTo(0, 0);
 		}, []);
 
-
 		return (
 		<div>	
 			<div className='wrapMain'>
+
 			<h1 className="mainTitle">Testigos de Hielo</h1>
+			<div>
+				<img className="lockupText"src={lockupText}  alt="26 de abril" />
+			</div>
+			<img className="logoTestigos" src={logoTestigos}  alt="Testigos de hielo" />
+
 				<MainBg/>
 		</div>
 
@@ -635,10 +651,27 @@ class App extends React.Component {
 			<div className='burgerWrap'>
 
 				<a className="burger" onClick={this.handleClick}>	
-					<img src={EyeMenu}  alt="Testigos de hielo" />
+					<img src={lockupExpo}  className="lockupExpo" alt="Testigos de hielo" />
 				</a>
 				</div>
 					<BrowserRouter>
+					<ul className="cat-links">
+					<li className='about-cat'>
+							<Link className="linkCat" to="/">Home</Link>
+						</li>
+						<li className='about-cat'>
+							<Link className="linkCat" to="/about">About</Link>
+						</li>
+						<li className='fotos-cat'>
+						<Link className="linkCat" to="/fotos">fotos</Link>
+						</li>					
+						<li className='videos-cat'>
+							<Link className="linkCat"to="/videos">videos</Link>
+						</li>					
+					</ul>	
+				
+
+
 					{this.state.menuVisible && <div>
 					<ul className="nav-links">
 					<li className='top-1'>
@@ -649,7 +682,6 @@ class App extends React.Component {
 						<NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.Importancia de la Montaña como reserva Hídrica</NavLink>
 					</li>
 
-
 					<li className='top-4'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4. Glaciología: que estudia y cómo se estudia.</NavLink>
 					</li>
@@ -659,7 +691,21 @@ class App extends React.Component {
 					<li className='top-6'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(6)} activeclassname="active">6. Modelamiento del futuro (presente próximo siglo)</NavLink>
 					</li>
+
+
+				<li className='about'>
+						<NavLink onClick={this.handleClick} to={"/Home"} activeclassname="active">about</NavLink>
+					</li>
+					<li className='fotos'>
+						<NavLink onClick={this.handleClick} to={"/Videos"} activeclassname="active">fotos</NavLink>
+					</li>
+					<li className='videos'>
+						<NavLink onClick={this.handleClick} to={"/About"} activeclassname="active">videos</NavLink>
+					</li>
 				</ul>
+
+		
+				
 				</div>}
 					
 				<Routes>
@@ -671,6 +717,7 @@ class App extends React.Component {
                     <Route exact path={this.routerBoy(4)} element={<this.Section4 />} />
                     <Route exact path={this.routerBoy(5)} element={<this.Section5 />} />
                     <Route exact path={this.routerBoy(6)} element={<this.Section6 />} />
+					<Route path="/about" element={<About />} />
                 </Routes>
 
 				{ this.state.rootURL !== "/" && 
