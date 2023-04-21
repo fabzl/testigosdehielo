@@ -3,6 +3,7 @@
   top: 10px; left:0;
   z-index: 999;
   width: 50vw;
+  max-width: 500px;
   display : inline-flex;
   justify-content: space-around; 
   margin-left: 30vw;
@@ -231,7 +232,7 @@ p {
   color: #7fbfea;
 }
 
-H2 , H1 {
+2 , H1 {
   
  color:#7fbfea;
  font-family: 'Oswald', sans-serif;
@@ -246,7 +247,7 @@ svg {
 
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fabriga', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color:#282c34;
@@ -317,9 +318,9 @@ p {
 
 
 .top-1 {
-  background-color: #FFFAC9;
-  background-color: #FFFAC9;
-  color:#EE7555;
+ 
+  background-color:#EE7555;
+  color: #FFFAC9;
 }
 .top-2 {
  
@@ -338,9 +339,9 @@ p {
   color:#FFF;
 }
 .top-5 {
-  background-color: #FFF;
-  border: 1px solid #61dafb;
-  color:#61dafb;
+
+  background-color: #61dafb;
+  color:#FFF;
 }
 .top-6 {
   background-color: #F29074;
@@ -350,8 +351,8 @@ p {
 
 
 .top-1 a {
-  background-color: #FFFAC9;
-  color:#EE7555;
+  background-color: #EE7555;
+  color:#FFFAC9;
 }
 .top-2 a {
  

@@ -175,7 +175,7 @@ const Footer = props => (
  */}
           <Mailto
             href={
-              "mailto:contacto@testigosdehielo.cl?subject=Contacto%20desde%20TestigosdeHIelo"
+              "instagram?subject=Contacto%20desde%20TestigosdeHIelo"
             }
           >
             <i className="far fa-envelope fa-2x" />

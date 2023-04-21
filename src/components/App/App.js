@@ -23,6 +23,8 @@ import Fotos from './Fotos';
 import Videos from './Videos';
 
 
+
+
 import lockupExpo from '../../img/lockup_expo.svg'
 import lockupText from '../../img/lockup_text.svg'
 import logoTestigos from '../../img/testigos_de_hielo_logo.svg'
@@ -36,6 +38,7 @@ import EyeMenu from '../../img/menu_eye.svg'
 import { createRoot } from "react-dom/client";
 
 import React, { useState, useEffect } from 'react';
+import MobileTimeline from './MobileTimeline';
 
 
 
@@ -290,13 +293,16 @@ class App extends React.Component {
 		return (
 
 			<div className="wrapperSection wrapper-2">
+				
+				
+				
 				<Waypoint
 					onEnter={this.onSectionEnter(2)}
 			//		onLeave={this.onSectionLeave(2)}
 					/>
 				<h2 className='sticky-text top-2'>2. Variabilidad e historia del clima</h2>
 
-			
+				<MobileTimeline></MobileTimeline>
 				
 				<p>Uno de los efectos más tangibles del cambio climático en nuestra región, se está observando en la disminución de precipitaciones y el aumento de fenómenos extremos como sequías extensas y eventos de lluvias intensas. Estos fenómenos se encuentran asociados a procesos naturales como la corriente del Niño/a, pero desde inicios del siglo XX se ha observado una clara relación con el incremento de la concentración de gases de efecto invernadero, que ha modificado los patrones de circulación atmosférica (Morales et al., 2020).</p>
 
@@ -569,6 +575,11 @@ class App extends React.Component {
 		}
 	
 }
+
+	insertTimeLine = () => {
+
+	}
+
 
 	// funcion de principal de routeo para useffect
 	// se ejecuta para todas las Secciones

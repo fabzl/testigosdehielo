@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;600;700&family=Roboto:wght@400;700;900&display=swap');
 
+@import url("//db.onlinewebfonts.com/c/1a204cd3ccb7f25e06faa548e6251a59?family=Fabriga");
 
 body {
   margin: 0;
  
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fabriga', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
