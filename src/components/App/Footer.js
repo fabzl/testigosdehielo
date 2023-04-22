@@ -6,11 +6,27 @@ import styled from "styled-components";
 //simport Social from "./Social";
 // import { Link, NavLink } from "react-router-dom";
 import InstagramIcon from "../../img/instagram-icon.svg";
-import ExpoGraphic from "../../img//isometrica_expo.svg";
-import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
+import ExpoGraphic from "../../img/isometrica_expo.svg";
+import { NavLink } from 'react-router-dom';
 import About from './About';
 import Fotos from './Fotos';
 import Videos from './Videos';
+
+//logos 
+import CienciaPublica from "../../img/LogoConcurso_CP_trazoblanco.png";
+
+import Lai from "../../img/LAI_LetrasBlanco.png";
+import Unab from "../../img/logo-unab-cc.svg";
+import Vice from "../../img/VRID.png";
+
+
+import Parque from "../../img/parque.svg";
+import Museo from "../../img/Blanco_MCAP+MHNV_RGB.png";
+import Tecno from "../../img/logo-tecno.svg";
+
+import Juncal from '../../img/juncal-nor-oriente.jpg'
+import Bar from '../../img/timelin01_bar-01.svg'
+
 
 const InstaLink = styled.a`
 
@@ -19,7 +35,7 @@ const InstaLink = styled.a`
   text-transform: uppercase;
   font-weight: 700;
   display:inline-flex;
-  margin-top: 3px;
+  text-align:center;
   justify-content: center;
   @media (max-width: 840px) {
   }
@@ -67,30 +83,21 @@ const Logo = styled.img`
 `;
 
 const Wrap = styled.footer`
- 
 display: flex;
 flex-direction: column;
 align-items: center;
-background: url(${ExpoGraphic});
+background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%), url(${Juncal});
 background-color: #282c34;
 background-size:cover;
 background-position: center left;
 background-repeat: no-repeat;
 background-scale: 
 color: #ffffff;
-padding: 2rem 0;
 overflow:hidden;
-
 z-index: 50;
   padding: 3.5rem 4rem 2rem;
   min-height: 15rem;
   display: block;
-  padding-bottom: 2rem;
-
-
-  @media (max-width: 740px) {
-    padding-bottom: 4rem;
-  }
 `;
 
 const Content = styled.div`
@@ -116,21 +123,8 @@ const General = styled.div`
   }
 `;
 
-const BackToTop = styled.div`
-  flex: 1;
-  text-align: right;
-
-  @media (max-width: 740px) {
-    display: none;
-  }
-`;
-
 const Links = styled.div`
   margin-top: 1rem;
-  @media (max-width: 740px) {
-    flex-direction: column;
-    text-align: left;
-  }
 `;
 
 const ToTop = styled.a`
@@ -172,27 +166,27 @@ const Footer = props => (
 
 
   <Wrap>
+        <img className="heatBar"src={Bar} alt="Heat Bar"/>
 
    <Content>
 
       <General>
         <Links>		
         
-        <BrowserRouter>
 		
     <div className="menu-footer">
       <ul className="cat-links-footer">
         <li className='home-cat'>
-          <Link className="linkCat"  to="/">Home</Link>
+          <NavLink className="linkCat"  to="/">Home</NavLink>
         </li>
         <li className='about-cat'>
-          <Link className="linkCat"  to="/about">About</Link>
+          <NavLink className="linkCat"  to="/about">About</NavLink>
         </li>
         <li className='fotos-cat'>
-          <Link className="linkCat"  to="/fotos">fotos</Link>
+          <NavLink className="linkCat"  to="/fotos">fotos</NavLink>
         </li>					
         <li className='videos-cat'>
-          <Link className="linkCat"to="/videos">videos</Link>
+          <NavLink className="linkCat"to="/videos">videos</NavLink>
         </li>					
       </ul>
     <ul className='nav-links-footer'>
@@ -215,21 +209,7 @@ const Footer = props => (
   </ul>
 
   </div>
-  <Routes>
-				<Route exact path="/" />
-        <Route exact path={props.routerBoy(1)}  element={<props.Section1 />}/>
-        <Route exact path={props.routerBoy(2)}  />
-        <Route exact path={props.routerBoy(3)}  />
-        <Route exact path={props.routerBoy(4)} />
-        <Route exact path={props.routerBoy(5)}  />
-        <Route exact path={props.routerBoy(6)}  />
-				<Route path="/about"  element={<About />}  href="/about" />
-				<Route path="/Fotos" element={<Fotos />} />
-				<Route path="/Videos" element={<Videos />} />
- </Routes>
 
-
-  </BrowserRouter>
 
           <InstaLink
             href={
@@ -246,17 +226,23 @@ const Footer = props => (
             </InstaLink>
         </Links>
       </General>
-      <BackToTop>
-        <ToTop onClick={() => smoothScroll()}>
-          <span>
-            <i className="fas fa-angle-up fa-4x" />
-          </span>
-        </ToTop>
-      </BackToTop>
+      <div className="logos-bar">
+      <p>Financiado por : </p>
+      <img className="logo-footer ciencia"src={CienciaPublica} alt="CienciaPublica" />
+      <p>Organiza por : </p>
+      <img className="logo-footer lai"src={Lai} alt="Lai" />
 
-      <p>financiado por : </p>
-      
+      <img className="logo-footer vice" src={Vice} alt="Vicerrectoria de Investigacion y Doctorado" />
 
+      <img className="logo-footer unab"src={Unab} alt="Universidad Andres Bello campus creativo" />
+
+
+      <p>Colaboran por : </p>
+      <img className="logo-footer parque"src={Parque} alt="CienciaPublica" />
+      <img className="logo-footer museo"src={Museo} alt="CienciaPublica" />
+      <img className="logo-footer tecno"src={Tecno} alt="CienciaPublica" />
+   
+      </div>
     </Content>
   </Wrap>
 );

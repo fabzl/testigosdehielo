@@ -1,3 +1,84 @@
+.heatBar {
+  width: 40vw;
+  text-align: center;
+  justify-content: center;
+  align-self: center;
+  margin:0 auto;
+  display: flex;
+}
+
+.logo-footer {
+  height: 160px;
+  display: inline-flex;
+  flex-direction: row;
+
+  &.unab  {
+    height: 100px; 
+  }
+  &.vice {
+    height: 100px; 
+  }
+  &.lai {
+    height: 120px; 
+  }
+  &.parque  {
+    height: 120px; 
+  }
+  &.museo {
+    height: 120px; 
+  }
+  &.tecno {
+    height: 80px; 
+  }
+}
+
+
+@media screen and (max-width: 750px) {
+  /* ... */
+  .logo-footer {
+    height: 160px;
+    display: inline-flex;
+    flex-direction: row;
+  
+    &.unab  {
+      height: 50px; 
+    }
+    &.vice {
+      height: 50px; 
+    }
+    &.lai {
+      height: 60px; 
+    }
+    &.parque  {
+      height: 60px; 
+    }
+    &.museo {
+      height: 60px; 
+    }
+    &.tecno {
+      height: 40px; 
+    }
+  }
+  
+}
+
+
+
+.logos-bar {
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  p {
+    color:white;
+    text-align: left;
+    margin:0;
+    font-size: 1.5rem;
+    }
+
+
+}
 
 .instagramIcon {
   height: 34px;
@@ -10,12 +91,12 @@
   color: #FFF;
   font-size: 2.2rem;
   margin: 0;
+  align-self: center;
 
 }
 
 .cat-links-footer li {
   padding: 5px;
-  border: 1px solid blue;
 }
 
 .cat-links {

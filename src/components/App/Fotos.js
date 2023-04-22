@@ -1,28 +1,36 @@
 import React from 'react';
-import ReactAudioPlayer from 'react-audio-player';
-import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
-import Footer from './Footer';
+import AwesomeSlider from 'react-awesome-slider';
+import 'react-awesome-slider/dist/styles.css';
 
-import EyeMenu from '../../img/menu_eye.svg';
 
-class Fotos extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      count: 0,
-      rootURL: '/fotos',
-      menuVisible: false,
-      endNavVisible: true,
-    };
-  }
+const sliderImages = [
+  'https://picsum.photos/id/1018/1000/600/',
+  'https://picsum.photos/id/1015/1000/600/',
+  'https://picsum.photos/id/1019/1000/600/',
+  'https://picsum.photos/id/1020/1000/600/',
+  'https://picsum.photos/id/1021/1000/600/',
+];
 
-  render() {
-    return (
-      <div className="wrapperSection wrapper-2">
-        Fotos
-      </div>
-    );
-  }
-}
+const Fotos = () => {
+  return (
+
+    <div className="wrapperSection wrapper-2">
+   
+
+    <AwesomeSlider
+      animation="slide"
+      bullets={false}
+      organicArrows={false}
+      className="slider"
+    >
+      {sliderImages.map((image, index) => (
+        <div key={index} data-src={image} />
+      ))}
+    </AwesomeSlider>
+
+    </div>
+  );
+};
 
 export default Fotos;
+
