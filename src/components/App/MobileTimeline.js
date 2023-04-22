@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { ReactComponent as Bar } from '../../img/timeline01_bar.svg';
-import { ReactComponent as Timeline } from '../../img//timeline_01.svg';
+import { ReactComponent as Timeline } from '../../img/timeline_01.svg';
 import './MobileTimeline.scss';
 import styled from 'styled-components'
 
@@ -45,7 +45,7 @@ const MobileTimeline = () => {
         <Circle/>
 
         </div>
-        <Timeline className="timeline-graphics" onClick={() => handleScroll(2000)} />
+        <Timeline className="timeline-graphics" onClick={() => handleScroll(-2000)} />
       </div>
     </div>
   );

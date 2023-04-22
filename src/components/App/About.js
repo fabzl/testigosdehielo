@@ -3,7 +3,6 @@ import ReactAudioPlayer from 'react-audio-player';
 import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import Footer from './Footer';
 
-import EyeMenu from '../../img/menu_eye.svg';
 
 class About extends React.Component {
   constructor(props) {

@@ -1,3 +1,23 @@
+
+.instagramIcon {
+  height: 34px;
+  display: inline-block;
+  margin:4px 0 0 0;
+  padding:0;
+  padding-right:10px;
+}
+.instaIconText {
+  color: #FFF;
+  font-size: 2.2rem;
+  margin: 0;
+
+}
+
+.cat-links-footer li {
+  padding: 5px;
+  border: 1px solid blue;
+}
+
 .cat-links {
   position: fixed;
   top: 26vh;
@@ -172,6 +192,28 @@ p {
 
 .activeMenu {
   transform: rotate(90deg);
+}
+.menu-footer {
+  z-index: 100;
+  width:100vw;
+  display: inline-flex;
+  list-style-type: none;
+  text-align: left;
+  li  {
+    list-style-type: none;
+  }
+}
+
+.nav-links-footer {
+  list-style-type: none;
+  text-align: left;
+  li a {
+  color: white;
+
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 }
 
 .nav-links.show {

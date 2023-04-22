@@ -22,8 +22,7 @@ import About from './About';
 import Fotos from './Fotos';
 import Videos from './Videos';
 
-
-
+import isoExpo from '../../img/isometrica_expo.svg'
 
 import lockupExpo from '../../img/lockup_expo.svg'
 import lockupText from '../../img/lockup_text.svg'
@@ -34,9 +33,6 @@ import Juncal from '../../img/juncal-nor-oriente.jpg'
 import TestAudio from '../../audios/test.mp3'
 import AudioGuideLogo from '../../img/audioguide.svg'
 
-import EyeMenu from '../../img/menu_eye.svg'
-import { createRoot } from "react-dom/client";
-
 import React, { useState, useEffect } from 'react';
 import MobileTimeline from './MobileTimeline';
 
@@ -44,8 +40,8 @@ import MobileTimeline from './MobileTimeline';
 
 const WrapQuote = styled.p`
 text-align: center;
-font-family: 'Oswald', sans-serif;
-font-style: italic;
+font-family: 'Fabriga', sans-serif;
+font-weigth: 900;
 color: #666;
 max-width: 70vw;
 text-align: center;
@@ -56,6 +52,8 @@ position: relative;
 height: auto;
 min-height: 80vh;
 line-height: 200%;
+letter-spacing :80%;
+background-color:#EEE;
 `
 
 const MainBg = styled.div`
@@ -115,7 +113,6 @@ text-transform: uppercase;
 font-weight: 800;
 font-size: 1.5rem;
 `
-
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -186,7 +183,7 @@ class App extends React.Component {
 	  }; 	
 
 	
-	handleClick = () => {
+	  handleClick = () => {
 		if(this.state.menuVisible === false ){
 			this.setState({ menuVisible : true })
 		}else {
@@ -194,14 +191,13 @@ class App extends React.Component {
 		}
 	  };
 
-	resizeStickyHeader = () => {
-		
-		const collection = document.getElementsByClassName("sticky-text");
-		console.log("get sticky header heigth",collection[this.state.activeSection].offsetHeight);
-		//collection.log("alto: ",collection[this.state.activeSection].offsetHeight);
-		const targetAudioPlayer = document.getElementsByClassName("wrapper-"+this.state.activeSection);
+	handleClickFooter = () => {
 
-	}
+			this.setState({ menuVisible : false })
+			useEffect(() => {
+				window.scrollTo(0, 0);
+			}, []);
+	  };
 
 
 	  SectionIntro = () => {
@@ -222,10 +218,14 @@ class App extends React.Component {
 				<MainBg/>
 		</div>
 
-		<WrapQuote>
-			Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.
-		</WrapQuote> 
+		<div className='wrapQuoteBg'>
+			<WrapQuote>
+		
+				<img src={isoExpo}  className="isExpo" alt="Testigos de hielo" />
 
+					Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.
+			</WrapQuote> 
+		</div>
 		{ this.state.activeSection === 0 ? null :  	this.Section1() }
 		{ this.state.activeSection === 1 ? null :  	this.Section1() }
 		{ this.state.activeSection === 2 ? null :   this.Section2() }
@@ -233,7 +233,6 @@ class App extends React.Component {
 		{ this.state.activeSection === 4 ? null :   this.Section4() }
 		{ this.state.activeSection === 5 ? null :   this.Section5() }
 		{ this.state.activeSection === 6 ? null :  	this.Section6() }
-
 
 			</div>
 			);
@@ -599,9 +598,6 @@ class App extends React.Component {
 			theBit = "/"
 		}
 
-		// para que el header cambie activamente modifico la propiedad. 
-		this.resizeStickyHeader();
-
 		// seteamos el estado del Root y esperamos para seguir .
 		this.setState({rootURL: theBit }, () => {
 
@@ -615,7 +611,7 @@ class App extends React.Component {
 					){
 					// obtengo el numero de la URL . 
 					let sectionNum = Number( this.state.rootURL.replace(/\D/g,''));
-				
+					
 						// si la navegacion es mas q el total se vuelve a 1 
 					if(this.state.activeSection >= this.state.totalSections) {
 						sectionNum = 1;
@@ -655,44 +651,42 @@ class App extends React.Component {
 		// const { history } = this.props;
 		//history.push("/"+nombre)
 	}
+
 	render() {
 		return (
 			<div>
 
 			<div className='burgerWrap'>
 
-				<a className="burger" onClick={this.handleClick}>	
-					<img src={lockupExpo}  className="lockupExpo" alt="Testigos de hielo" />
+			<a className={`burger${this.state.menuVisible ? ' activeMenu' : ''}`} onClick={this.handleClick}>					<img src={lockupExpo}  className="lockupExpo" alt="Testigos de hielo" />
 				</a>
 				</div>
 					<BrowserRouter>
-					<ul className="cat-links">
-					<li className='about-cat'>
-							<Link className="linkCat" to="/">Home</Link>
-						</li>
-						<li className='about-cat'>
-							<Link className="linkCat" to="/about">About</Link>
-						</li>
-						<li className='fotos-cat'>
-						<Link className="linkCat" to="/fotos">fotos</Link>
-						</li>					
-						<li className='videos-cat'>
-							<Link className="linkCat"to="/videos">videos</Link>
-						</li>					
-					</ul>	
-				
-
-
-					{this.state.menuVisible && <div>
-					<ul className="nav-links">
-					<li className='top-1'>
+		
+			
+					{this.state.menuVisible && <div className="menu">
+						<ul className="cat-links">
+							<li className='home-cat'>
+								<Link className="linkCat" onClick={this.handleClick} to="/">Home</Link>
+							</li>
+							<li className='about-cat'>
+								<Link className="linkCat" onClick={this.handleClick} to="/about">About</Link>
+							</li>
+							<li className='fotos-cat'>
+								<Link className="linkCat" onClick={this.handleClick} to="/fotos">fotos</Link>
+							</li>					
+							<li className='videos-cat'>
+								<Link className="linkCat"to="/videos">videos</Link>
+							</li>					
+						</ul>
+					<ul className={this.state.menuVisible ? 'nav-links show' : 'nav-links'}>
+						<li className='top-1'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(1)} activeclassname="active">1.Cambio Climático</NavLink></li>
 					<li className='top-2'>
 						<NavLink onClick={this.handleClick}to={this.routerBoy(2)} activeclassname="active">2. Variabilidad e historia del Clima</NavLink></li>
 					<li className='top-3'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.Importancia de la Montaña como reserva Hídrica</NavLink>
 					</li>
-
 					<li className='top-4'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4. Glaciología: que estudia y cómo se estudia.</NavLink>
 					</li>
@@ -702,17 +696,6 @@ class App extends React.Component {
 					<li className='top-6'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(6)} activeclassname="active">6. Modelamiento del futuro (presente próximo siglo)</NavLink>
 					</li>
-
-
-				<li className='about'>
-						<NavLink onClick={this.handleClick} to={"/Home"} activeclassname="active">about</NavLink>
-					</li>
-					<li className='fotos'>
-						<NavLink onClick={this.handleClick} to={"/Videos"} activeclassname="active">fotos</NavLink>
-					</li>
-					<li className='videos'>
-						<NavLink onClick={this.handleClick} to={"/About"} activeclassname="active">videos</NavLink>
-					</li>
 				</ul>
 
 		
@@ -720,15 +703,16 @@ class App extends React.Component {
 				</div>}
 					
 				<Routes>
-				
-				<Route exact path="/" element={<this.SectionIntro />} />
-                    <Route exact path={this.routerBoy(1)} element={<this.Section1 />} />
-                    <Route exact path={this.routerBoy(2)} element={<this.Section2 />} />
-                    <Route exact path={this.routerBoy(3)} element={<this.Section3 />} />
-                    <Route exact path={this.routerBoy(4)} element={<this.Section4 />} />
-                    <Route exact path={this.routerBoy(5)} element={<this.Section5 />} />
-                    <Route exact path={this.routerBoy(6)} element={<this.Section6 />} />
-					<Route path="/about" element={<About />} />
+						<Route exact path="/" element={<this.SectionIntro />} />
+        	            <Route exact path={this.routerBoy(1)} element={<this.Section1 />} />
+        	            <Route exact path={this.routerBoy(2)} element={<this.Section2 />} />
+        	            <Route exact path={this.routerBoy(3)} element={<this.Section3 />} />
+        	            <Route exact path={this.routerBoy(4)} element={<this.Section4 />} />
+        	            <Route exact path={this.routerBoy(5)} element={<this.Section5 />} />
+        	            <Route exact path={this.routerBoy(6)} element={<this.Section6 />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/Fotos" element={<Fotos />} />
+						<Route path="/Videos" element={<Videos />} />
                 </Routes>
 
 				{ this.state.rootURL !== "/" && 
@@ -747,7 +731,7 @@ class App extends React.Component {
 				
 
 
-				<Footer>
+				<Footer routerBoy={this.routerBoy} SectionIntro={this.SectionIntro} Section1={this.Section1} Section2={this.Section2} Section3={this.Section3} Section4={this.Section4} Section5={this.Section5} Section6={this.Section6}   handleClickFooter={this.handleClickFooter}>
 
 				</Footer>
 
