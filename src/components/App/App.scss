@@ -1,12 +1,15 @@
 .cat-links {
   position: fixed;
-  top: 10px; left:0;
+  top: 26vh;
+  margin:0;
+  left:0;
   z-index: 999;
-  width: 50vw;
-  max-width: 500px;
+  width: 100vw;
   display : inline-flex;
   justify-content: space-around; 
-  margin-left: 30vw;
+  background-color: #999;
+  padding: 30px 0;
+
 
   li {
     list-style: none;
@@ -20,7 +23,7 @@
   font-size: 2rem;
   padding: 30px;
   text-decoration: none; 
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Fabriga', sans-serif;
  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -60,6 +63,13 @@ p {
   html {
     font-size: 10px;
   }
+
+  .logoTestigos {
+   
+    height: 60vh;
+  
+  }
+  
 }
 
 /* Styles for screens at least 768px wide */
@@ -87,7 +97,6 @@ p {
     }
 }
 
-
 .logoTestigos {
   position: absolute;
   top:0;right: 0;
@@ -96,10 +105,18 @@ p {
   z-index: 55;
   margin:5vh;
 }
+
+.logoTestigos-menu {
+  position: absolute;
+  top:0;right: 0;
+  width: auto;
+  height: 90vh;
+  z-index: 55;
+  margin:5vh;
+}
+
 .lockupExpo {
-  path {
-    fill: red;
-  }
+
 }
 
 
@@ -108,11 +125,12 @@ p {
   position: sticky;
   top:60px;
   left:340px;
-  z-index: 9999;
+  z-index: 99;
   width: calc(20vw + 250px);
   max-width: 450px;
-  min-width: 200px;
+  min-width: 150px;
   margin-top: 40px;
+  transform:translateY(0px);
 
 }
 
@@ -120,12 +138,21 @@ p {
   /* ... */
 
   .lockupText {
-    margin-top: 0px;
-    left:30px;
-    position: sticky;
+    position: absolute;
+    top:40vh;
+    width: auto;
+    height: 90vh;
+    margin:0;
+ 
   }
-}
 
+  .logoTestigos {
+    height: 60vh;
+  }
+
+}
+.menu {
+}
 
 .burger {
   
@@ -136,24 +163,46 @@ p {
   width: calc(20vw + 100px);
   max-width: 300px;
   min-width: 200px;
+  transition: all 0.7s ease-in-out;
+  
+  transform: rotate(0);
+
+ 
+}
+
+.activeMenu {
+  transform: rotate(90deg);
+}
+
+.nav-links.show {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.7s ease-in-out;
 }
 
 .nav-links {
+
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.7s ease-in-out;
  list-style-type: none;
  position: fixed;
  top:0;
  left:0;
  margin: 0;
  width: 100vw;
- padding: 0;
+ padding: 35vh 0 0 0;
  height: 100vh;
  z-index: 998;
  text-align: left;
+ background-color: #888;
+ transition: all 0.7s ease-in-out;
+
  
 }
 .nav-links li {
   width: 100vw;
-  height: 16.6%;
+  height: 10%;
   display: flex;
   justify-content:flex-start;
   text-align: left;
@@ -174,6 +223,7 @@ p {
   padding: 30px;
   text-align: left;
   flex-direction: column;
+  text-transform: uppercase;
 
 }
 
@@ -184,7 +234,7 @@ p {
 .wrapQuote {
 
   text-align: center;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Fabriga', sans-serif;
   font-style: italic;
   color: #666;
   max-width: 70vw;
@@ -200,7 +250,7 @@ p {
 
 .App {
   text-align: center;
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Fabriga', sans-serif;
   font-family: 'Roboto', sans-serif;
   width: 100vw;
 
@@ -232,7 +282,7 @@ p {
   color: #7fbfea;
 }
 
-2 , H1 {
+H2 , H1 {
   
  color:#7fbfea;
  font-family: 'Oswald', sans-serif;
@@ -242,7 +292,11 @@ p {
 }
 
 svg {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Fabriga', sans-serif;
+}
+
+.wrapQuoteBg {
+  background-color: #eee;
 }
 
 body {
@@ -301,7 +355,7 @@ p {
 
 .sticky-text {
   position: sticky;
-  padding: 25px 0 25px calc(20vw + 150px);
+  padding: 25px 25px 25px calc(20vw + 150px);
   background-color: #FFFAC9;
   top:0;
   font-size: 2.5rem;
@@ -317,10 +371,10 @@ p {
 
 
 
-.top-1 {
+.top-1  {
  
-  background-color:#EE7555;
-  color: #FFFAC9;
+  background-color:#d22726;
+  color: #FFF;
 }
 .top-2 {
  
@@ -329,7 +383,7 @@ p {
   color:#FFF;
 }
 .top-3 {
-  background-color: #E73D2F;
+  background-color: #912713;
  
   color:#FFF;
 }
@@ -344,15 +398,14 @@ p {
   color:#FFF;
 }
 .top-6 {
-  background-color: #F29074;
- 
+  background-color: #f8bb26;
   color:#FFF;
 }
 
 
 .top-1 a {
-  background-color: #EE7555;
-  color:#FFFAC9;
+  background-color: #d22726;
+  color:#FFF;
 }
 .top-2 a {
  
@@ -361,7 +414,7 @@ p {
   color:#FFF;
 }
 .top-3 a {
-  background-color: #E73D2F;
+  background-color: #912713;
  
   color:#FFF;
 }
@@ -376,8 +429,7 @@ p {
   color:#FFF;
 }
 .top-6 a{
-  background-color: #F29074;
- 
+  background-color: #f8bb26;
   color:#FFF;
 }
 .wrapperSection {
