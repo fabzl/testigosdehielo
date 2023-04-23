@@ -1,3 +1,96 @@
+.info-a4 {
+  max-width: 70vw;
+  margin: 0 auto;
+  text-align: center;
+  display: block;
+}
+
+.slider.aws-btn {
+
+  --slider-height-percentage: 60%;
+  --slider-transition-duration: 700ms;
+  --organic-arrow-thickness: 12px;
+  --organic-arrow-border-radius: 6px;
+  --organic-arrow-height: 40px;
+  --organic-arrow-color: #FFF;
+  --control-button-width: 10%;
+  --control-button-height: 25%;
+  --control-button-background: transparent;
+  --control-bullet-color: #FFF;
+  --control-bullet-active-color: #d5d5d5;
+  --loader-bar-color: #FFF;
+  --loader-bar-height: 3px;
+  }
+
+  .slider-bullets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 1px solid red;
+  }
+  
+  .slider-bullets li {
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slider-bullets li.active {
+    background-color: #fff;
+  }
+ 
+  
+  
+  
+  
+
+
+.lafabulosa {
+ 
+  text-transform: uppercase;
+  color: white;
+  & a {
+    color: white;
+  }
+}
+
+.slider-container {
+  position: relative;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.slider-control {
+  margin: 0 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background-color: rgba(255, 255, 255, 1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-control.active {
+  background-color: #fff;
+}
+///
 .heatBar {
   width: 40vw;
   text-align: center;
@@ -151,11 +244,19 @@ h2 {
 
 /* Paragraphs */
 p {
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 2rem;
   margin-bottom: 1.5rem;
+  font-weight: 700;
+  & a {
+    color: #1d1d1b;
+    text-decoration: none;
+    font-weight: 900;
+  }
 }
 
+.wideRead {
+  line-height: 2.5rem;
+}
 
 
 @media screen and (max-width: 450px) {
@@ -232,6 +333,7 @@ p {
   min-width: 150px;
   margin-top: 40px;
   transform:translateY(0px);
+  
 
 }
 
@@ -474,6 +576,7 @@ H1 {
 p { 
   max-width: 80vw;
   margin: 0 auto;
+  padding: 2rem;
 }
 
 .sticky-text {
@@ -485,19 +588,25 @@ p {
   display: flex; 
   align-items: center;
   text-align: center;
-
   height: calc(20vw + 150px);
   max-height: 300px;
   min-height: 200px;
-
+  margin: 0;
 }
 
 
+.top-black  {
+ 
+  background-color:#000;
+  color: #FFF;
+  margin: 0;
+}
 
 .top-1  {
  
   background-color:#d22726;
   color: #FFF;
+
 }
 .top-2 {
  
@@ -556,7 +665,6 @@ p {
   color:#FFF;
 }
 .wrapperSection {
-  margin-bottom: 25vh;
 }
 
 @keyframes App-logo-spin {

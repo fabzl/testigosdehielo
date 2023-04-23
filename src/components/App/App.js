@@ -253,12 +253,14 @@ class App extends React.Component {
 		return (
 			<div className="wrapperSection wrapper-1">
 				<Waypoint
+				
 					onEnter={this.onSectionEnter(1)}
 				//	onLeave={this.onSectdioguideTextionLeave(1)}
 				/>
 				<h2 className='sticky-text top-1'>1. Cambio climático</h2>
+							
+				<p>De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas”.<br/> Fuente: <a rel='noopener noreferrer' target="_blank"  href="https://www.un.org/es/climatechange/what-is-climate-change"> https://www.un.org/es/climatechange/what-is-climate-change</a></p>
 				
-				<p>De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas” (https://www.un.org/es/climatechange/what-is-climate-change)</p>
 				
 
 				<AudioPlayer >
@@ -269,15 +271,23 @@ class App extends React.Component {
 						
 					/>
 				</AudioPlayer>
+		
 				
-				<p>Gráfico de concentración en partes por millón (ppm) de moléculas de dióxido de carbono en la atmósfera global entre el año 0 y el año 2022 de la era actual. Fuente: https://ourworldindata.org/atmospheric-concentrations. </p>
-				<p>Gráfico concentración de gases de efecto invernadero a escala global,  desde el año 1750 a 2022. Fuente: Gráfico de elaboración propia basado en los datos de: https://ourworldindata.org/atmospheric-concentrations</p>
-				<p>La quema de combustibles fósiles genera emisiones de gases de efecto invernadero que actúan como una manta que envuelve a la Tierra, atrapando el calor del sol y elevando las temperaturas (https://www.un.org/es/climatechange/what-is-climate-change)</p>
-				<p>Esquema explicativo del balance de energía generado por los gases de efecto invernadero en la atmósfera. Fuente: http://antarctica.cl/divulgacion/
-					El cambio climático es una variación de las condiciones ambientales del planeta, ocasionado directa o indirectamente por la actividad humana, el cual está alterando la composición de la atmósfera. Manifestándose en un aumento de las temperaturas medias y alteraciones del clima a escala mundial.</p>
+				<img src={A1} alt="Gases de Efecto Invernadero" />
+				<p>Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations"> https://ourworldindata.org/atmospheric-concentrations</a></p>
+
+
+				<p>La quema de combustibles fósiles genera emisiones de gases de efecto invernadero que actúan como una manta que envuelve a la Tierra, atrapando el calor del sol y elevando las temperaturas
+				<br/> Fuente: <a  rel='noopener noreferrer' target="_blank" href="http://antarctica.cl/divulgacion"> http://antarctica.cl/divulgacion</a></p>
+				<img className="info-a4" src={A4} alt="Gráfico de concentración en partes por millón" />
+				<p>Esquema explicativo del balance de energía generado por los gases de efecto invernadero en la atmósfera. Fuente:
+				
+				
+				El cambio climático es una variación de las condiciones ambientales del planeta, ocasionado directa o indirectamente por la actividad humana, el cual está alterando la composición de la atmósfera. Manifestándose en un aumento de las temperaturas medias y alteraciones del clima a escala mundial.</p>
 
 				<img src={A2} alt="Gases de Efecto Invernadero" />
 				<p>El clima es un estado característico propio de una zona en un largo periodo de tiempo, incluyendo aspectos como la temperatura, precipitaciones, humedad y viento. Mientras que la atmósfera está formada por una mezcla de gases y participa en la regulación del clima.</p>
+				<img src={A3} alt="Gases de Efecto Invernadero" />
 			</div>
 		);
 	};

@@ -112,7 +112,7 @@ const Content = styled.div`
 const General = styled.div`
   flex: 3;
   text-align: center;
-  color: black;
+  color: #1d1d1b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -241,7 +241,8 @@ const Footer = props => (
       <img className="logo-footer parque"src={Parque} alt="CienciaPublica" />
       <img className="logo-footer museo"src={Museo} alt="CienciaPublica" />
       <img className="logo-footer tecno"src={Tecno} alt="CienciaPublica" />
-   
+      <p className="lafabulosa">2023 | 28 de abril al 28 de julio | Explanada Central Parque Cultural de Valparaíso |  Sitio web  <a     rel='noopener noreferrer'
+            target="_blank"href="https://www.lafabulosa.org">la fabulosa</a></p>
       </div>
     </Content>
   </Wrap>

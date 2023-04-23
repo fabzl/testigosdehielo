@@ -1,261 +1,213 @@
 import React from 'react';
 import './Timeline.scss';
 
-const Timeline = () => {
-  // Define timeline data
-  const timelineData = [
-	{
-		"year": 1850,
-		"color": "#ff0000",
-		"tooltip": "Event in 1850"
-	  },
-	  {
-		"year": 1851,
-		"color": "#ff1200",
-		"tooltip": "Event in 1851"
-	  },
-	  {
-		"year": 1852,
-		"color": "#ff2400",
-		"tooltip": "Event in 1852"
-	  },
-	  {
-		"year": 1853,
-		"color": "#ff3600",
-		"tooltip": "Event in 1853"
-	  },
-	  {
-		"year": 1854,
-		"color": "#ff4800",
-		"tooltip": "Event in 1854"
-	  },
-	  {
-		"year": 1855,
-		"color": "#ff5a00",
-		"tooltip": "Event in 1855"
-	  },
-	  {
-		"year": 1856,
-		"color": "#ff6c00",
-		"tooltip": "Event in 1856"
-	  },
-	  {
-		"year": 1857,
-		"color": "#ff7e00",
-		"tooltip": "Event in 1857"
-	  },
-	  {
-		"year": 1858,
-		"color": "#ff9000",
-		"tooltip": "Event in 1858"
-	  },
-	  {
-		"year": 1859,
-		"color": "#ffa200",
-		"tooltip": "Event in 1859"
-	  },
-	  {
-		"year": 1860,
-		"color": "#ffb400",
-		"tooltip": "Event in 1860"
-	  },
-	  {
-		"year": 1861,
-		"color": "#ffc600",
-		"tooltip": "Event in 1861"
-	  },
-	  {
-		"year": 1862,
-		"color": "#ffd800",
-		"tooltip": "Event in 1862"
-	  },
-	  {
-		"year": 1863,
-		"color": "#ffea00",
-		"tooltip": "Event in 1863"
-	  },
-	  {
-		"year": 1864,
-		"color": "#e5ff00",
-		"tooltip": "Event in 1864"
-	  },
-	  {
-		"year": 1865,
-		"color": "#cbff00",
-		"tooltip": "Event in 1865"
-	  },
-	  {
-		"year": 1866,
-		"color": "#b1ff00",
-		"tooltip": "Event in 1866"
-	  },
-	  {
-		"year": 1867,
-		"color": "#97ff00",
-		"tooltip": "Event in 1867"
-	  },
-	  {
-		"year": 1868,
-		"color": "#7dff00",
-		"tooltip": "Event in 1868"
-	  },
-	  {
-		"year": 1869,
-		"color": "#63ff00",
-		"tooltip": "Event in 1869"
-	  },
-	  {
-		"year": 1870,
-		"color": "#49ff00",
-		"tooltip": "Event in 1870"
-	  },
-	  {
-		"year": 1871,
-		"color": "#2fff00",
-		"tooltip": "Event in 1871"
-	  },
-	  {
-		"year": 1872,
-		"color": "#15ff00",
-		"tooltip": "Event in 1872"
-	  },
-	  {
-		"year": 1873,
-		"color": "#00ff0c",
-		"tooltip": "Event in 1873"
-		},
-		{
-		"year": 1874,
-		"color": "#00ff26",
-		"tooltip": "Event in 1874"
-		},
-		{
-		"year": 1875,
-		"color": "#00ff40",
-		"tooltip": "Event in 1875"
-		},
-		{
-		"year": 1876,
-		"color": "#00ff5a",
-		"tooltip": "Event in 1876"
-		},
-		{
-		"year": 1877,
-		"color": "#00ff74",
-		"tooltip": "Event in 1877"
-		},
-		{
-		"year": 1878,
-		"color": "#00ff8e",
-		"tooltip": "Event in 1878"
-		},
-		{
-		"year": 1879,
-		"color": "#00ffa8",
-		"tooltip": "Event in 1879"
-		},
-		{
-		"year": 1880,
-		"color": "#00ffc2",
-		"tooltip": "Event in 1880"
-		},
-		{
-		"year": 1881,
-		"color": "#00ffdc",
-		"tooltip": "Event in 1881"
-		},
-		{
-		"year": 1882,
-		"color": "#00fff6",
-		"tooltip": "Event in 1882"
-		},
-		{
-		"year": 1883,
-		"color": "#00e3ff",
-		"tooltip": "Event in 1883"
-		},
-		{
-		"year": 1884,
-		"color": "#00c7ff",
-		"tooltip": "Event in 1884"
-		},
-		{
-		"year": 1885,
-		"color": "#00abff",
-		"tooltip": "Event in 1885"
-		},
-		{
-		"year": 1886,
-		"color": "#008fff",
-		"tooltip": "Event in 1886"
-		},
-		{
-		"year": 1887,
-		"color": "#0073ff",
-		"tooltip": "Event in 1887"
-		},
-		{
-		"year": 1888,
-		"color": "#0057ff",
-		"tooltip": "Event in 1888"
-		},
-		{
-		"year": 1889,
-		"color": "#003bff",
-		"tooltip": "Event in 1889"
-		},
-		{
-		"year": 1890,
-		"color": "#001fff",
-		"tooltip": "Event in 1890"
-		},
-		{
-		"year": 1891,
-		"color": "#0c00ff",
-		"tooltip": "Event in 1891"
-		},
-		{
-		"year": 1892,
-		"color": "#2800ff",
-		"tooltip": "Event in 1892"
-		},
-		{
-		"year": 1893,
-		"color": "#4400ff",
-		"tooltip": "Event in 1893"
-		},
-		{
-		"year": 1894,
-		"color": "#6000ff",
-		"tooltip": "Event in 1894"
-		},
-		{
-		"year": 1895,
-		"color": "#7c00ff",
-		"tooltip": ""
-		},
-		{
-		"year": 1896,
-		"color": "#9800ff",
-		"tooltip": "Event in 1896",
-		},
-		
-  ];
+import TinyTriangle from "../../img/triangle.svg"
 
-  // Define timeline elements
-  const timelineElements = timelineData.map((item) => (
+
+
+const Timeline = () => {
+	// Define timeline data
+	const timelineData = [
+		{"year": 1850, "color": "#124E8B",
+		"tooltip":"Desde este año aumentaron en un 48% las emisiones de dióxido de carbono, producto de la actividad humana"
+	},
+		{"year": 1851, "color": "#3DBFEF"},
+		{"year": 1852, "color": "#3DBFEF"},
+		{"year": 1853, "color": "#3DBFEF"},
+		{"year": 1854, "color": "#3D80C2"},
+		{"year": 1855, "color": "#3D80C2"},
+		{"year": 1856, "color": "#3D80C2"},
+		{"year": 1857, "color": "#124E8B"},
+		{"year": 1858, "color": "#3D80C2"},
+		{"year": 1859, "color": "#3DBFEF"},
+		{"year": 1860, "color": "#3D80C2"},
+		{"year": 1861, "color": "#124E8B"},
+		{"year": 1862, "color": "#3D80C2"},
+		{"year": 1863, "color": "#124E8B"},
+		{"year": 1864, "color": "#3D80C2"},
+		{"year": 1865, "color": "#3D80C2"},
+		{"year": 1866, "color": "#3D80C2"},
+		{"year": 1867, "color": "#3D80C2"},
+		{"year": 1868, "color": "#3D80C2"},
+		{"year": 1869, "color": "#3D80C2"},
+		{"year": 1870, "color": "#3D80C2"},
+		{"year": 1871, "color": "#3D80C2"},
+		{"year": 1872, "color": "#3D80C2"},
+		{"year": 1873, "color": "#3D80C2"},
+		{"year": 1874, "color": "#124E8B"},
+		{"year": 1875, "color": "#B5DEE8"},
+		{"year": 1876, "color": "#F4F9FB"},
+		{"year": 1877, "color": "#3D80C2"},
+		{"year": 1878, "color": "#3D80C2"},
+		{"year": 1879, "color": "#3DBFEF"},
+		{"year": 1880, "color": "#3D80C2"},
+		{"year": 1881, "color": "#3D80C2"},
+		{"year": 1882, "color": "#124E8B"},
+		{"year": 1883, "color": "#124E8B"},
+		{"year": 1884, "color": "#124E8B"},
+		{"year": 1885, "color": "#124E8B"},
+		{"year": 1886, "color": "#3D80C2"},
+		{"year": 1887, "color": "#3DBFEF"},
+		{"year": 1888, "color": "#124E8B"},
+		{"year": 1889, "color": "#124E8B"},
+		{"year": 1890, "color": "#124E8B"},
+		{"year": 1891, "color": "#124E8B"},
+		{"year": 1892, "color": "#3DBFEF"},
+		{"year": 1893, "color": "#3DBFEF"},
+		{"year": 1894, "color": "#124E8B"},
+		{"year": 1895, "color": "#3D80C2"},
+		{"year": 1896, "color": "#3DBFEF"},
+		{"year": 1897, "color": "#3D80C2"},
+		{"year": 1898, "color": "#124E8B"},
+		{"year": 1899, "color": "#124E8B"},
+		{"year": 1900, "color": "#3D80C2"},
+		{"year": 1901, "color": "#124E8B"},
+		{"year": 1902, "color": "#124E8B"},
+		{"year": 1903, "color": "#3DBFEF"},
+		{"year": 1904, "color": "#3DBFEF"},
+		{"year": 1905, "color": "#124E8B"},
+		{"year": 1906, "color": "#124E8B"},
+		{"year": 1907, "color": "#3D80C2"},
+		{"year": 1908, "color": "#3D80C2"},
+		{"year": 1909, "color": "#3DBFEF"},
+		{"year": 1910, "color": "#3D80C2"},
+		{"year": 1911, "color": "#3D80C2"},
+		{"year": 1912, "color": "#3D80C2"},
+		{"year": 1913, "color": "#3DBFEF"},
+		{"year": 1914, "color": "#B5DEE8"},
+		{"year": 1915, "color": "#3DBFEF"},
+  {"year": 1916, "color": "#3DBFEF"},
+  {"year": 1917, "color": "#3D80C2"},
+  {"year": 1918, "color": "#B5DEE8"},
+  {"year": 1919, "color": "#B5DEE8"},
+  {"year": 1920, "color": "#B5DEE8"},
+  {"year": 1921, "color": "#3D80C2"},
+  {"year": 1922, "color": "#B5DEE8"},
+  {"year": 1923, "color": "#3DBFEF"},
+  {"year": 1924, "color": "#B5DEE8"},
+  {"year": 1925, "color": "#F4F9FB"},
+  {"year": 1926, "color": "#F4F9FB"},
+  {"year": 1927, "color": "#F4F9FB"},
+  {"year": 1928, "color": "#FFFFFF"},
+  {"year": 1929, "color": "#FFFFFF"},
+  {"year": 1930, "color": "#F4F9FB"},
+  {"year": 1931, "color": "#F4F9FB"},
+  {"year": 1932, "color": "#FBF4EB"},
+  {"year": 1933, "color": "#FFFFFF"},
+  {"year": 1934, "color": "#FFFFFF"},
+			  {"year": 1935, "color": "#B5DEE8"},
+			  {"year": 1936, "color": "#B5DEE8"},
+			  {"year": 1937, "color": "#B5DEE8"},
+			  {"year": 1938, "color": "#B5DEE8"},
+			  {"year": 1939, "color": "#3DBFEF"},
+			  {"year": 1940, "color": "#F4F9FB"},
+			  {"year": 1941, "color": "#F4F9FB"},
+			  {"year": 1942, "color": "#FFFFFF"},
+			  {"year": 1943, "color": "#B5DEE8"},
+			  {"year": 1944, "color": "#3DBFEF"},
+			  {"year": 1945, "color": "#3DBFEF"},
+			  {"year": 1946, "color": "#F4F9FB"},
+			  {"year": 1947, "color": "#F4F9FB"},
+			  {"year": 1948, "color": "#F4F9FB"},
+			  {"year": 1949, "color": "#B5DEE8"},
+			  {"year": 1950, "color": "#F4F9FB"},
+			  {"year": 1951, "color": "#F4F9FB"},
+			  {"year": 1952, "color": "#F4F9FB"},
+			  {"year": 1953, "color": "#3D80C2"},
+			  {"year": 1954, "color": "#3DBFEF"},
+			  {"year": 1955, "color": "#B5DEE8"},
+			  {"year": 1956, "color": "#B5DEE8"},
+			  {"year": 1957, "color": "#B5DEE8"},
+			  {"year": 1958, "color": "#F4F9FB"},
+			  {"year": 1959, "color": "#B5DEE8"},
+			  {"year": 1960, "color": "#3DBFEF"},
+			  {"year": 1961, "color": "#B5DEE8"},
+			  {"year": 1962, "color": "#FFFFFF"},
+			  {"year": 1963, "color": "#B5DEE8"},
+			  {"year": 1964, "color": "#B5DEE8"},
+			  {"year": 1965, "color": "#3DBFEF"},
+			  {"year": 1966, "color": "#FFFFFF"},
+			  {"year": 1967, "color": "#F4F9FB"},
+			  {"year": 1968, "color": "#FFFFFF"},
+			  {"year": 1969, "color": "#FBF4EB"},
+			  {"year": 1970, "color": "#F8C1A3"},
+			  {"year": 1971, "color": "#F4F9FB"},
+			  {"year": 1972, "color": "#FBF4EB"},
+			  {"year": 1973, "color": "#FFFFFF"},
+			  {"year": 1974, "color": "#FFFFFF"},
+			  {"year": 1975, "color": "#FFFFFF"},
+			  {"year": 1976, "color": "#FBF4EB"},
+			  {"year": 1977, "color": "#F8C1A3"},
+			  {"year": 1978, "color": "#F8C1A3"},
+			  {"year": 1979, "color": "#EB645A"},
+			  {"year": 1980, "color": "#F8C1A3"},
+			  {"year": 1981, "color": "#FFFFFF"},
+			  {"year": 1982, "color": "#FBF4EB"},
+			  {"year": 1983, "color": "#FBF4EB"},
+			  {"year": 1984, "color": "#EB645A"},
+			  {"year": 1985, "color": "#F8C1A3"},
+			  {"year": 1986, "color": "#EB645A"},
+			  {"year": 1987, "color": "#E63230"},
+			  {"year": 1988, "color": "#F8C1A3"},
+			  {"year": 1989, "color": "#F8C1A3"},
+			  {"year": 1990, "color": "#E73C3C"},
+			  {"year": 1991, "color": "#E73C3C"},
+			  {"year": 1992, "color": "#E73C3C"},
+			  {"year": 1993, "color": "#E73C3C"},
+			  {"year": 1994, "color": "#E63230"},
+			  {"year": 1995, "color": "#E63230"},
+			  {"year": 1996, "color": "#E63230"},
+			  {"year": 1997, "color": "#E73C3C"},
+			  {"year": 1998, "color": "#E63230"},
+			  {"year": 1999, "color": "#D12626"},
+			  {"year": 2000, "color": "#E73C3C"},
+			  {"year": 2001, "color": "#E63230"},
+			  {"year": 2002, "color": "#E63230"},
+			  {"year": 2003, "color": "#E63230"},
+			  {"year": 2004, "color": "#8F2713"},
+			  {"year": 2005, "color": "#8A1A1A"},
+			  {"year": 2006, "color": "#8F2713"},
+			  {"year": 2007, "color": "#D12626"},
+			  {"year": 2008, "color": "#8F2713"},
+			  {"year": 2009, "color": "#8A1A1A"},
+			  {"year": 2010, "color": "#D12626"},
+			  {"year": 2011, "color": "#8F2713"},
+			  {"year": 2012, "color": "#8A1A1A"},
+			  {"year": 2013, "color": "#8A1A1A"},
+			  {"year": 2014, "color": "#8A1A1A"},
+			  {"year": 2015, "color": "#8A1A1A"},
+			  {"year": 2016, "color": "#8A1A1A"},
+			  {"year": 2017, "color": "#8A1A1A"},
+			  {"year": 2018, "color": "#8A1A1A"},
+			  {"year": 2019, "color": "#8A1A1A"},
+			  {"year": 2020, "color": "#8A1A1A"},
+			  {"year": 2021, "color": "#8A1A1A"},
+			  {"year": 2022, "color": "#8A1A1A"}
+
+	];
+	// Define timeline elements
+	const timelineElements = timelineData.map((item) => (
     <div
       key={item.year}
       className="timeline-item"
-      style={{ backgroundColor: item.color }}
-      title={item.tooltip}
-    >
-      {item.year}
-    </div>
+      title={item.tooltip}>
+		
+	<div className='tooltip-wrapper'> 
+	{(item.tooltip)? <div className="timeline-tooltip"><h4>{item.year}</h4> <p>{item.tooltip}</p> </div>: ""}	
+	</div>
+		<div className="timeline-color-block" 
+      style={{ backgroundColor: item.color }}>
+		</div>
+	   <img className="timeline-triangle" src={TinyTriangle} alt="timeline-triangle"></img>
+       <p className='timeline-year'>{item.year}</p> 
+    </div >
   ));
 
-  // Render timeline
-  return <div className="timeline-container">{timelineElements}</div>;
+
+// Render timeline
+return <div className="timeline-container">
+	{timelineElements}
+	</div>;
 };
 
 export default Timeline;

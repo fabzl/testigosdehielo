@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
 import { ReactComponent as Bar } from '../../img/timeline01_bar.svg';
-import { ReactComponent as Timeline } from '../../img/timeline_01.svg';
+///import { ReactComponent as Timeline } from '../../img/timeline_01.svg';
 import './MobileTimeline.scss';
 import styled from 'styled-components'
-
+import  Timeline  from './Timeline';
 
 const Circle = styled.div`
 	background-color:white;
@@ -26,7 +26,7 @@ const MobileTimeline = () => {
 
   const handleScroll = (deltaX) => {
     if (timelineContainerRef.current) {
-      console.log('scrollBy executed');
+      console.log('scrollBy executed: ', deltaX);
       timelineContainerRef.current.scrollBy({
         left: deltaX,
         behavior: 'smooth',
@@ -35,18 +35,21 @@ const MobileTimeline = () => {
   };
 
   return (
-    <div className="mobile-timeline-container">
-      <div className="mobile-timeline-wrapper" ref={timelineContainerRef}>
-        <div className="timeline-circle">
+    <div className="wrap-timeline">
+      <div className="timeline-circle">
         <h3>Grados Celsius (°C)</h3>
         <Bar style={barStyles} />    
         <p>Una "anomalía" de temperatura nos indica una desviación obre un periodo de referencia significativo (30 años) . En este caso el periodo de referencia es la media de temperaturas entre 1961 y 1990. Lo que quiere decir que un valor de +1.0, implica que la temperatura promedio anual de un sitio (enero a diciembre) estaría +1.0ºC sobre la media de referencia.</p>
         <h3>¿Qué tan caluroso o frío fue el año en que naciste? </h3>
         <Circle/>
-
         </div>
-        <Timeline className="timeline-graphics" onClick={() => handleScroll(-2000)} />
+    <div className="mobile-timeline-container" onClick={() => handleScroll()}>
+    
+      <div className="mobile-timeline-wrapper" ref={timelineContainerRef}>
+      
+        <Timeline className="timeline-graphics"  />
       </div>
+    </div>
     </div>
   );
 };

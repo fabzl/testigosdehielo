@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 
@@ -12,21 +12,54 @@ const sliderImages = [
 ];
 
 const Fotos = () => {
+
+  const [selected, setSelected] = useState(0);
+
+  const handleTransitionRequest = (currentIndex, nextIndex) => {
+    setSelected(nextIndex);
+  };
+
   return (
 
     <div className="wrapperSection wrapper-2">
-   
-
-    <AwesomeSlider
-      animation="slide"
-      bullets={false}
-      organicArrows={false}
-      className="slider"
-    >
-      {sliderImages.map((image, index) => (
-        <div key={index} data-src={image} />
-      ))}
-    </AwesomeSlider>
+  
+   <h2 className='sticky-text top-black'>Fotos</h2>
+   <div className="slider-container">
+      <AwesomeSlider
+        animation="slide"
+    
+        play={true}
+        infinite={true}
+        cancelOnInteraction={false} // should stop playing on user interaction
+        interval={6000}
+        buttons={true}
+        bullets={false}
+        
+        organicArrows={true}
+        selected={selected}
+        onTransitionRequest={handleTransitionRequest}
+        className="slider"
+        showThumbnails 
+        mobileTouch={true}
+      >
+        {sliderImages.map((image, index) => (
+          <div key={index} data-src={image} />
+        ))}
+      </AwesomeSlider>
+      <div className="slider-controls">
+        {sliderImages.map((_, index) => (
+          <button
+            key={index}
+            className={`slider-control ${
+              selected === index ? 'active' : ''
+            }`}
+            onClick={() => setSelected(index)}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+    </div>
 
     </div>
   );

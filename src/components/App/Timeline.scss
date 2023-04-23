@@ -1,0 +1,86 @@
+
+.timeline-tooltip {
+    background-color: white;
+    z-index: 20;
+    width: 250px;
+    height: 100px;
+    color: black;
+    white-space: normal;
+    position: absolute;
+    top:0;
+    .h4 {
+
+    border-bottom: 3px solid #3D80C2;
+    font-weight: 900;
+}
+p  {
+    font-size: 1rem;
+
+}
+
+}
+
+.tooltip-wrapper {
+    height:15vh;
+}
+.timeline-triangle {
+
+    width: 60%;
+    align-self: center;
+    margin: 0 20%;
+}
+
+.wrap-timeline {
+    position: relative;
+}
+
+
+.timeline-item {
+    display: inline-block;
+    height: 55vh;
+    width: 60px;
+    align-items: center;
+}
+
+.tooltip {
+
+}
+
+.timeline-year {
+    width: 100%;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-weight: 900;
+    font-size: 1.6rem;
+    flex-direction: row;
+    padding: 0;
+    margin: 10px auto;
+    display: flex;
+    height: auto;
+    transform: rotate(180deg);
+    align-items: center;
+
+    p {
+        align-self: center;
+        padding: 0;
+        margin: 0;
+        display: flex;
+    }
+
+}
+
+.mobile-timeline-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    height: 80vh;
+}
+
+
+.timeline-color-block {
+    width: 100%;
+    height: 80%;
+    align-items: stretch;
+    margin-bottom:10px;
+}
