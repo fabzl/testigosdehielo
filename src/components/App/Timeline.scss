@@ -1,27 +1,65 @@
+.timeline-arrow {
+width: 30px;
+transform: translate(15px);
+}
 
 .timeline-tooltip {
-    background-color: white;
+    flex-grow: 1;
     z-index: 20;
-    width: 250px;
-    height: 100px;
-    color: black;
+    width: auto;
+    height: 15vh;
+    min-width: 150px;
+    max-width: 320px;
+    color: #1d1d1b;
     white-space: normal;
     position: absolute;
     top:0;
-    .h4 {
+    
 
-    border-bottom: 3px solid #3D80C2;
+    &.down {
+        top:650px;
+        text-align: left;
+        justify-content:baseline;
+        
+        transform: translate(30px,230px);
+
+    h4  {
+        transform: translate(0px,-30px); 
+    }
+    p {
+        transform: translate(30px,-30px); 
+        white-space: normal;
+        max-width: 100%;
+    }
+
+
+     .timeline-arrow {
+        transform:  translate(-15px,10px) rotate(180deg);
+     }
+    }
+
+    h4 {
+        transform: translate(60px,60px); 
+    font-size: 1.8rem;
+    border-bottom: 5px solid #3D80C2;
     font-weight: 900;
+    display: inline-block;
+    padding-bottom: 20px;
+    margin: 10px 0;
+
 }
 p  {
     font-size: 1rem;
-
+    margin: 0;
+    padding: 0;
+    transform: translate(60px,60px); 
 }
 
 }
 
 .tooltip-wrapper {
-    height:15vh;
+    height:16vh;
+    min-height: 230px;
 }
 .timeline-triangle {
 
@@ -37,7 +75,7 @@ p  {
 
 .timeline-item {
     display: inline-block;
-    height: 55vh;
+    height: 53vh;
     width: 60px;
     align-items: center;
 }
@@ -74,13 +112,14 @@ p  {
     flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
-    height: 80vh;
+    height: 85vh;
 }
 
 
 .timeline-color-block {
     width: 100%;
-    height: 80%;
+    min-height: 550px;
+    display: flex;
     align-items: stretch;
     margin-bottom:10px;
 }
