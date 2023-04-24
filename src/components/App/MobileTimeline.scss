@@ -9,7 +9,7 @@
     .mobile-timeline-wrapper {
       height: 100%;
       display: flex;
-     
+     min-height: 800px;
 
     }
   
@@ -20,6 +20,7 @@
 
   .timeline-circle {
     user-select: none;
+    pointer-events: none;
     height: 450px;
     width: 450px;
     position: absolute;
