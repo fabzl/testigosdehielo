@@ -38,8 +38,8 @@ const MobileTimelineValpo = () => {
       <div className="timeline-circle">
         <h3>Índice PDSI</h3>
         <Bar style={barStyles} />    
-        <p>Las reconstrucciones de precipitaciones se realizan en base a un índice de sequías estandarizado, conocido por las siglas PDSI (Palmer drought severity index), que nos indica que tan lluvioso o seco fue un periodo de tiempo. Un valor sobre 4 se considera un año muy lluvioso, mientras que un valor de -4 o inferior corresponde a un año extremadamente seco. </p>
-        <h3>¿Qué tan caluroso o frío fue el año en que naciste? </h3>
+        <p>Las reconstrucciones de precipitaciones se realizan en base a un índice de sequías estandarizado, conocido por las siglas PDSI (Palmer drought severity index), que nos indica que tan lluvioso o seco fue un periodo de tiempo. Un valor sobre 4 se considera un año muy lluvioso, mientras que un valor de -4 o inferior corresponde a un año extremadamente seco.</p>
+        <h3>¿Qué tan húmedo o seco fue el año en que se realiza el cruce de los Andes por parte de la Expedición libertadora durante el periodo de la Independencia?</h3>
         <Circle/>
         </div>
     <div className="mobile-timeline-container" onClick={() => handleScroll()}>
