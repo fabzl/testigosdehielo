@@ -49,7 +49,6 @@
   
   
   
-  
 
 
 .lafabulosa {
@@ -227,6 +226,8 @@
 /* Base font size for the document */
 html {
   font-size: 8px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Headings */
@@ -319,6 +320,14 @@ p {
 
 .lockupExpo {
 
+}
+
+.big-title {
+  font-size: 4rem;
+  font-family: 'Fabriga', sans-serif;
+  margin: auto;
+  width: 100%;
+  text-align: center;
 }
 
 

@@ -2,10 +2,7 @@ import React from 'react';
 import './Timeline.scss';
 
 import TinyTriangle from "../../img/triangle.svg"
-
 import TimelineArrow from "../../img/timeline-arrow.svg"
-
-
 
 const Timeline = () => {
 	// Define timeline data
@@ -182,9 +179,8 @@ const Timeline = () => {
 			  {"year": 2017, "color": "#8A1A1A",down:true,tooltip:"Tornado en Quillota, región de Valparaíso, Chile. Alcanzando al menos 80 km/hr"},
 			  {"year": 2018, "color": "#8A1A1A"},
 			  {"year": 2019, "color": "#8A1A1A"},
-			  {"year": 2020, "color": "#8A1A1A",tooltip:"Se registró la temperatura más alta registrada en el continente antártico, llegando a los 18°C"},
+			  {"year": 2020, "color": "#8A1A1A",tooltip:"Se registró la temperatura más alta en el continente antártico, llegando a los 18°C"},
 			  {"year": 2021, "color": "#8A1A1A", down:true,tooltip:"Tornados en la región de la Araucanía, Los Lagos y Biobío, Chile"},
-			  {"year": 2022, "color": "#8A1A1A"}
 
 	];
 	// Define timeline elements

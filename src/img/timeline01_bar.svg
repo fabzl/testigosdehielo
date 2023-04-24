@@ -1,50 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 25.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 927.1 108.8" style="enable-background:new 0 0 927.1 108.8;" xml:space="preserve">
-<rect x="3" y="32" transform="matrix(1.429647e-03 -1 1 1.429647e-03 -17.7928 110.3553)" style="fill:#124E8B;" width="86.8" height="64.2"/>
-<rect x="67.1" y="32.2" transform="matrix(1.429647e-03 -1 1 1.429647e-03 46.1319 174.7012)" style="fill:#3D80C2;" width="86.8" height="64.2"/>
-<rect x="131.3" y="32.2" transform="matrix(1.429647e-03 -1 1 1.429647e-03 110.1567 238.9476)" style="fill:#3DBFEF;" width="86.8" height="64.2"/>
-<rect x="195.5" y="32.3" transform="matrix(1.429647e-03 -1 1 1.429647e-03 174.1815 303.1937)" style="fill:#B5DEE8;" width="86.8" height="64.2"/>
-<rect x="259.7" y="32.3" transform="matrix(1.429647e-03 -1 1 1.429647e-03 238.2066 367.44)" style="fill:#F4F9FB;" width="86.8" height="64.2"/>
-<rect x="323.9" y="32.5" transform="matrix(1.429647e-03 -1 1 1.429647e-03 302.1312 431.7859)" style="fill:#FFFFFF;" width="86.8" height="64.2"/>
-<rect x="388" y="32.6" transform="matrix(1.429647e-03 -1 1 1.429647e-03 366.1559 496.0322)" style="fill:#FBF4EB;" width="86.8" height="64.2"/>
-<rect x="452.2" y="32.6" transform="matrix(1.429647e-03 -1 1 1.429647e-03 430.1808 560.2784)" style="fill:#F8C1A3;" width="86.8" height="64.2"/>
-<rect x="516.4" y="32.8" transform="matrix(1.429647e-03 -1 1 1.429647e-03 494.1055 624.6244)" style="fill:#EB645A;" width="86.8" height="64.2"/>
-<rect x="580.6" y="32.9" transform="matrix(1.429647e-03 -1 1 1.429647e-03 558.1302 688.8707)" style="fill:#E73C3C;" width="86.8" height="64.2"/>
-<rect x="644.7" y="32.9" transform="matrix(1.429647e-03 -1 1 1.429647e-03 622.0555 753.0167)" style="fill:#E63230;" width="86.8" height="64.2"/>
-<rect x="708.9" y="33" transform="matrix(1.429647e-03 -1 1 1.429647e-03 686.0804 817.2629)" style="fill:#D12626;" width="86.8" height="64.2"/>
-<rect x="773" y="33.2" transform="matrix(1.429647e-03 -1 1 1.429647e-03 750.0049 881.609)" style="fill:#8F2713;" width="86.8" height="64.2"/>
-<rect x="837.2" y="33.2" transform="matrix(1.429542e-03 -1 1 1.429542e-03 814.0301 945.855)" style="fill:#8A1A1A;" width="86.8" height="64.2"/>
+	 viewBox="0 0 927.1 152.9" style="enable-background:new 0 0 927.1 152.9;" xml:space="preserve">
+<rect x="3" y="76.1" transform="matrix(1.429645e-03 -1 1 1.429645e-03 -61.8498 154.376)" style="fill:#124E8B;" width="86.8" height="64.2"/>
+<rect x="67.2" y="76.3" transform="matrix(1.429645e-03 -1 1 1.429645e-03 2.0286 218.8381)" style="fill:#3D80C2;" width="86.8" height="64.2"/>
+<rect x="131.3" y="76.3" transform="matrix(1.429645e-03 -1 1 1.429645e-03 66.0071 283.0009)" style="fill:#3DBFEF;" width="86.8" height="64.2"/>
+<rect x="195.5" y="76.4" transform="matrix(1.429645e-03 -1 1 1.429645e-03 130.0856 347.2636)" style="fill:#B5DEE8;" width="86.8" height="64.2"/>
+<rect x="259.6" y="76.4" transform="matrix(1.429645e-03 -1 1 1.429645e-03 194.0646 411.4267)" style="fill:#F4F9FB;" width="86.8" height="64.2"/>
+<rect x="323.9" y="76.6" transform="matrix(1.429645e-03 -1 1 1.429645e-03 258.043 475.7889)" style="fill:#FFFFFF;" width="86.8" height="64.2"/>
+<rect x="388.1" y="76.7" transform="matrix(1.429645e-03 -1 1 1.429645e-03 322.0211 540.1515)" style="fill:#FBF4EB;" width="86.8" height="64.2"/>
+<rect x="452.2" y="76.8" transform="matrix(1.429645e-03 -1 1 1.429645e-03 385.9999 604.3142)" style="fill:#F8C1A3;" width="86.8" height="64.2"/>
+<rect x="516.4" y="76.9" transform="matrix(1.429645e-03 -1 1 1.429645e-03 449.9783 668.6767)" style="fill:#EB645A;" width="86.8" height="64.2"/>
+<rect x="580.6" y="77" transform="matrix(1.429645e-03 -1 1 1.429645e-03 514.0564 732.9396)" style="fill:#E73C3C;" width="86.8" height="64.2"/>
+<rect x="644.6" y="77" transform="matrix(1.429645e-03 -1 1 1.429645e-03 577.9359 797.0023)" style="fill:#E63230;" width="86.8" height="64.2"/>
+<rect x="708.9" y="77.1" transform="matrix(1.429645e-03 -1 1 1.429645e-03 642.0145 861.2651)" style="fill:#D12626;" width="86.8" height="64.2"/>
+<rect x="773.1" y="77.3" transform="matrix(1.429645e-03 -1 1 1.429645e-03 705.8923 925.7274)" style="fill:#8F2713;" width="86.8" height="64.2"/>
+<rect x="837.2" y="77.4" transform="matrix(1.429540e-03 -1 1 1.429540e-03 769.8717 989.8901)" style="fill:#8A1A1A;" width="86.8" height="64.2"/>
 <g>
-	<rect x="72.4" y="0" style="fill:#1D1D1B;" width="2.8" height="20.5"/>
+	<rect x="72.4" y="44.1" style="fill:#1D1D1B;" width="2.8" height="20.5"/>
 </g>
 <g>
 	
-		<rect x="183.6" y="9" transform="matrix(4.822541e-03 -1 1 4.822541e-03 182.419 204.1009)" style="fill:#1D1D1B;" width="20.4" height="2.8"/>
+		<rect x="183.6" y="53.1" transform="matrix(4.822485e-03 -1 1 4.822485e-03 138.3586 247.95)" style="fill:#1D1D1B;" width="20.4" height="2.8"/>
 </g>
 <g>
-	<rect x="312.3" y="0.3" style="fill:#1D1D1B;" width="2.8" height="20.5"/>
+	<rect x="312.3" y="44.4" style="fill:#1D1D1B;" width="2.8" height="20.5"/>
 </g>
 <g>
-	<rect x="432.2" y="0.5" style="fill:#1D1D1B;" width="2.8" height="20.5"/>
-</g>
-<g>
-	
-		<rect x="543.4" y="9.5" transform="matrix(4.824203e-03 -1 1 4.824203e-03 539.983 564.3943)" style="fill:#1D1D1B;" width="20.4" height="2.8"/>
-</g>
-<g>
-	<rect x="672.1" y="0.9" style="fill:#1D1D1B;" width="2.8" height="20.4"/>
-</g>
-<g>
-	<rect x="792.2" y="1" style="fill:#1D1D1B;" width="2.8" height="20.5"/>
+	<rect x="432.2" y="44.6" style="fill:#1D1D1B;" width="2.8" height="20.5"/>
 </g>
 <g>
 	
-		<rect x="903.3" y="10" transform="matrix(4.824203e-03 -1 1 4.824203e-03 897.6962 924.9376)" style="fill:#1D1D1B;" width="20.5" height="2.8"/>
+		<rect x="543.4" y="53.6" transform="matrix(4.824147e-03 -1 1 4.824147e-03 495.9268 608.2391)" style="fill:#1D1D1B;" width="20.4" height="2.8"/>
+</g>
+<g>
+	<rect x="672.1" y="45" style="fill:#1D1D1B;" width="2.8" height="20.4"/>
+</g>
+<g>
+	<rect x="792.2" y="45.1" style="fill:#1D1D1B;" width="2.8" height="20.5"/>
 </g>
 <g>
 	
-		<rect x="461.3" y="-442.3" transform="matrix(1.509978e-03 -1 1 1.509978e-03 441.5535 484.8206)" style="fill:#1D1D1B;" width="4.5" height="927.1"/>
+		<rect x="903.3" y="54.2" transform="matrix(4.824147e-03 -1 1 4.824147e-03 853.5444 968.7775)" style="fill:#1D1D1B;" width="20.5" height="2.8"/>
+</g>
+<g>
+	
+		<rect x="461.3" y="-398.1" transform="matrix(1.509976e-03 -1 1 1.509976e-03 397.3908 528.817)" style="fill:#1D1D1B;" width="4.5" height="927.1"/>
+</g>
+<g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 540.0244 1476.5146)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">-0,4</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 662.4814 1476.5146)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">-0,2</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 807.207 1476.5146)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 912.5713 1476.5146)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0,2</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 1031.9805 1476.5146)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0,4</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 1152.4521 1476.5146)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0,6</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 1272.3809 1476.5146)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0,8</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 1396.5752 1476.5146)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">1,0</text>
+		</g>
+	</g>
+</g>
+<g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 24.8472 35.5425)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">-0,4</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 147.3042 35.5425)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">-0,2</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 292.0298 35.5425)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 397.394 35.5425)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0,2</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 516.8032 35.5425)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0,4</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 637.2749 35.5425)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0,6</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 757.2036 35.5425)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">0,8</text>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 881.3979 35.5425)" style="fill:#1D1D1B; font-family:'Fabriga'; font-size:33.8141px;">1,0</text>
+		</g>
+	</g>
 </g>
 </svg>

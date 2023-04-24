@@ -16,7 +16,6 @@ import B1 from '../../img/B1.svg'
 import B2 from '../../img/B2.svg'
 import B3 from '../../img/B3.svg'
 import B4 from '../../img/B4.svg'
-import B5 from '../../img/B5.svg'
 
 import About from './About';
 import Fotos from './Fotos';
@@ -33,8 +32,10 @@ import Juncal from '../../img/juncal-nor-oriente.jpg'
 import TestAudio from '../../audios/test.mp3'
 import AudioGuideLogo from '../../img/audioguide.svg'
 
+
 import React, { useState, useEffect } from 'react';
 import MobileTimeline from './MobileTimeline';
+import MobileTimelineValpo from './MobileTimelineValpo';
 
 
 
@@ -70,8 +71,9 @@ const AudioPlayer = styled.div`
   width: 100%;
   background-color: #f1f3f4;
   position: sticky;
-  top:350px;
+  top:250px;
   text-align:center;
+  z-index:60;
 
 `
 const EndNav = styled.div`
@@ -241,8 +243,6 @@ class App extends React.Component {
 
 	Section1 = () => {
 		
-
-
 		useEffect(() => {
 			window.scrollTo(0, 0);
 
@@ -260,7 +260,6 @@ class App extends React.Component {
 				<h2 className='sticky-text top-1'>1. Cambio climático</h2>
 							
 				<p>De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas”.<br/> Fuente: <a rel='noopener noreferrer' target="_blank"  href="https://www.un.org/es/climatechange/what-is-climate-change"> https://www.un.org/es/climatechange/what-is-climate-change</a></p>
-				
 				
 
 				<AudioPlayer >
@@ -302,28 +301,26 @@ class App extends React.Component {
 		return (
 
 			<div className="wrapperSection wrapper-2">
-				
-				
-				
+						
 				<Waypoint
 					onEnter={this.onSectionEnter(2)}
 			//		onLeave={this.onSectionLeave(2)}
 					/>
 				<h2 className='sticky-text top-2'>2. Variabilidad e historia del clima</h2>
+				<p className='wideRead'>Uno de los efectos más tangibles del cambio climático en nuestra región, se está observando en la disminución de precipitaciones y el aumento de fenómenos extremos como sequías extensas y eventos de lluvias intensas. Estos fenómenos se encuentran asociados a procesos naturales como la corriente del Niño/a, pero desde inicios del siglo XX se ha observado una clara relación con el incremento de la concentración de gases de efecto invernadero, que ha modificado los patrones de circulación atmosférica (Morales et al., 2020).</p>
+				<h2 className="big-title" alt="Anomalias de tempratura a escala global" >Anomalías de Temperatura a Escala Global</h2>
 
 				<MobileTimeline></MobileTimeline>
 				
-				<p>Uno de los efectos más tangibles del cambio climático en nuestra región, se está observando en la disminución de precipitaciones y el aumento de fenómenos extremos como sequías extensas y eventos de lluvias intensas. Estos fenómenos se encuentran asociados a procesos naturales como la corriente del Niño/a, pero desde inicios del siglo XX se ha observado una clara relación con el incremento de la concentración de gases de efecto invernadero, que ha modificado los patrones de circulación atmosférica (Morales et al., 2020).</p>
-
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
 						controls
-						
 					/>
 				</AudioPlayer>
 
-
+				<h2 className="big-title" alt="Anomalias de tempratura a escala global" >Anomalías de Temperatura a Escala Global</h2>
+				<MobileTimelineValpo></MobileTimelineValpo>
 				<img src={B3} alt="Variacion de Precipitaciones en la Región de Valparaiso" />
 				<p> Precipitaciones y temperaturas históricas a nivel país, además de la región de Valparaíso (ca. 1400 - presente). Anomalías y tendencias en el clima.</p>
 				<p>Gráfico de la variación de precipitaciones a nivel local en la región de Valparaíso (índice de sequías) desde el año 1750 a 2019. Fuente: elaboración propia basado en datos del “Atlas de Sequía Sudamericano” (Morales et al., 2020; https://sada.cr2.cl/)</p>
@@ -332,8 +329,6 @@ class App extends React.Component {
 
 				<p>Gráfico de anomalía de temperaturas (respecto al promedio entre 1971-1990) para Chile entre 1901 y 2021 tomado de https://showyourstripes.info/l/southamerica/chile</p>
 				<p>Gráfico de anomalía (respecto al promedio entre 1961-1990) de temperaturas para Valparaíso entre 1880 y 2021 tomado de http://berkeleyearth.lbl.gov/locations/32.95S-71.81W# </p>
-
-				<img src={B5} alt="Anomalias de la Temperatura a escala global" />
 
 				<p>A escala global el año 2021 fue el 6to año más cálido desde 1880, estimándose la temperatura media global (tierra más océano) de 14.7 °C, siendo 0.84 °C sobre el promedio del siglo XX. Con este año se completan 45 años consecutivos (desde 1977) más cálidos que el promedio. De los 10 años más cálidos, 9 están dentro del 2013 al 2021. La temperatura global terrestre y oceánica anual ha aumentado en 0.08°C por década desde 1880, mientras que desde 1981 la tasa de aumento es más del doble con 0.18°C por década</p>
 

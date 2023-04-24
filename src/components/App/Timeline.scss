@@ -14,7 +14,7 @@ transform: translate(15px);
     white-space: normal;
     position: absolute;
     top:0;
-    
+
 
     &.down {
         top:650px;
@@ -70,6 +70,8 @@ p  {
 
 .wrap-timeline {
     position: relative;
+    overflow: hidden;
+    padding:42px;
 }
 
 
@@ -78,6 +80,7 @@ p  {
     height: 53vh;
     width: 60px;
     align-items: center;
+    min-height: 600px;
 }
 
 .tooltip {
@@ -112,7 +115,8 @@ p  {
     flex-direction: row;
     overflow-x: auto;
     white-space: nowrap;
-    height: 85vh;
+    height: 1070px;
+    min-height: 600px;
 }
 
 
