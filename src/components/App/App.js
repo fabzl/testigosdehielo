@@ -259,7 +259,7 @@ class App extends React.Component {
 				/>
 				<h2 className='sticky-text top-1'>1. Cambio climático</h2>
 							
-				<p>De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas”.<br/> Fuente: <a rel='noopener noreferrer' target="_blank"  href="https://www.un.org/es/climatechange/what-is-climate-change"> https://www.un.org/es/climatechange/what-is-climate-change</a></p>
+				<p className="wideRead">De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas”.<br/> Fuente: <a rel='noopener noreferrer' target="_blank"  href="https://www.un.org/es/climatechange/what-is-climate-change"> https://www.un.org/es/climatechange/what-is-climate-change</a></p>
 				
 
 				<AudioPlayer >
@@ -324,7 +324,6 @@ class App extends React.Component {
 				<img src={B3} alt="Variacion de Precipitaciones en la Región de Valparaiso" />
 				<p> Precipitaciones y temperaturas históricas a nivel país, además de la región de Valparaíso (ca. 1400 - presente). Anomalías y tendencias en el clima.</p>
 				<p>Gráfico de la variación de precipitaciones a nivel local en la región de Valparaíso (índice de sequías) desde el año 1750 a 2019. Fuente: elaboración propia basado en datos del “Atlas de Sequía Sudamericano” (Morales et al., 2020; https://sada.cr2.cl/)</p>
-
 				<p>De acuerdo con el informe anual de la Dirección Meteorológica de Chile (DMC): La temperatura media nacional en 2021 fue de 13.5 °C, 0.76°C más cálido que el promedio 1961- 1990 y 0.5°C respecto al promedio 1981-2010. El informe continúa aclarando que: La tendencia de la temperatura media es de 0.15°C por década. Se suman 11 años cálidos consecutivos y ha sido la más cálida desde hace 61 años, duplicando la década inmediatamente anterior (2000-2010). (Gutiérrez et al., 2022).</p>
 
 				<p>Gráfico de anomalía de temperaturas (respecto al promedio entre 1971-1990) para Chile entre 1901 y 2021 tomado de https://showyourstripes.info/l/southamerica/chile</p>
