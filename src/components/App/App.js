@@ -368,10 +368,6 @@ class App extends React.Component {
 
 				<p className='wideRead'>Gráfico de la variación de precipitaciones a nivel local en la región de Valparaíso (índice de sequías) desde el año 1750 a 2019.  <br/><span className="fuente">Fuente: elaboración propia basado en datos del “Atlas de Sequía Sudamericano </span><br/> </p>
 
-				<img src={Precipitaciones} className="precipitaciones" alt="precipitaciones" />
-				
-				<img src={MundoSequia} className="precipitaciones" alt="precipitaciones" />
-
 				<h2 className="big-title gases" alt="Olas de calor de la zona Central de Chile"  >
 				OLAS DE CALOR DE LA ZONA CENTRAL DE CHILE*<span>(desde 1970 a 2022)</span>
 				</h2>
