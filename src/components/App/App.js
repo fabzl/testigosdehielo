@@ -305,9 +305,8 @@ class App extends React.Component {
 				<p className="wideRead">Gráfico de concentración en partes por millón (ppm) de moléculas de dióxido de carbono en la atmósfera global entre el año 0 y el año 2022 de la era actual. <br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations"> https://ourworldindata.org/atmospheric-concentrations</a></span></p>
 		
 				<h2 className="big-title gases" alt="Anomalias de tempratura a escala global" >CONCENTRACIÓN DE CO²* EN LA ATMÓSFERA A ESCALA GLOBAL <span>(desde 1750 a 2022)</span></h2>
-				<h3 className='subtitle gases'>*Dióxido de carbono = Gas de efecto invernadero</h3>
+				<h3 className='wideRead subtitle gases'>*Dióxido de carbono = Gas de efecto invernadero</h3>
 				<MobileTimelineCO2></MobileTimelineCO2>
-				
 				<p className="wideRead">Gráfico concentración de gases de efecto invernadero a escala global,  desde el año 1750 a 2022.<br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations">https://ourworldindata.org/atmospheric-concentrations</a></span></p>
 
 				<AudioPlayer >
@@ -527,7 +526,7 @@ class App extends React.Component {
 				/>
 
 				<h2 className='sticky-text top-5'>5. Qué son los testigos de hielos y para qué sirven</h2>
-				<h2 className="big-title sequia" alt="Anomalias de tempratura a escala global"> Testigos de Hielo</h2>
+				<h2 className="big-title anomalia" alt="Anomalias de tempratura a escala global"> Testigos de Hielo</h2>
 				<img className='big-foto' src={TestigosMain} alt="testigos de hielo"></img>
 				
 				<p className='wideRead'>Los testigos de hielo representan una verdadera diamante de las técnicas científicas, y son una herramienta importante para el estudio glaciar, estos son perforaciones hechas en un glaciar de forma cilíndrica en una capa de hielo o glaciar, realizadas en profundidad desde la superficie. Los glaciares acumulan capas de nieve, que lentamente se transforman en hielo por efecto de la presión y dinámica del glaciar.</p>
