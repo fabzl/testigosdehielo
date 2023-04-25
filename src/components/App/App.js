@@ -11,7 +11,6 @@ import A3 from '../../img/A3.svg'
 import A4 from '../../img/A4.svg'
 import B1 from '../../img/B1.svg'
 import B2 from '../../img/B2.svg'
-import B3 from '../../img/B3.svg'
 import B4 from '../../img/B4.svg'
 
 import About from './About';
@@ -33,8 +32,6 @@ import MundoSequia from '../../img/mundo_sequia.svg'
 
 
 
-
-
 import isoExpo from '../../img/isometrica_expo.svg'
 
 import lockupExpo from '../../img/lockup_expo.svg'
@@ -43,6 +40,21 @@ import logoTestigos from '../../img/testigos_de_hielo_logo.svg'
 
 
 import Juncal from '../../img/juncal-nor-oriente.jpg'
+
+import JuncalSurMapa from '../../img/juncalsurfoto.jpg'
+
+import JuncalSur from '../../img/juncal-sur-mapa-01.jpg'
+
+import TestigosMain from '../../img/TestigoMain.svg'
+
+import Testigos2 from '../../img/Testigos2.svg'
+
+
+import Reservahidrica from '../../img/resevahidrica2.svg'
+import CicloDeAgua from '../../img/ciclodeagua.svg'
+import CicloDeAguaText from '../../img/ciclo_deagua.svg'
+
+
 import TestAudio from '../../audios/test.mp3'
 import AudioGuideLogo from '../../img/audioguide.svg'
 
@@ -389,12 +401,7 @@ class App extends React.Component {
 					onEnter={this.onSectionEnter(3)}
 					onLeave={this.onSectionLeave(3)}
 				/>
-				<h2 className='sticky-text top-3'>3.Importancia de la montaña como reserva hídrica</h2>
-
-			
-				<p>
-					En Chile el 70% de la población se abastece de agua proveniente de la cordillera (Bórquez et al., 2006), además nuestro país alberga más del 80% de los glaciares existentes de Sudamérica (Barcaza et al., 2017), la Cordillera de Los Andes aloja a gran cantidad de estos glaciares, los cuales son parte importante de las reservas de agua dulce (torres de agua), fundamentales para la vida y el ecosistema. Los glaciares emplazados en la cordillera contribuyen de gran manera a los flujos de agua superficial como subterráneos, llegando a aportar el 67% del agua dulce en años con bajas precipitaciones (Peña and Nazarala, 1987), sin embargo la principal fuente de recarga sigue siendo la precipitación de nieve y lluvia para las cuencas de Chile central. En particular para la región de Valparaíso, la cuenca del Aconcagua, se alimenta entre de fusión de nieve y lluvia (~50%), fuentes glaciares (~30%) y de aguas subterráneas`y formas periglacieres (~20%) (Crespo et al., 2020).
-				</p>
+				<h2 className='sticky-text top-3'>3.Importancia de la montaña como reserva hídrica</h2>	
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
@@ -404,27 +411,32 @@ class App extends React.Component {
 					/>
 				</AudioPlayer>
 
+				<h3 className='wideRead subtitle'>FOTOGRAFÍA GLACIAR JUNCAL SUR</h3>
 
-				<img src={A4} alt="Importancia de la Montana como reserva hidrica" />
+				<img className='big-foto' src={JuncalSurMapa} alt="mapa"></img>
+				<p className='wideRead'>Orientación nor-oriente, Octubre 2022.
+				<br></br><span className='fuente'>Fotografía: Francisco García / UNAB</span></p>
 
-				<p>
-					En el presente las consecuencias del proceso de cambio climático son más tangibles que nunca, las que hemos observado concretamente en nuestro territorio. En Chile (y en gran parte de Sudamérica) hemos estado experimentando uno de los periodos de sequías jamás visto a escala histórica (Morales et al., 2020; Bustos et al., 2015), presentándose un déficit importante en la cubierta de nieve para los últimos años que alcanzó un 34% de la cobertura de nieve, respecto al periodo promedio entre 2000 y 2021, en la cuenca del río Aconcagua que surte directamente de agua a la región de Valparaíso (IANIGLA-CONICET y (CR)²; web Observatorio de Nieve en los Andes de Argentina y Chile). Esta condición extrema ha acarreado nefastas consecuencias, como incendios forestales y urbanos, que han afectado directamente a los habitantes de ciudades densamente pobladas como la ciudad de Valparaíso (Sapiains y otros., 2019).
+				<img className='big-foto' src={Juncal} alt="mapa"></img>
+				<p className='wideRead'>Fotografía con orientación sur-poniente del glaciar Juncal Sur, Octubre 2022. <br></br><span className='fuente'>Fuente: elaboración propia.</span> 
 				</p>
+				
+				<img className='big-foto' src={Reservahidrica} alt="mapa"></img>
+							
+				<p className='wideRead'>En Chile el 70% de la población se abastece de agua proveniente de la cordillera (Bórquez et al., 2006), además nuestro país alberga más del 80% de los glaciares existentes de Sudamérica (Barcaza et al., 2017), la Cordillera de Los Andes aloja a gran cantidad de estos glaciares, los cuales son parte importante de las reservas de agua dulce (torres de agua), fundamentales para la vida y el ecosistema. Los glaciares emplazados en la cordillera contribuyen de gran manera a los flujos de agua superficial como subterráneos, llegando a aportar el 67% del agua dulce en años con bajas precipitaciones (Peña and Nazarala, 1987), sin embargo la principal fuente de recarga sigue siendo la precipitación de nieve y lluvia para las cuencas de Chile central. En particular para la región de Valparaíso, la cuenca del Aconcagua, se alimenta entre de fusión de nieve y lluvia (~50%), fuentes glaciares (~30%) y de aguas subterráneas y formas periglacieres (~20%). <span className='fuente'>Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://showyourstripes.info/c/globe" >Crespo et al., 2020.</a></span></p>
 
-				<p>
-					Mapa de glaciares y redes hidricas, zona central de Chile. Fuente: elaboración propia.
+				<img  className='big-foto' src={JuncalSur} alt="Juncal Sur" />
+
+				<p className='wideRead'>Mapa de glaciares y redes hidricas, zona central de Chile.<br></br><span className='fuente'>Fuente: elaboración propia.</span> </p>
+				<img className='big-foto' src={CicloDeAguaText} alt="mapa"></img>
+
+				<p className='wideRead'>En el presente las consecuencias del proceso de cambio climático son más tangibles que nunca, las que hemos observado concretamente en nuestro territorio. En Chile (y en gran parte de Sudamérica) hemos estado experimentando uno de los periodos de sequías jamás visto a escala histórica (Morales et al., 2020; Bustos et al., 2015), presentándose un déficit importante en la cubierta de nieve para los últimos años que alcanzó un 34% de la cobertura de nieve, respecto al periodo promedio entre 2000 y 2021, en la cuenca del río Aconcagua que surte directamente de agua a la región de Valparaíso (IANIGLA-CONICET y (CR)²; web Observatorio de Nieve en los Andes de Argentina y Chile). Esta condición extrema ha acarreado nefastas consecuencias, como incendios forestales y urbanos, que han afectado directamente a los habitantes de ciudades densamente pobladas como la ciudad de Valparaíso. <br></br><span className="fuente">Fuente: Sapiains y otros., 2019.</span>
 				</p>
-				<p>
-					Fotografía con orientación nor-oriente del glaciar Juncal Sur, octubre 2022. Fuente: elaboración propia.
-				</p>
-				<p>
-					Fotografía con orientación sur-poniente del glaciar Juncal Sur, octubre 2022. Fuente: elaboración propia.
-				</p>
-				<p>
-					En Chile el 70% de la población se abastece de agua proveniente de la cordillera (Bórquez et al., 2006), además nuestro país alberga más del 80% de los glaciares existentes de Sudamérica (Barcaza et al., 2017), la Cordillera de Los Andes aloja a gran cantidad de estos glaciares, los cuales son parte importante de las reservas de agua dulce (torres de agua), fundamentales para la vida y el ecosistema. Los glaciares emplazados en la cordillera contribuyen de gran manera a los flujos de agua superficial como subterráneos, llegando a aportar el 67% del agua dulce en años con bajas precipitaciones (Peña and Nazarala, 1987), sin embargo la principal fuente de recarga sigue siendo la precipitación de nieve y lluvia para las cuencas de Chile central. En particular para la región de Valparaíso, la cuenca del Aconcagua, se alimenta entre de fusión de nieve y lluvia (~50%), fuentes glaciares (~30%) y de aguas subterráneas`y formas periglacieres (~20%) (Crespo et al., 2020).
-				</p>
-				<p>
-					Ilustración del ciclo del agua. Fuente: Servicio Geológico de Estados Unidos (https://www.usgs.gov/media/images/el-ciclo-del-agua-water-cycle-spanish-png)
+				<img className='big-foto' src={CicloDeAgua} alt="Ciclo de Agua"></img>
+		
+				<p className='wideRead'> Ilustración del ciclo del agua.<br></br> <span className="fuente">Fuente: Servicio Geológico de Estados Unidos
+				<a  rel='noopener noreferrer' target="_blank" href="https://www.usgs.gov/media/images/el-ciclo-del-agua-water-cycle-spanish-png" >https://www.usgs.gov/media/images/el-ciclo-del-agua-water-cycle-spanish-png </a>
+				</span>
 				</p>
 
 				<div>
@@ -493,6 +505,9 @@ class App extends React.Component {
 
 				<h2 className='sticky-text top-5'>5. Qué son los testigos de hielos y para qué sirven</h2>
 				
+				<img className='big-foto' src={TestigosMain} alt="mapa"></img>
+
+				
 				<p>Los testigos de hielo representan una verdadera diamante de las técnicas científicas, y son una herramienta importante para el estudio glaciar, estos son perforaciones hechas en un glaciar de forma cilíndrica en una capa de hielo o glaciar, realizadas en profundidad desde la superficie. Los glaciares acumulan capas de nieve, que lentamente se transforman en hielo por efecto de la presión y dinámica del glaciar. 
 				</p>
 				<AudioPlayer>
@@ -502,7 +517,7 @@ class App extends React.Component {
 						
 					/>
 				</AudioPlayer>
-				<img src={A1} alt="Testigos de hielo" />
+			
 				<p>
 			Cada una de estas capas “captura” las condiciones ambientales del lugar donde el glaciar crece y avanza (temperatura del aire), pero también es un registro único de condiciones ambientales escala global (burbujas de aire que atrapan los gases de la atmósfera), también al ser como una verdadera sábana blanca, los glaciares acumulan impurezas (naturales y generadas por el hombre) que son transportadas desde grandes distancias y que se acumulan con cada nueva precipitación de nieve. Los eventos de erupciones volcánicas son identificados relativamente fácil a lo largo de los testigos de hielo y nos dan una idea de la edad del hielo.
 

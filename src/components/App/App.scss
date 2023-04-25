@@ -6,6 +6,18 @@
   url("../../fonts/fabriga.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
   url("../../fonts/fabriga.svg#Fabriga") format("svg"); /* iOS 4.1- */
 }
+
+.big-foto {
+  margin: 0 auto;
+  width: 80%;
+  position: relative;
+  display: flex;
+}
+.subtitle {
+  font-size: 2rem;
+}
+
+
 .fuente {
   color: #777;
   font-size: 1rem;
