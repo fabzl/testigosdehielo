@@ -26,10 +26,27 @@
     color: #777;
   }
 }
+.calor {
+  color:#f29074;
+}
+
+.calentamiento {
+  color:#e73331;
+}
+
+.gases {
+  color:#ed6c2c;
+}
+
+.anomalia {
+  color:#3e81c3;
+}
+
 
 .sequia {
   color:#e6be8b;
 }
+
 
 .info-a4 {
   max-width: 70vw;
@@ -230,11 +247,11 @@
   margin:0;
   left:0;
   z-index: 999;
-  width: 100vw;
+  width: 80vw;
   display : inline-flex;
   justify-content: space-around; 
-  background-color: #999;
   padding: 30px 0;
+  color: white;
 
 
   li {
@@ -336,13 +353,35 @@ p {
     }
 }
 
+
+.menu {
+
+  visibility:hidden;
+  opacity: 0;
+
+  transform: translateX(100%);
+   &.active {
+    transform: translateX(0);
+    visibility: visible;
+    opacity: 1;
+  }
+  transition: all 1s ease-in-out;
+}
+
+
+
 .logoTestigos {
   position: absolute;
-  top:0;right: 0;
+  top:0;
+  right: 0;
   width: auto;
   height: 90vh;
   z-index: 55;
   margin:5vh;
+  &.logo-menu {
+    z-index: 999;
+  }
+  transition: all 1s;
 }
 
 .logoTestigos-menu {
@@ -359,23 +398,28 @@ p {
 }
 
 .big-title {
-  font-size: 4rem;
+  font-size: 6rem;
   font-family: 'Fabriga', sans-serif;
   margin: 2vh auto;
-  width: 100%;
+  width: 90%;
   text-align: center;
+  font-weight: 900;
+  span {
+    font-size: 3rem;
+
+  }
 }
 
 .lockupText {
 
   position: sticky;
   top:60px;
-  left:340px;
+  left:300px;
   z-index: 99;
-  width: calc(20vw + 250px);
+  width: calc(20vw + 50px);
   max-width: 450px;
-  min-width: 150px;
-  margin-top: 40px;
+  min-width: 100px;
+  margin-top: 20px;
   transform:translateY(0px);
   
 
@@ -395,11 +439,11 @@ p {
 
   .logoTestigos {
     height: 60vh;
+  
   }
 
 }
-.menu {
-}
+
 
 .burger {
   
@@ -411,7 +455,6 @@ p {
   max-width: 200px;
   min-width: 200px;
   transition: all 0.7s ease-in-out;
-  
   transform: rotate(0);
 
  
@@ -464,24 +507,27 @@ p {
  height: 100vh;
  z-index: 998;
  text-align: left;
- background-color: #888;
+  a {
+    color: white;
+  }
  transition: all 0.7s ease-in-out;
 
  
 }
 .nav-links li {
-  width: 100vw;
-  height: 10%;
+  width: 70vw;
+  height: 8vh;
   display: flex;
   justify-content:flex-start;
   text-align: left;
+  border-bottom: 3px solid white ;
 
 }
 
 .nav-links li a {
   margin: 0;
   text-decoration: none; 
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Fabriga', sans-serif;
  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 800;
@@ -493,13 +539,14 @@ p {
   text-align: left;
   flex-direction: column;
   text-transform: uppercase;
-
+  color: white;
 }
 
 .audioguide-logo {
   height: 54px;
   margin:  auto;
-}.wrapQuote {
+}
+.wrapQuote {
 
   text-align: center;
   font-family: 'Fabriga', sans-serif;
@@ -553,7 +600,7 @@ p {
 H2 , H1 {
   
  color:#7fbfea;
- font-family: 'Oswald', sans-serif;
+ font-family: 'Fabriga', sans-serif;
  text-transform: uppercase; 
  font-weight: 800;
  z-index: 995;
@@ -645,7 +692,7 @@ p {
 
 .top-1  {
  
-  background-color:#d22726;
+  background-color:#e73d2f;
   color: #FFF;
 
 }

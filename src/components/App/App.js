@@ -1,3 +1,6 @@
+
+import React, { useState, useEffect } from 'react';
+
 import './App.scss'
 import styled from 'styled-components'
 import { Waypoint } from 'react-waypoint';
@@ -7,11 +10,7 @@ import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-
 import Footer from './Footer';
 import A1 from '../../img/A1.svg'
 import A2 from '../../img/A2.svg'
-import A3 from '../../img/A3.svg'
 import A4 from '../../img/A4.svg'
-import B1 from '../../img/B1.svg'
-import B2 from '../../img/B2.svg'
-import B4 from '../../img/B4.svg'
 
 import About from './About';
 import Fotos from './Fotos';
@@ -21,7 +20,6 @@ import Videos from './Videos';
 import sequiaValpo from '../../img/sequia_valpo.svg'
 import sequiaValpo2 from '../../img/sequia_valpo_02.svg'
 
-
 import Calent from '../../img/calent_2.svg'
 import Gases from '../../img/gases.svg'
 import Precipitaciones from '../../img/precipitaciones.svg'
@@ -29,8 +27,6 @@ import Precipitaciones from '../../img/precipitaciones.svg'
 import MundoCalent from  '../../img/mundo_calent.svg'
 import MundoGases from '../../img/mundo_gases.svg'
 import MundoSequia from '../../img/mundo_sequia.svg'
-
-
 
 import isoExpo from '../../img/isometrica_expo.svg'
 
@@ -47,19 +43,24 @@ import JuncalSur from '../../img/juncal-sur-mapa-01.jpg'
 
 import TestigosMain from '../../img/TestigoMain.svg'
 
-import Testigos2 from '../../img/Testigos2.svg'
+import Glaciofoto from '../../img/glaciologia_01.jpg'
+import Glaciofoto2 from '../../img/glaciologia_02.jpg'
 
+import Erupcion from '../../img/erupcion.png'
+import TestigoPedazo from '../../img/testigos_pedazo.png'
 
 import Reservahidrica from '../../img/resevahidrica2.svg'
 import CicloDeAgua from '../../img/ciclodeagua.svg'
 import CicloDeAguaText from '../../img/ciclo_deagua.svg'
+
+import Derretimiento from '../../img/derretimiento01.jpg'
+import Derretimiento2 from '../../img/derretimiento02.jpg'
 
 
 import TestAudio from '../../audios/test.mp3'
 import AudioGuideLogo from '../../img/audioguide.svg'
 
 
-import React, { useState, useEffect } from 'react';
 import MobileTimeline from './MobileTimeline';
 import MobileTimelineValpo from './MobileTimelineValpo';
 import MobileTimelineCO2 from './MobileTimelineCO2';
@@ -83,9 +84,26 @@ letter-spacing :80%;
 background-color:#EEE;
 `
 
+
+const Menu = styled.div`
+	background-size:cover;
+	background-position:top;
+	background-repeat: no-repeat;
+    z-index: 999;
+	width:100vw;
+	height:100vh;
+	top:0;
+	position:fixed;
+
+	background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%), url(${Juncal});
+
+
+`
+
+
 const MainBg = styled.div`
 	background-image:url("${Juncal}");
-	background-position:cover;
+	background-size:cover;
 	background-repeat: no-repeat;
 	width:100vw;
 	height:100vh;
@@ -119,7 +137,7 @@ color:#FFF;
 text-decoration: none;
 }
 text-align:center;
-font-family: 'Oswald', sans-serif;
+font-family: 'Fabriga', sans-serif;
 text-transform: uppercase; 
 font-weight: 800;
 font-size: 1.5rem;
@@ -237,7 +255,7 @@ class App extends React.Component {
 
 			<h1 className="mainTitle">Testigos de Hielo</h1>
 			<div>
-				<img className="lockupText"src={lockupText}  alt="26 de abril" />
+				<img className="lockupText"src={lockupText}  alt="28 de abril" />
 			</div>
 			<img className="logoTestigos" src={logoTestigos}  alt="Testigos de hielo" />
 
@@ -286,6 +304,8 @@ class App extends React.Component {
 				
 				<p className="wideRead">Gráfico de concentración en partes por millón (ppm) de moléculas de dióxido de carbono en la atmósfera global entre el año 0 y el año 2022 de la era actual. <br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations"> https://ourworldindata.org/atmospheric-concentrations</a></span></p>
 		
+				<h2 className="big-title gases" alt="Anomalias de tempratura a escala global" >CONCENTRACIÓN DE CO²* EN LA ATMÓSFERA A ESCALA GLOBAL <span>(desde 1750 a 2022)</span></h2>
+				<h3 className='subtitle gases'>*Dióxido de carbono = Gas de efecto invernadero</h3>
 				<MobileTimelineCO2></MobileTimelineCO2>
 				
 				<p className="wideRead">Gráfico concentración de gases de efecto invernadero a escala global,  desde el año 1750 a 2022.<br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations">https://ourworldindata.org/atmospheric-concentrations</a></span></p>
@@ -343,28 +363,29 @@ class App extends React.Component {
 				<img src={sequiaValpo2} className="sequiaValpo2" alt="sequiaValpo2" />
 				
 	
-				<h2 className="big-title sequia" alt="Anomalias de tempratura a escala global" >VARIACIÓN DE PRECIPITACIONES EN LA REGIÓN DE VALPARAÍSO</h2>
+				<h2 className="big-title sequia" alt="Anomalias de tempratura a escala global" >VARIACIÓN DE PRECIPITACIONES EN LA REGIÓN DE VALPARAÍSO<br></br><span>(desde 1750 a 2022)</span></h2>
 				<MobileTimelineValpo></MobileTimelineValpo>
 
+				<p className='wideRead'>Gráfico de la variación de precipitaciones a nivel local en la región de Valparaíso (índice de sequías) desde el año 1750 a 2019.  <br/><span className="fuente">Fuente: elaboración propia basado en datos del “Atlas de Sequía Sudamericano </span><br/> </p>
 
 				<img src={Precipitaciones} className="precipitaciones" alt="precipitaciones" />
 				
 				<img src={MundoSequia} className="precipitaciones" alt="precipitaciones" />
 
-				<h2 className="big-title calor" alt="Olas de calor de la zona Central de Chile"  >
-				OLAS DE CALOR DE LA ZONA CENTRAL DE CHILE*
+				<h2 className="big-title gases" alt="Olas de calor de la zona Central de Chile"  >
+				OLAS DE CALOR DE LA ZONA CENTRAL DE CHILE*<span>(desde 1970 a 2022)</span>
 				</h2>
 
 				<MobileTimelineCalor></MobileTimelineCalor>
-				<p className='wideRead'>Gráfico de la variación de precipitaciones a nivel local en la región de Valparaíso (índice de sequías) desde el año 1750 a 2019.  <br/><span className="fuente">Fuente: elaboración propia basado en datos del “Atlas de Sequía Sudamericano </span><br/> 
 
-				</p>
+				<p className='wideRead'>Gráfico de olas de calor de la zona central de Chile (Regiones de Valparaíso y Metropolitana) desde el año 1970 hasta 2022. <span className="fuente">Fuente: elaboración propia basada en datos de la dirección Meteorológica de Chile (DMC) (0)</span></p>
+
 				<p className='wideRead'>De acuerdo con el informe anual de la Dirección Meteorológica de Chile (DMC): La temperatura media nacional en 2021 fue de 13.5 °C, 0.76°C más cálido que el promedio 1961- 1990 y 0.5°C respecto al promedio 1981-2010. El informe continúa aclarando que: La tendencia de la temperatura media es de 0.15°C por década. Se suman 11 años cálidos consecutivos y ha sido la más cálida desde hace 61 años, duplicando la década inmediatamente anterior (2000-2010).<br/> <span className='fuente'>Fuente Gutiérrez et al., 2022.</span></p>
 
-				<h2 className="big-title" alt="Anomalias de tempratura a escala global sequia"  >Anomalías de Temperaturas a Escala Global</h2>
+				<h2 className="big-title anomalia" alt="Anomalias de tempratura a escala global "  >Anomalías de Temperaturas a Escala Global</h2>
 				<MobileTimeline></MobileTimeline>
 				
-				<p className='wideRead'><span className="fuente"> Fuente: Gráfico de anomalía de temperaturas (respecto al promedio entre 1971-1990) para Chile entre 1901 y 2021 tomado de<br/><a  rel='noopener noreferrer' target="_blank" href="https://showyourstripes.info/l/southamerica/chile">
+				<p className='wideRead'><span className="fuente"> Fuente: Gráfico de anomalía de temperaturas (respecto al promedio entre 1971-1990) para Chile entre 1901 y 2021.<br/><a  rel='noopener noreferrer' target="_blank" href="https://showyourstripes.info/l/southamerica/chile">
 					 https://showyourstripes.info/l/southamerica/chile</a><br/>
 					 Fuente: Gráfico de anomalía (respecto al promedio entre 1961-1990) de temperaturas para Valparaíso entre 1880 y 2021 <br/> <a  rel='noopener noreferrer' target="_blank" href="https://berkeleyearth.lbl.gov/locations/32.95S-71.81W#"> </a>https://berkeleyearth.lbl.gov/locations/32.95S-71.81W# </span>
 				<span className="fuente">
@@ -435,7 +456,7 @@ class App extends React.Component {
 				<img className='big-foto' src={CicloDeAgua} alt="Ciclo de Agua"></img>
 		
 				<p className='wideRead'> Ilustración del ciclo del agua.<br></br> <span className="fuente">Fuente: Servicio Geológico de Estados Unidos
-				<a  rel='noopener noreferrer' target="_blank" href="https://www.usgs.gov/media/images/el-ciclo-del-agua-water-cycle-spanish-png" >https://www.usgs.gov/media/images/el-ciclo-del-agua-water-cycle-spanish-png </a>
+				<br></br><a  rel='noopener noreferrer' target="_blank" href="https://www.usgs.gov/media/images/el-ciclo-del-agua-water-cycle-spanish-png" >https://www.usgs.gov/media/images/el-ciclo-del-agua-water-cycle-spanish-png </a>
 				</span>
 				</p>
 
@@ -461,14 +482,16 @@ class App extends React.Component {
 					onLeave={this.
 						onSectionLeave(4)}
 				/>
-				<h2 className='sticky-text top-4'>4. Glaciología: que estudia y cómo se estudia, además de la importancia de esta ciencia.
+				<h2 className='sticky-text top-4'>4. Glaciología: que estudia y cómo se estudia.
 				</h2>
 
+				<img src={Glaciofoto} className="big-foto" alt="Glaciologos en Acción"/>
+				 
+				<p className='wideRead'>La glaciología es una disciplina científica encargada de estudiar los glaciares, las glaciaciones y la criósfera en general, a través de monitoreos del comportamiento y formación, realizando mediciones en terreno o mediciones remotas.</p>
 
-
-				<p>La glaciología es una disciplina científica encargada de estudiar los glaciares, las glaciaciones y la criósfera en general, a través de monitoreos del comportamiento y formación, realizando mediciones en terreno o mediciones remotas.</p>
-				<p>La criósfera se define como todos los componentes congelados naturales que se encuentran sobre o debajo de la superficie terrestre u oceánicas. Incluyendo nieve, glaciares, casquetes de hielo icebergs, hielo marino, lagos y ríos congelados, además de suelos congelados. Tiene un rol importante en la regulación del clima a escala local y global, influyendo en la hidrología, nubes, precipitaciones y la circulación de la atmósfera y los océanos. El cambio climático está ocasionando una gran pérdida de la criósfera, mediante el derretimiento de grandes extensiones de hielo.
+				<p className='wideRead'>La criósfera se define como todos los componentes congelados naturales que se encuentran sobre o debajo de la superficie terrestre u oceánicas. Incluyendo nieve, glaciares, casquetes de hielo icebergs, hielo marino, lagos y ríos congelados, además de suelos congelados. Tiene un rol importante en la regulación del clima a escala local y global, influyendo en la hidrología, nubes, precipitaciones y la circulación de la atmósfera y los océanos. El cambio climático está ocasionando una gran pérdida de la criósfera, mediante el derretimiento de grandes extensiones de hielo.
 				</p>
+
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
@@ -477,12 +500,16 @@ class App extends React.Component {
 						
 					/>
 				</AudioPlayer>
+{/* 
 
-				<p>Componentes de la Criósfera que se estudian comúnmente en los procesos de balance de masa por la glaciología (Fuente: “El Atlas de Glaciares y Aguas Andinos: el impacto del retroceso de los glaciares sobre los recursos hídricos” (Johansen et al., 2019))
+				
+				<span className='fuente'>Fuente: “El Atlas de Glaciares y Aguas Andinos: el impacto del retroceso de los glaciares sobre los recursos hídricos”  Johansen et al., 2019,</span>
+				</p> */}
+				<p className='wideRead'>Los estudios en terreno incluyen normalmente expediciones en condiciones muy adversas, en donde investigadores hombres y mujeres deben exponerse a condiciones ambientales complejas. Una buena preparación de la expedición y buen equipamiento asegura que los científicos puedan trabajar de buena forma en la montaña o regiones polares. Muchas veces las expediciones ocurren en zonas muy remotas (zonas de acumulación de hielo), que deben ser accedidas caminando por largas rutas sobre glaciares o por medios de transporte como helicóptero o avión.
 				</p>
-				<p>Los estudios en terreno incluyen normalmente expediciones en condiciones muy adversas, en donde investigadores hombres y mujeres deben exponerse a condiciones ambientales complejas. Una buena preparación de la expedición y buen equipamiento asegura que los científicos puedan trabajar de buena forma en la montaña o regiones polares. Muchas veces las expediciones ocurren en zonas muy remotas (zonas de acumulación de hielo), que deben ser accedidas caminando por largas rutas sobre glaciares o por medios de transporte como helicóptero o avión.
-				</p>
-				<p>Trabajo en terreno de un grupo de glaciólogos que están determinando las tasas de derretimiento de verano en una zona de ablación del glaciar Juncal Norte (Fuente propia).
+				<img src={Glaciofoto2} className="big-foto" alt="Glaciologos en Acción 2"/>
+
+				<p className='wideRead'>Trabajo en terreno de un grupo de glaciólogos que están determinando las tasas de derretimiento de verano en una zona de ablación del glaciar Juncal Norte.<br></br> <span className='fuente' >Fuente: Elaboración propia.</span>
 				</p>
 			</div>
 
@@ -504,12 +531,12 @@ class App extends React.Component {
 				/>
 
 				<h2 className='sticky-text top-5'>5. Qué son los testigos de hielos y para qué sirven</h2>
+				<h2 className="big-title sequia" alt="Anomalias de tempratura a escala global"> Testigos de Hielo</h2>
+				<img className='big-foto' src={TestigosMain} alt="testigos de hielo"></img>
 				
-				<img className='big-foto' src={TestigosMain} alt="mapa"></img>
+				<p className='wideRead'>Los testigos de hielo representan una verdadera diamante de las técnicas científicas, y son una herramienta importante para el estudio glaciar, estos son perforaciones hechas en un glaciar de forma cilíndrica en una capa de hielo o glaciar, realizadas en profundidad desde la superficie. Los glaciares acumulan capas de nieve, que lentamente se transforman en hielo por efecto de la presión y dinámica del glaciar.</p>
 
-				
-				<p>Los testigos de hielo representan una verdadera diamante de las técnicas científicas, y son una herramienta importante para el estudio glaciar, estos son perforaciones hechas en un glaciar de forma cilíndrica en una capa de hielo o glaciar, realizadas en profundidad desde la superficie. Los glaciares acumulan capas de nieve, que lentamente se transforman en hielo por efecto de la presión y dinámica del glaciar. 
-				</p>
+
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
@@ -518,46 +545,51 @@ class App extends React.Component {
 					/>
 				</AudioPlayer>
 			
-				<p>
-			Cada una de estas capas “captura” las condiciones ambientales del lugar donde el glaciar crece y avanza (temperatura del aire), pero también es un registro único de condiciones ambientales escala global (burbujas de aire que atrapan los gases de la atmósfera), también al ser como una verdadera sábana blanca, los glaciares acumulan impurezas (naturales y generadas por el hombre) que son transportadas desde grandes distancias y que se acumulan con cada nueva precipitación de nieve. Los eventos de erupciones volcánicas son identificados relativamente fácil a lo largo de los testigos de hielo y nos dan una idea de la edad del hielo.
+				<p className='wideRead'>Cada una de estas capas “captura” las condiciones ambientales del lugar donde el glaciar crece y avanza (temperatura del aire), pero también es un registro único de condiciones ambientales escala global (burbujas de aire que atrapan los gases de la atmósfera), también al ser como una verdadera sábana blanca, los glaciares acumulan impurezas (naturales y generadas por el hombre) que son transportadas desde grandes distancias y que se acumulan con cada nueva precipitación de nieve. Los eventos de erupciones volcánicas son identificados relativamente fácil a lo largo de los testigos de hielo y nos dan una idea de la edad del hielo.</p>
 
 
-					Fotografía la erupción del volcán Calbuco, año 2015. Fuente: (https://nuestroclima.com/la-erupcion-del-calbuco-en-4k/)
+				
+			<img className='big-foto' src={Erupcion} alt="erupcion"></img>
+  			<p className='wideRead'>Fotografía la erupción del volcán Calbuco, año 2015.<br></br> <span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://nuestroclima.com/la-erupcion-del-calbuco-en-4k/">https://nuestroclima.com/</a></span></p>
 
-					Fotografía de una sección de testigo de hielo de 200 m de profundidad extraído en 2013, en un punto cercano a la cumbre del monte Hunter, Alaska, Estados Unidos  Fuente: Lecavalier y Markle (2016)
-
-					De esta forma la metodología científica utilizada en el análisis de los testigos de hielo ha permitido reconstruir el clima y las condiciones ambientales de hasta 800 mil años (Wolf et al., 2010) que muestran la transición de ciclos glaciares (épocas de climas fríos) e interglaciares (épocas de climas cálidos) y que muestran que el proceso de calentamiento actual no tiene precedentes en el registro del clima del pasado y solo se compara al clima de hace millones de años (
-
-
-
-
-					Figura resumen de la variación de CO2 reconstruida a partir de datos de testigos de hielo y observaciones actuales (Fuente: https://ourworldindata.org/atmospheric-concentrations )
+			<img className='big-foto' src={TestigoPedazo} alt="Pedazo testigo de Hielo 2013 Alaska"></img>
+			<p className='wideRead'>
+			Fotografía de una sección de testigo de hielo de 200 m de profundidad extraído en 2013, en un punto cercano a la cumbre del monte Hunter, Alaska, Estados Unidos.<br></br>  <span className='fuente'>Fuente: Lecavalier y Markle (2016)</span></p>
 
 
 
 
+			<p className='wideRead'>
+			De esta forma la metodología científica utilizada en el análisis de los testigos de hielo ha permitido reconstruir el clima y las condiciones ambientales de hasta 800 mil años (Wolf et al., 2010) que muestran la transición de ciclos glaciares (épocas de climas fríos) e interglaciares (épocas de climas cálidos) y que muestran que el proceso de calentamiento actual no tiene precedentes en el registro del clima del pasado y solo se compara al clima de hace millones de años </p>
+{/* 
 
-					Figura panel superior: resumen de la variación de CO2 y Metano (CH4 reconstruida a partir de datos de testigos de hielo comparadas con observaciones actuales.
+			<p className='wideRead'>
+			Figura resumen de la variación de CO2 reconstruida a partir de datos de testigos de hielo y observaciones actuales (Fuente: https://ourworldindata.org/atmospheric-concentrations )
+			</p>
+			
+			<p className='wideRead'>Figura panel superior: resumen de la variación de CO2 y Metano (CH4 reconstruida a partir de datos de testigos de hielo comparadas con observaciones actuales.</p>
+			
+			<p className='wideRead'>Figura panel inferior: resumen de la variación de CO2 comparada con la temperatura atmosférica del planeta reconstruida a partir de información de testigos de hielo y observaciones actuales.<br/>
+			<span clasName="fuente">Fuente: https://www.bas.ac.uk/data/our-data/publication/ice-cores-and-climate-change/ 
+			</span></p> */}
 
-					Figura panel inferior: resumen de la variación de CO2 comparada con la temperatura atmosférica del planeta reconstruida a partir de información de testigos de hielo y observaciones actuales.
+			<p className='wideRead'>
+					Por lo tanto los testigos aportan información sobre las condiciones ambientales y sus variaciones en el tiempo en cada capa de hielo que compone un glaciar, plasmando información sobre la composición atmosférica y antecedentes de cómo era el ambiente en la época que cayeron las precipitaciones que formaron y forman parte del glaciar, pudiendo así modelar y reconstruir climas pasados.</p>
 
-					(Fuente: https://www.bas.ac.uk/data/our-data/publication/ice-cores-and-climate-change/ )
-
-					Por lo tanto los testigos aportan información sobre las condiciones ambientales y sus variaciones en el tiempo en cada capa de hielo que compone un glaciar, plasmando información sobre la composición atmosférica y antecedentes de cómo era el ambiente en la época que cayeron las precipitaciones que formaron y forman parte del glaciar, pudiendo así modelar y reconstruir climas pasados.
-
-
-
-					Fotografía a escala que muestra un evento de derretimiento en una sección de testigo de hielo de 20 cm de largo en total proveniente del Norte de Chile, representando eventos como olas de calor. Fuente: elaboración propia.
+		<img className='big-foto' src={Derretimiento} alt="Hielo del norte De Chile"></img>
+					<p className='wideRead'>
+					Fotografía a escala que muestra un evento de derretimiento en una sección de testigo de hielo de 20 cm de largo en total proveniente del Norte de Chile, representando eventos como olas de calor. Fuente: elaboración propia.</p>
 
 
+			<img className='big-foto' src={Derretimiento2} alt="Fotografía de una sección de testigo de hielo del Norte de Chile"></img>
 
-					Fotografía de una sección de testigo de hielo del Norte de Chile, representando transformación o transición de nieve a neviza y finalmente a hielo. Fuente: elaboración propia.
+			<p className='wideRead'>
+					Fotografía de una sección de testigo de hielo del Norte de Chile, representando transformación o transición de nieve a neviza y finalmente a hielo. Fuente: elaboración propia.</p>
 
 
 
-					Ejemplo de infografía de un testigo de hielo de la Antártica relacionado a eventos históricos. Fuente: British Antarctic Survey (https://www.bas.ac.uk/)
-
-				</p>
+{/* 					<p className='wideRead'>Ejemplo de infografía de un testigo de hielo de la Antártica relacionado a eventos históricos. Fuente: British Antarctic Survey (https://www.bas.ac.uk/)</p> */}
+				
 			</div>
 		);
 	};
@@ -581,7 +613,29 @@ class App extends React.Component {
 				/>
 				<h2 className='sticky-text top-6'>6. Modelamiento del futuro (presente próximo siglo)</h2>
 	
-				<p>Los efectos del cambio climático descritos hasta ahora continuaran en el futuro, a no ser que se tomen medidas urgentes en cuanto a la forma de usar los recursos naturales (Rojas et al., 2019; IPCC, 2021). De esta forma sabemos que las precipitaciones disminuirán entre un 5% y un 15% en la zona centro y sur de Chile (Stehr et al., 2019), lo que inevitablemente repercutirá en la perdida de masa glaciar a lo largo de Chile. En la zona central se proyecta una perdida de masa de hielo de entre un 12% y 37% (Glaciar Universidad) (Escanilla-Minchel et al., 2020) dependiendo de las decisiones socio-políticas que se lleguen a tomar en el futuro. El IPCC (2021) ha fijado como meta un calentamiento no superior a 1.5°C para el presente siglo, de manera de evitar efectos irreversibles en nuestro ambiente debido al cambio climático. Si esta meta se cumple, los efectos del cambio climático, podrián ser moderados pero no desapareceran. Las simulaciones, muestran que en todos los escenarios la precipitación de la zona central disminuirá y la temperatura aumentará (como efectos tangibles del cambio climático).</p>
+				<p className='wideRead'>Los efectos del cambio climático descritos hasta ahora continuaran en el futuro, a no ser que se tomen medidas urgentes en cuanto a la forma de usar los recursos naturales (Rojas et al., 2019; IPCC, 2021). De esta forma sabemos que las precipitaciones disminuirán entre un 5% y un 15% en la zona centro y sur de Chile (Stehr et al., 2019), lo que inevitablemente repercutirá en la perdida de masa glaciar a lo largo de Chile. En la zona central se proyecta una perdida de masa de hielo de entre un 12% y 37% (Glaciar Universidad) (Escanilla-Minchel et al., 2020) dependiendo de las decisiones socio-políticas que se lleguen a tomar en el futuro. El IPCC (2021) ha fijado como meta un calentamiento no superior a 1.5°C para el presente siglo, de manera de evitar efectos irreversibles en nuestro ambiente debido al cambio climático. Si esta meta se cumple, los efectos del cambio climático, podrián ser moderados pero no desapareceran. Las simulaciones, muestran que en todos los escenarios la precipitación de la zona central disminuirá y la temperatura aumentará (como efectos tangibles del cambio climático).</p>
+				<h2 className="big-title calentamiento" alt="Anomalias de tempratura a escala global" >Calentamiento Global</h2>
+
+				<img src={Calent} className="big-foto" alt="Calentamiento Global" />
+
+				<img src={MundoCalent} className="big-foto" alt="Mundo Calentamiento Global" />
+
+				<h2 className="big-title sequia" alt="Anomalias de tempratura a escala global" >Precipitaciones y sequía</h2>
+
+<img src={Precipitaciones} className="big-foto" alt="Precipitacion" />
+
+<img src={MundoSequia} className="big-foto" alt="Mundo Sequia" />
+
+<h2 className="big-title gases" alt="Anomalias de tempratura a escala global" >Gases de Efecto Invernadero</h2>
+
+<img src={Gases} className="big-foto" alt="Gases" />
+
+<img src={MundoGases} className="big-foto" alt="Mundo Gases" />
+
+
+
+
+
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					<ReactAudioPlayer src={TestAudio}
@@ -589,25 +643,17 @@ class App extends React.Component {
 						
 					/>
 				</AudioPlayer>
-				<p>  Figura panel superior modelo de las tendencias de precipitaciones (IPCC, 2021) para el mundo en caso de un aumento de 1.5°C, 2°C y 4°C</p>
-				<p>
+{/* 				<p className='wideRead'>  Figura panel superior modelo de las tendencias de precipitaciones (IPCC, 2021) para el mundo en caso de un aumento de 1.5°C, 2°C y 4°C</p>
+				<p className='wideRead'>
 					Figura panel superior modelo de las tendencias de temperaturas regionales (IPCC, 2021) para el mundo en caso de un aumento promedio de 1.5°C, 2°C y 4°C de la temperartura.
 				</p>
-				<p>  Modelamiento de la temperatura a escala global bajo distintos escenarios socio-económicos. Fuente: http://antarctica.cl/divulgacion/
+				<p className='wideRead'>  Modelamiento de la temperatura a escala global bajo distintos escenarios socio-económicos. Fuente: http://antarctica.cl/divulgacion/
 				</p>
-				<p>
+ */}
+				<p className='wideRead'>
 					De acuerdo con las palabras del Dr. Raul Cordero (www.antarctica.cl): El clima del futuro depende de las decisiones que tomemos hoy. Si nos comprometemos con los objetivos del Acuerdo de París podríamos limitar el alza de la temperatura global a alrededor de 1.5°C y lograríamos conservar gran parte de la biodiversidad del planeta. Si no lo hacemos y no redoblamos esfuerzos para mitigar nuestras emisiones, el planeta podría ser a fines de siglo hasta 4°C en promedio más cálido que hoy, condenando a la extinción a muchas especies animales y vegetales. Es  nuestra tarea exigir que se cumplan estos acuerdos, de lo contrario, ya conocemos los posibles escenarios futuros.
 				</p>
 
-
-				<img src={A3} alt="Precipitaciones y Sequia" />
-
-
-				<img src={B1} alt="Precipitaciones Anuales sobre el glaciar juncal sur" />
-				<img src={B2} alt="Concentracion de Dioxido de carbono en" />
-
-				<img src={B4} alt="Olas de Calor de la Zona central de Chile" />
-				<p className='wideRead'>Gráfico de olas de calor de la zona central de Chile (Regiones de Valparaíso y Metropolitana) desde el año 1970 hasta 2022. <span className="fuente">Fuente: elaboración propia basada en datos de la dirección Meteorológica de Chile (DMC) (0)</span></p>
 			</div>
 		);
 	};
@@ -714,7 +760,10 @@ class App extends React.Component {
 					<BrowserRouter>
 		
 			
-					{this.state.menuVisible && <div className="menu">
+					{<Menu className={this.state.menuVisible ? 'menu active' : 'menu'} >
+
+					<img className="logoTestigos logo-menu" src={logoTestigos}  alt="Testigos de hielo" />
+
 						<ul className="cat-links">
 							<li className='home-cat'>
 								<Link className="linkCat" onClick={this.handleClick} to="/">Home</Link>
@@ -730,27 +779,27 @@ class App extends React.Component {
 							</li>					
 						</ul>
 					<ul className={this.state.menuVisible ? 'nav-links show' : 'nav-links'}>
-						<li className='top-1'>
+						<li className='menu-link'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(1)} activeclassname="active">1.Cambio Climático</NavLink></li>
-					<li className='top-2'>
+					<li className='menu-link'>
 						<NavLink onClick={this.handleClick}to={this.routerBoy(2)} activeclassname="active">2. Variabilidad e historia del Clima</NavLink></li>
-					<li className='top-3'>
+					<li className='menu-link'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.Importancia de la Montaña como reserva Hídrica</NavLink>
 					</li>
-					<li className='top-4'>
+					<li className='menu-link'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4. Glaciología: que estudia y cómo se estudia.</NavLink>
 					</li>
-					<li className='top-5'>
+					<li className='menu-link'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(5)} activeclassname="active">5. Qué son los testigos de hielos y para qué sirven</NavLink>
 					</li>
-					<li className='top-6'>
+					<li className='menu-link'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(6)} activeclassname="active">6. Modelamiento del futuro (presente próximo siglo)</NavLink>
 					</li>
 				</ul>
 
 		
 				
-				</div>}
+				</Menu>}
 					
 				<Routes>
 						<Route exact path="/" element={<this.SectionIntro />} />
