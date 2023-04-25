@@ -1,3 +1,24 @@
+@font-face {font-family: "Fabriga";
+  src: url("../../fonts/fabriga.eot"); /* IE9*/
+  src: url("../../fonts/fabriga.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("../../fonts/fabriga.woff2") format("woff2"), /* chrome、firefox */
+  url("../../fonts/fabriga.woff") format("woff"), /* chrome、firefox */
+  url("../../fonts/fabriga.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("../../fonts/fabriga.svg#Fabriga") format("svg"); /* iOS 4.1- */
+}
+.fuente {
+  color: #777;
+  font-size: 1rem;
+  text-transform: uppercase;
+  a {
+    color: #777;
+  }
+}
+
+.sequia {
+  color:#e6be8b;
+}
+
 .info-a4 {
   max-width: 70vw;
   margin: 0 auto;
@@ -256,7 +277,10 @@ p {
 }
 
 .wideRead {
-  line-height: 2.5rem;
+  line-height: 180%;
+  max-width: 80vw;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
 
@@ -464,8 +488,7 @@ p {
 .audioguide-logo {
   height: 54px;
   margin:  auto;
-}
-.wrapQuote {
+}.wrapQuote {
 
   text-align: center;
   font-family: 'Fabriga', sans-serif;
@@ -583,9 +606,7 @@ H1 {
   display: none;
 }
 p { 
-  max-width: 80vw;
-  margin: 0 auto;
-  padding: 2rem;
+
 }
 
 .sticky-text {

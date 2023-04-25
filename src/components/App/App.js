@@ -1,9 +1,7 @@
 import './App.scss'
 import styled from 'styled-components'
 import { Waypoint } from 'react-waypoint';
-//import React from 'react'
-//import ReactPlayer from 'react-player'
-//import ReactPlayer from 'react-player/lazy'
+
 import ReactAudioPlayer from 'react-audio-player';
 import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
 import Footer from './Footer';
@@ -11,7 +9,6 @@ import A1 from '../../img/A1.svg'
 import A2 from '../../img/A2.svg'
 import A3 from '../../img/A3.svg'
 import A4 from '../../img/A4.svg'
-import A5 from '../../img/A5.svg'
 import B1 from '../../img/B1.svg'
 import B2 from '../../img/B2.svg'
 import B3 from '../../img/B3.svg'
@@ -20,6 +17,23 @@ import B4 from '../../img/B4.svg'
 import About from './About';
 import Fotos from './Fotos';
 import Videos from './Videos';
+
+
+import sequiaValpo from '../../img/sequia_valpo.svg'
+import sequiaValpo2 from '../../img/sequia_valpo_02.svg'
+
+
+import Calent from '../../img/calent_2.svg'
+import Gases from '../../img/gases.svg'
+import Precipitaciones from '../../img/precipitaciones.svg'
+
+import MundoCalent from  '../../img/mundo_calent.svg'
+import MundoGases from '../../img/mundo_gases.svg'
+import MundoSequia from '../../img/mundo_sequia.svg'
+
+
+
+
 
 import isoExpo from '../../img/isometrica_expo.svg'
 
@@ -36,8 +50,8 @@ import AudioGuideLogo from '../../img/audioguide.svg'
 import React, { useState, useEffect } from 'react';
 import MobileTimeline from './MobileTimeline';
 import MobileTimelineValpo from './MobileTimelineValpo';
-
-
+import MobileTimelineCO2 from './MobileTimelineCO2';
+import MobileTimelineCalor from './MobileTimelineCalor';
 
 const WrapQuote = styled.p`
 text-align: center;
@@ -107,10 +121,8 @@ a {
 	color:#FFF;
 	text-decoration: none;
 	}
-
-
 text-align:center;
-font-family: 'Oswald', sans-serif;
+font-family: 'Fabriga', sans-serif;
 text-transform: uppercase; 
 font-weight: 800;
 font-size: 1.5rem;
@@ -222,10 +234,8 @@ class App extends React.Component {
 
 		<div className='wrapQuoteBg'>
 			<WrapQuote>
-		
 				<img src={isoExpo}  className="isExpo" alt="Testigos de hielo" />
-
-					Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.
+				Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.
 			</WrapQuote> 
 		</div>
 		{ this.state.activeSection === 0 ? null :  	this.Section1() }
@@ -258,9 +268,15 @@ class App extends React.Component {
 				//	onLeave={this.onSectdioguideTextionLeave(1)}
 				/>
 				<h2 className='sticky-text top-1'>1. Cambio climático</h2>
-							
-				<p className="wideRead">De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas”.<br/> Fuente: <a rel='noopener noreferrer' target="_blank"  href="https://www.un.org/es/climatechange/what-is-climate-change"> https://www.un.org/es/climatechange/what-is-climate-change</a></p>
 				
+				<p className="wideRead">De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas”.<br/><span className='fuente'> Fuente: <a rel='noopener noreferrer' target="_blank"  href="https://www.un.org/es/climatechange/what-is-climate-change">https://www.un.org/es/climatechange/what-is-climate-change</a></span></p>
+				<img className="info-a4" src={A4} alt="Gráfico de concentración en partes por millón" />
+				
+				<p className="wideRead">Gráfico de concentración en partes por millón (ppm) de moléculas de dióxido de carbono en la atmósfera global entre el año 0 y el año 2022 de la era actual. <br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations"> https://ourworldindata.org/atmospheric-concentrations</a></span></p>
+		
+				<MobileTimelineCO2></MobileTimelineCO2>
+				
+				<p className="wideRead">Gráfico concentración de gases de efecto invernadero a escala global,  desde el año 1750 a 2022.<br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations">https://ourworldindata.org/atmospheric-concentrations</a></span></p>
 
 				<AudioPlayer >
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
@@ -271,22 +287,16 @@ class App extends React.Component {
 					/>
 				</AudioPlayer>
 		
-				
 				<img src={A1} alt="Gases de Efecto Invernadero" />
-				<p>Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations"> https://ourworldindata.org/atmospheric-concentrations</a></p>
+				<img src={A2} alt="Gases de Efecto Invernadero" />
 
-
-				<p>La quema de combustibles fósiles genera emisiones de gases de efecto invernadero que actúan como una manta que envuelve a la Tierra, atrapando el calor del sol y elevando las temperaturas
-				<br/> Fuente: <a  rel='noopener noreferrer' target="_blank" href="http://antarctica.cl/divulgacion"> http://antarctica.cl/divulgacion</a></p>
-				<img className="info-a4" src={A4} alt="Gráfico de concentración en partes por millón" />
-				<p>Esquema explicativo del balance de energía generado por los gases de efecto invernadero en la atmósfera. Fuente:
-				
-				
+				<p className="wideRead">La quema de combustibles fósiles genera emisiones de gases de efecto invernadero que actúan como una manta que envuelve a la Tierra, atrapando el calor del sol y elevando las temperaturas
+				<br/><span className="fuente"> Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://antarctica.cl/divulgacion"> https://antarctica.cl/divulgacion</a></span></p>
+				<p className="wideRead">
 				El cambio climático es una variación de las condiciones ambientales del planeta, ocasionado directa o indirectamente por la actividad humana, el cual está alterando la composición de la atmósfera. Manifestándose en un aumento de las temperaturas medias y alteraciones del clima a escala mundial.</p>
 
-				<img src={A2} alt="Gases de Efecto Invernadero" />
-				<p>El clima es un estado característico propio de una zona en un largo periodo de tiempo, incluyendo aspectos como la temperatura, precipitaciones, humedad y viento. Mientras que la atmósfera está formada por una mezcla de gases y participa en la regulación del clima.</p>
-				<img src={A3} alt="Gases de Efecto Invernadero" />
+				<p  className="wideRead">El clima es un estado característico propio de una zona en un largo periodo de tiempo, incluyendo aspectos como la temperatura, precipitaciones, humedad y viento. Mientras que la atmósfera está formada por una mezcla de gases y participa en la regulación del clima.</p>
+
 			</div>
 		);
 	};
@@ -307,10 +317,7 @@ class App extends React.Component {
 			//		onLeave={this.onSectionLeave(2)}
 					/>
 				<h2 className='sticky-text top-2'>2. Variabilidad e historia del clima</h2>
-				<p className='wideRead'>Uno de los efectos más tangibles del cambio climático en nuestra región, se está observando en la disminución de precipitaciones y el aumento de fenómenos extremos como sequías extensas y eventos de lluvias intensas. Estos fenómenos se encuentran asociados a procesos naturales como la corriente del Niño/a, pero desde inicios del siglo XX se ha observado una clara relación con el incremento de la concentración de gases de efecto invernadero, que ha modificado los patrones de circulación atmosférica (Morales et al., 2020).</p>
-				<h2 className="big-title" alt="Anomalias de tempratura a escala global" >Anomalías de Temperatura a Escala Global</h2>
-
-				<MobileTimeline></MobileTimeline>
+				<p className='wideRead'>Uno de los efectos más tangibles del cambio climático en nuestra región, se está observando en la disminución de precipitaciones y el aumento de fenómenos extremos como sequías extensas y eventos de lluvias intensas. Estos fenómenos se encuentran asociados a procesos naturales como la corriente del Niño/a, pero desde inicios del siglo XX se ha observado una clara relación con el incremento de la concentración de gases de efecto invernadero, que ha modificado los patrones de circulación atmosférica <br/><span className="fuente">Fuente:  Morales et al., 2020. </span></p>
 				
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
@@ -318,29 +325,52 @@ class App extends React.Component {
 						controls
 					/>
 				</AudioPlayer>
-
-				<h2 className="big-title" alt="Anomalias de tempratura a escala global" >Anomalías de Temperatura a Escala Global</h2>
+				<h2 className="big-title sequia" alt="Anomalias de tempratura a escala global" >Precipitaciones y sequía</h2>
+				
+				<img src={sequiaValpo} className="sequiaValpo" alt="sequiaValpo" />
+				<img src={sequiaValpo2} className="sequiaValpo2" alt="sequiaValpo2" />
+				
+	
+				<h2 className="big-title sequia" alt="Anomalias de tempratura a escala global" >VARIACIÓN DE PRECIPITACIONES EN LA REGIÓN DE VALPARAÍSO</h2>
 				<MobileTimelineValpo></MobileTimelineValpo>
-				<img src={B3} alt="Variacion de Precipitaciones en la Región de Valparaiso" />
-				<p> Precipitaciones y temperaturas históricas a nivel país, además de la región de Valparaíso (ca. 1400 - presente). Anomalías y tendencias en el clima.</p>
-				<p>Gráfico de la variación de precipitaciones a nivel local en la región de Valparaíso (índice de sequías) desde el año 1750 a 2019. Fuente: elaboración propia basado en datos del “Atlas de Sequía Sudamericano” (Morales et al., 2020; https://sada.cr2.cl/)</p>
-				<p>De acuerdo con el informe anual de la Dirección Meteorológica de Chile (DMC): La temperatura media nacional en 2021 fue de 13.5 °C, 0.76°C más cálido que el promedio 1961- 1990 y 0.5°C respecto al promedio 1981-2010. El informe continúa aclarando que: La tendencia de la temperatura media es de 0.15°C por década. Se suman 11 años cálidos consecutivos y ha sido la más cálida desde hace 61 años, duplicando la década inmediatamente anterior (2000-2010). (Gutiérrez et al., 2022).</p>
 
-				<p>Gráfico de anomalía de temperaturas (respecto al promedio entre 1971-1990) para Chile entre 1901 y 2021 tomado de https://showyourstripes.info/l/southamerica/chile</p>
-				<p>Gráfico de anomalía (respecto al promedio entre 1961-1990) de temperaturas para Valparaíso entre 1880 y 2021 tomado de http://berkeleyearth.lbl.gov/locations/32.95S-71.81W# </p>
 
-				<p>A escala global el año 2021 fue el 6to año más cálido desde 1880, estimándose la temperatura media global (tierra más océano) de 14.7 °C, siendo 0.84 °C sobre el promedio del siglo XX. Con este año se completan 45 años consecutivos (desde 1977) más cálidos que el promedio. De los 10 años más cálidos, 9 están dentro del 2013 al 2021. La temperatura global terrestre y oceánica anual ha aumentado en 0.08°C por década desde 1880, mientras que desde 1981 la tasa de aumento es más del doble con 0.18°C por década</p>
+				<img src={Precipitaciones} className="precipitaciones" alt="precipitaciones" />
+				
+				<img src={MundoSequia} className="precipitaciones" alt="precipitaciones" />
 
-				<p>Gráfico de anomalía (respecto al promedio entre 1961-1990) de temperaturas a escala global entre los años 1850 y 2021. Fuente: El gráfico es elaboración propia basado en los datos de HadCRUT5  (Morice et al., 2021)(https://www.metoffice.gov.uk/hadobs/hadcrut5/)
+				<h2 className="big-title calor" alt="Olas de calor de la zona Central de Chile"  >
+				OLAS DE CALOR DE LA ZONA CENTRAL DE CHILE*
+				</h2>
+
+				<MobileTimelineCalor></MobileTimelineCalor>
+				<p className='wideRead'>Gráfico de la variación de precipitaciones a nivel local en la región de Valparaíso (índice de sequías) desde el año 1750 a 2019.  <br/><span className="fuente">Fuente: elaboración propia basado en datos del “Atlas de Sequía Sudamericano </span><br/> 
+
 				</p>
-				<p>Gráfico anomalía (respecto al promedio entre 1961-1990) de la temperatura media global entre 1850 y 2021. Fuente: Tomado de https://showyourstripes.info/c/globe</p>
+				<p className='wideRead'>De acuerdo con el informe anual de la Dirección Meteorológica de Chile (DMC): La temperatura media nacional en 2021 fue de 13.5 °C, 0.76°C más cálido que el promedio 1961- 1990 y 0.5°C respecto al promedio 1981-2010. El informe continúa aclarando que: La tendencia de la temperatura media es de 0.15°C por década. Se suman 11 años cálidos consecutivos y ha sido la más cálida desde hace 61 años, duplicando la década inmediatamente anterior (2000-2010).<br/> <span className='fuente'>Fuente Gutiérrez et al., 2022.</span></p>
 
-				<p>Anomalías de temperatura usando como periodo de referencia el promedio entre 1961 y 1990 para ser comparado con el promedio de 2021. Fuente: GISS Surface Temperature Analysis (https://data.giss.nasa.gov/gistemp/maps/)
-				</p>
-				<p>De acuerdo con el reporte de la Dirección Meteorológica de Chile para el año 2021 (Gutiérrez et al., 2022): En Chile continental la temperatura media durante el 2021 fue de 13.5°C, lo que fue levemente más frío que el año anterior (-0.12°C) pero de igual forma se convirtió en el 4to año más cálido en 61 años, siendo +0.76°C más cálida que el promedio climatológico 1961-1990.</p>
-				<p>Una de las consecuencias del aumento de las temperaturas máximas, es el incremento de eventos extremos de temperaturas que se denominan “olas de calor” que corresponden a eventos de altas temperaturas que persisten por tres días continuos o más (cuando la temperatura máxima del día está en el 10% superior de las temperaturas históricas registradas). De acuerdo con la DMC: “Los eventos meteorológicos extremos como las olas de calor han aumentado durante el último siglo de manera significativa, producto del evidente aumento de las temperaturas lo que representa un peligro para la salud de las personas, la agricultura y el medio ambiente” (Gutiérrez et al., 2022)
-				</p>
-				<p>Gráfico de olas de calor de la zona central de Chile (Regiones de Valparaíso y Metropolitana) desde el año 1970 hasta 2022. Fuente: elaboración propia basada en datos de la dirección Meteorológica de Chile (DMC) (0)</p>
+				<h2 className="big-title" alt="Anomalias de tempratura a escala global sequia"  >Anomalías de Temperaturas a Escala Global</h2>
+				<MobileTimeline></MobileTimeline>
+				
+				<p className='wideRead'><span className="fuente"> Fuente: Gráfico de anomalía de temperaturas (respecto al promedio entre 1971-1990) para Chile entre 1901 y 2021 tomado de<br/><a  rel='noopener noreferrer' target="_blank" href="https://showyourstripes.info/l/southamerica/chile">
+					 https://showyourstripes.info/l/southamerica/chile</a><br/>
+					 Fuente: Gráfico de anomalía (respecto al promedio entre 1961-1990) de temperaturas para Valparaíso entre 1880 y 2021 <br/> <a  rel='noopener noreferrer' target="_blank" href="https://berkeleyearth.lbl.gov/locations/32.95S-71.81W#"> </a>https://berkeleyearth.lbl.gov/locations/32.95S-71.81W# </span>
+				<span className="fuente">
+					Gráfico de anomalía (respecto al promedio entre 1961-1990) de temperaturas a escala global entre los años 1850 y 2021. Fuente: El gráfico es elaboración propia basado en los datos de HadCRUT5  (Morice et al., 2021) <br/><a  rel='noopener noreferrer' target="_blank" href="https://www.metoffice.gov.uk/hadobs/hadcrut5/">https://www.metoffice.gov.uk/hadobs/hadcrut5/</a>
+				<br/>
+				
+				Gráfico anomalía (respecto al promedio entre 1961-1990) de la temperatura media global entre 1850 y 2021. Fuente: Tomado de <br/><a  rel='noopener noreferrer' target="_blank" href="https://showyourstripes.info/c/globe"> https://showyourstripes.info/c/globe</a>
+				<br/>
+				Anomalías de temperatura usando como periodo de referencia el promedio entre 1961 y 1990 para ser comparado con el promedio de 2021.<br/> Fuente: GISS Surface Temperature Analysis <a  rel='noopener noreferrer' target="_blank" href="https://showyourstripes.info/c/globe" >https://data.giss.nasa.gov/gistemp/maps/</a>
+
+				</span></p>
+				
+				<p className='wideRead'>A escala global el año 2021 fue el 6to año más cálido desde 1880, estimándose la temperatura media global (tierra más océano) de 14.7 °C, siendo 0.84 °C sobre el promedio del siglo XX. Con este año se completan 45 años consecutivos (desde 1977) más cálidos que el promedio. De los 10 años más cálidos, 9 están dentro del 2013 al 2021. La temperatura global terrestre y oceánica anual ha aumentado en 0.08°C por década desde 1880, mientras que desde 1981 la tasa de aumento es más del doble con 0.18°C por década</p>
+				
+
+				<p className='wideRead'>De acuerdo con el reporte de la Dirección Meteorológica de Chile para el año 2021 (Gutiérrez et al., 2022): En Chile continental la temperatura media durante el 2021 fue de 13.5°C, lo que fue levemente más frío que el año anterior (-0.12°C) pero de igual forma se convirtió en el 4to año más cálido en 61 años, siendo +0.76°C más cálida que el promedio climatológico 1961-1990.</p>
+				<p className='wideRead'>Una de las consecuencias del aumento de las temperaturas máximas, es el incremento de eventos extremos de temperaturas que se denominan “olas de calor” que corresponden a eventos de altas temperaturas que persisten por tres días continuos o más (cuando la temperatura máxima del día está en el 10% superior de las temperaturas históricas registradas). De acuerdo con la DMC: “Los eventos meteorológicos extremos como las olas de calor han aumentado durante el último siglo de manera significativa, producto del evidente aumento de las temperaturas lo que representa un peligro para la salud de las personas, la agricultura y el medio ambiente” <span className='fuente'>Fuente:(Gutiérrez et al., 2022)
+				</span></p>
 			</div>
 
 		);
@@ -562,6 +592,7 @@ class App extends React.Component {
 				<img src={B2} alt="Concentracion de Dioxido de carbono en" />
 
 				<img src={B4} alt="Olas de Calor de la Zona central de Chile" />
+				<p className='wideRead'>Gráfico de olas de calor de la zona central de Chile (Regiones de Valparaíso y Metropolitana) desde el año 1970 hasta 2022. <span className="fuente">Fuente: elaboración propia basada en datos de la dirección Meteorológica de Chile (DMC) (0)</span></p>
 			</div>
 		);
 	};
