@@ -1,12 +1,12 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 import './App.scss'
 import styled from 'styled-components'
 import { Waypoint } from 'react-waypoint';
 
 import ReactAudioPlayer from 'react-audio-player';
-import { BrowserRouter, Routes, Route, Link, NavLink, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, NavLink} from 'react-router-dom';
 import Footer from './Footer';
 import A1 from '../../img/A1.svg'
 import A2 from '../../img/A2.svg'
@@ -24,9 +24,9 @@ import Calent from '../../img/calent_2.svg'
 import Gases from '../../img/gases.svg'
 import Precipitaciones from '../../img/precipitaciones.svg'
 
-import MundoCalent from  '../../img/mundo_calent.svg'
-import MundoGases from '../../img/mundo_gases.svg'
-import MundoSequia from '../../img/mundo_sequia.svg'
+import MundoCalent from  '../../img/mundo_calent.jpg'
+import MundoGases from '../../img/mundo_gases.jpg'
+import MundoSequia from '../../img/mundo_sequia.jpg'
 
 import isoExpo from '../../img/isometrica_expo.svg'
 
