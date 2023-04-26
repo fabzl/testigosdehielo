@@ -1,9 +1,9 @@
 
 import React, { useEffect } from 'react';
-
 import './App.scss'
 import styled from 'styled-components'
 import { Waypoint } from 'react-waypoint';
+import LazyLoad from 'react-lazy-load';
 
 import ReactAudioPlayer from 'react-audio-player';
 import { BrowserRouter, Routes, Route, Link, NavLink} from 'react-router-dom';
@@ -19,40 +19,27 @@ import Videos from './Videos';
 
 import sequiaValpo from '../../img/sequia_valpo.svg'
 import sequiaValpo2 from '../../img/sequia_valpo_02.svg'
-
 import Calent from '../../img/calent_2.svg'
 import Gases from '../../img/gases.svg'
 import Precipitaciones from '../../img/precipitaciones.svg'
-
 import MundoCalent from  '../../img/mundo_calent.jpg'
 import MundoGases from '../../img/mundo_gases.jpg'
 import MundoSequia from '../../img/mundo_sequia.jpg'
-
 import isoExpo from '../../img/isometrica_expo.svg'
-
 import lockupExpo from '../../img/lockup_expo.svg'
 import lockupText from '../../img/lockup_text.svg'
 import logoTestigos from '../../img/testigos_de_hielo_logo.svg'
-
-
 import Juncal from '../../img/juncal-nor-oriente.jpg'
-
 import JuncalSurMapa from '../../img/juncalsurfoto.jpg'
-
 import JuncalSur from '../../img/juncal-sur-mapa-01.jpg'
-
 import TestigosMain from '../../img/TestigoMain.svg'
-
 import Glaciofoto from '../../img/glaciologia_01.jpg'
 import Glaciofoto2 from '../../img/glaciologia_02.jpg'
-
 import Erupcion from '../../img/erupcion.png'
 import TestigoPedazo from '../../img/testigos_pedazo.png'
-
 import Reservahidrica from '../../img/resevahidrica2.svg'
 import CicloDeAgua from '../../img/ciclodeagua.svg'
 import CicloDeAguaText from '../../img/ciclo_deagua.svg'
-
 import Derretimiento from '../../img/derretimiento01.jpg'
 import Derretimiento2 from '../../img/derretimiento02.jpg'
 
@@ -255,16 +242,21 @@ class App extends React.Component {
 
 			<h1 className="mainTitle">Testigos de Hielo</h1>
 			<div>
-				<img className="lockupText"src={lockupText}  alt="28 de abril" />
+				
+					<img className="lockupText"src={lockupText}  alt="28 de abril" />
+				
 			</div>
-			<img className="logoTestigos" src={logoTestigos}  alt="Testigos de hielo" />
-
-				<MainBg/>
+			
+				<img className="logoTestigos" src={logoTestigos}  alt="Testigos de hielo" />
+			
+			<MainBg/>
 		</div>
 
 		<div className='wrapQuoteBg'>
 			<WrapQuote>
-				<img src={isoExpo}  className="isExpo" alt="Testigos de hielo" />
+				
+					<img src={isoExpo}  className="isExpo" alt="Testigos de hielo" />
+				
 				Durante la historia reciente de nuestro planeta ha sido testigo de muchos cambios en sus condiciones del clima y del ambiente. El hielo almacenado en los glaciares, ha visto y ha sufrido estos cambios, los que están almacenados en las capas que va almacenando año a año. Estos cambios se han traducido en el aumento de la temperatura a escala global, que han traído grandes cambios en las condiciones en que vivimos, y que nos han afectado directamente en nuestra vida cotidiana.
 			</WrapQuote> 
 		</div>
@@ -302,6 +294,7 @@ class App extends React.Component {
 				<p className="wideRead">De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas”.<br/><span className='fuente'> Fuente: <a rel='noopener noreferrer' target="_blank"  href="https://www.un.org/es/climatechange/what-is-climate-change">https://www.un.org/es/climatechange/what-is-climate-change</a></span></p>
 				<img className="info-a4" src={A4} alt="Gráfico de concentración en partes por millón" />
 				
+				
 				<p className="wideRead">Gráfico de concentración en partes por millón (ppm) de moléculas de dióxido de carbono en la atmósfera global entre el año 0 y el año 2022 de la era actual. <br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations"> https://ourworldindata.org/atmospheric-concentrations</a></span></p>
 		
 				<h2 className="big-title gases" alt="Anomalias de tempratura a escala global" >CONCENTRACIÓN DE CO²* EN LA ATMÓSFERA A ESCALA GLOBAL <span>(desde 1750 a 2022)</span></h2>
@@ -319,8 +312,9 @@ class App extends React.Component {
 				</AudioPlayer>
 		
 				<img src={A1} alt="Gases de Efecto Invernadero" />
+				
 				<img src={A2} alt="Gases de Efecto Invernadero" />
-
+				
 				<p className="wideRead">La quema de combustibles fósiles genera emisiones de gases de efecto invernadero que actúan como una manta que envuelve a la Tierra, atrapando el calor del sol y elevando las temperaturas
 				<br/><span className="fuente"> Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://antarctica.cl/divulgacion"> https://antarctica.cl/divulgacion</a></span></p>
 				<p className="wideRead">
@@ -359,6 +353,7 @@ class App extends React.Component {
 				<h2 className="big-title sequia" alt="Anomalias de tempratura a escala global" >Precipitaciones y sequía</h2>
 				
 				<img src={sequiaValpo} className="sequiaValpo" alt="sequiaValpo" />
+				
 				<img src={sequiaValpo2} className="sequiaValpo2" alt="sequiaValpo2" />
 				
 	
@@ -421,6 +416,7 @@ class App extends React.Component {
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
+					
 					<ReactAudioPlayer src={TestAudio}
 						controls
 						
@@ -430,26 +426,28 @@ class App extends React.Component {
 				<h3 className='wideRead subtitle'>FOTOGRAFÍA GLACIAR JUNCAL SUR</h3>
 
 				<img className='big-foto' src={JuncalSurMapa} alt="mapa"></img>
+				
 				<p className='wideRead'>Orientación nor-oriente, Octubre 2022.
 				<br></br><span className='fuente'>Fotografía: Francisco García / UNAB</span></p>
 
 				<img className='big-foto' src={Juncal} alt="mapa"></img>
+				
 				<p className='wideRead'>Fotografía con orientación sur-poniente del glaciar Juncal Sur, Octubre 2022. <br></br><span className='fuente'>Fuente: elaboración propia.</span> 
 				</p>
 				
 				<img className='big-foto' src={Reservahidrica} alt="mapa"></img>
-							
+						
 				<p className='wideRead'>En Chile el 70% de la población se abastece de agua proveniente de la cordillera (Bórquez et al., 2006), además nuestro país alberga más del 80% de los glaciares existentes de Sudamérica (Barcaza et al., 2017), la Cordillera de Los Andes aloja a gran cantidad de estos glaciares, los cuales son parte importante de las reservas de agua dulce (torres de agua), fundamentales para la vida y el ecosistema. Los glaciares emplazados en la cordillera contribuyen de gran manera a los flujos de agua superficial como subterráneos, llegando a aportar el 67% del agua dulce en años con bajas precipitaciones (Peña and Nazarala, 1987), sin embargo la principal fuente de recarga sigue siendo la precipitación de nieve y lluvia para las cuencas de Chile central. En particular para la región de Valparaíso, la cuenca del Aconcagua, se alimenta entre de fusión de nieve y lluvia (~50%), fuentes glaciares (~30%) y de aguas subterráneas y formas periglacieres (~20%). <span className='fuente'>Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://showyourstripes.info/c/globe" >Crespo et al., 2020.</a></span></p>
 
 				<img  className='big-foto' src={JuncalSur} alt="Juncal Sur" />
 
 				<p className='wideRead'>Mapa de glaciares y redes hidricas, zona central de Chile.<br></br><span className='fuente'>Fuente: elaboración propia.</span> </p>
 				<img className='big-foto' src={CicloDeAguaText} alt="mapa"></img>
-
+				
 				<p className='wideRead'>En el presente las consecuencias del proceso de cambio climático son más tangibles que nunca, las que hemos observado concretamente en nuestro territorio. En Chile (y en gran parte de Sudamérica) hemos estado experimentando uno de los periodos de sequías jamás visto a escala histórica (Morales et al., 2020; Bustos et al., 2015), presentándose un déficit importante en la cubierta de nieve para los últimos años que alcanzó un 34% de la cobertura de nieve, respecto al periodo promedio entre 2000 y 2021, en la cuenca del río Aconcagua que surte directamente de agua a la región de Valparaíso (IANIGLA-CONICET y (CR)²; web Observatorio de Nieve en los Andes de Argentina y Chile). Esta condición extrema ha acarreado nefastas consecuencias, como incendios forestales y urbanos, que han afectado directamente a los habitantes de ciudades densamente pobladas como la ciudad de Valparaíso. <br></br><span className="fuente">Fuente: Sapiains y otros., 2019.</span>
 				</p>
 				<img className='big-foto' src={CicloDeAgua} alt="Ciclo de Agua"></img>
-		
+				
 				<p className='wideRead'> Ilustración del ciclo del agua.<br></br> <span className="fuente">Fuente: Servicio Geológico de Estados Unidos
 				<br></br><a  rel='noopener noreferrer' target="_blank" href="https://www.usgs.gov/media/images/el-ciclo-del-agua-water-cycle-spanish-png" >https://www.usgs.gov/media/images/el-ciclo-del-agua-water-cycle-spanish-png </a>
 				</span>
@@ -481,7 +479,7 @@ class App extends React.Component {
 				</h2>
 
 				<img src={Glaciofoto} className="big-foto" alt="Glaciologos en Acción"/>
-				 
+				
 				<p className='wideRead'>La glaciología es una disciplina científica encargada de estudiar los glaciares, las glaciaciones y la criósfera en general, a través de monitoreos del comportamiento y formación, realizando mediciones en terreno o mediciones remotas.</p>
 
 				<p className='wideRead'>La criósfera se define como todos los componentes congelados naturales que se encuentran sobre o debajo de la superficie terrestre u oceánicas. Incluyendo nieve, glaciares, casquetes de hielo icebergs, hielo marino, lagos y ríos congelados, además de suelos congelados. Tiene un rol importante en la regulación del clima a escala local y global, influyendo en la hidrología, nubes, precipitaciones y la circulación de la atmósfera y los océanos. El cambio climático está ocasionando una gran pérdida de la criósfera, mediante el derretimiento de grandes extensiones de hielo.
@@ -490,6 +488,7 @@ class App extends React.Component {
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
+					
 					<ReactAudioPlayer src={TestAudio}
 						controls
 						
@@ -534,6 +533,7 @@ class App extends React.Component {
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
+					
 					<ReactAudioPlayer src={TestAudio}
 						controls
 						
@@ -545,9 +545,11 @@ class App extends React.Component {
 
 				
 			<img className='big-foto' src={Erupcion} alt="erupcion"></img>
-  			<p className='wideRead'>Fotografía la erupción del volcán Calbuco, año 2015.<br></br> <span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://nuestroclima.com/la-erupcion-del-calbuco-en-4k/">https://nuestroclima.com/</a></span></p>
+			
+			<p className='wideRead'>Fotografía la erupción del volcán Calbuco, año 2015.<br></br> <span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://nuestroclima.com/la-erupcion-del-calbuco-en-4k/">https://nuestroclima.com/</a></span></p>
 
 			<img className='big-foto' src={TestigoPedazo} alt="Pedazo testigo de Hielo 2013 Alaska"></img>
+			
 			<p className='wideRead'>
 			Fotografía de una sección de testigo de hielo de 200 m de profundidad extraído en 2013, en un punto cercano a la cumbre del monte Hunter, Alaska, Estados Unidos.<br></br>  <span className='fuente'>Fuente: Lecavalier y Markle (2016)</span></p>
 
@@ -572,6 +574,7 @@ class App extends React.Component {
 					Por lo tanto los testigos aportan información sobre las condiciones ambientales y sus variaciones en el tiempo en cada capa de hielo que compone un glaciar, plasmando información sobre la composición atmosférica y antecedentes de cómo era el ambiente en la época que cayeron las precipitaciones que formaron y forman parte del glaciar, pudiendo así modelar y reconstruir climas pasados.</p>
 
 		<img className='big-foto' src={Derretimiento} alt="Hielo del norte De Chile"></img>
+		
 					<p className='wideRead'>
 					Fotografía a escala que muestra un evento de derretimiento en una sección de testigo de hielo de 20 cm de largo en total proveniente del Norte de Chile, representando eventos como olas de calor. Fuente: elaboración propia.</p>
 
@@ -617,15 +620,15 @@ class App extends React.Component {
 
 				<h2 className="big-title sequia" alt="Anomalias de tempratura a escala global" >Precipitaciones y sequía</h2>
 
-<img src={Precipitaciones} className="big-foto" alt="Precipitacion" />
+				<img src={Precipitaciones} className="big-foto" alt="Precipitacion" />
 
-<img src={MundoSequia} className="big-foto" alt="Mundo Sequia" />
+				<img src={MundoSequia} className="big-foto" alt="Mundo Sequia" />
 
-<h2 className="big-title gases" alt="Anomalias de tempratura a escala global" >Gases de Efecto Invernadero</h2>
+				<h2 className="big-title gases" alt="Anomalias de tempratura a escala global" >Gases de Efecto Invernadero</h2>
 
-<img src={Gases} className="big-foto" alt="Gases" />
+				<img src={Gases} className="big-foto" alt="Gases" />
 
-<img src={MundoGases} className="big-foto" alt="Mundo Gases" />
+				<img src={MundoGases} className="big-foto" alt="Mundo Gases" />
 
 
 
@@ -633,6 +636,7 @@ class App extends React.Component {
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
+					
 					<ReactAudioPlayer src={TestAudio}
 						controls
 						
@@ -645,7 +649,7 @@ class App extends React.Component {
 				<p className='wideRead'>  Modelamiento de la temperatura a escala global bajo distintos escenarios socio-económicos. Fuente: http://antarctica.cl/divulgacion/
 				</p>
  */}
-				<p className='wideRead'>
+					<p className='wideRead'>
 					De acuerdo con las palabras del Dr. Raul Cordero (www.antarctica.cl): El clima del futuro depende de las decisiones que tomemos hoy. Si nos comprometemos con los objetivos del Acuerdo de París podríamos limitar el alza de la temperatura global a alrededor de 1.5°C y lograríamos conservar gran parte de la biodiversidad del planeta. Si no lo hacemos y no redoblamos esfuerzos para mitigar nuestras emisiones, el planeta podría ser a fines de siglo hasta 4°C en promedio más cálido que hoy, condenando a la extinción a muchas especies animales y vegetales. Es  nuestra tarea exigir que se cumplan estos acuerdos, de lo contrario, ya conocemos los posibles escenarios futuros.
 				</p>
 
@@ -745,11 +749,12 @@ class App extends React.Component {
 
 	render() {
 		return (
+			<LazyLoad>
 			<div>
+			
+				<div className='burgerWrap'>
 
-			<div className='burgerWrap'>
-
-			<a className={`burger${this.state.menuVisible ? ' activeMenu' : ''}`} onClick={this.handleClick}>					<img src={lockupExpo}  className="lockupExpo" alt="Testigos de hielo" />
+			<a className={`burger${this.state.menuVisible ? ' activeMenu' : ''}`} onClick={this.handleClick}><img src={lockupExpo}  className="lockupExpo" alt="Testigos de hielo" />
 				</a>
 				</div>
 					<BrowserRouter>
@@ -830,10 +835,10 @@ class App extends React.Component {
 
 
 
-
+		
 			</div>
-
-
+		
+			</LazyLoad>
 		)
 	}
 }

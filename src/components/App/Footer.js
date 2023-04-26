@@ -1,16 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-//import { BrowserRouter as Router, Route } from "react-router-dom";
-
-//import logo from "../img/logo_white_simple.svg";
-//simport Social from "./Social";
-// import { Link, NavLink } from "react-router-dom";
 import InstagramIcon from "../../img/instagram-icon.svg";
-import ExpoGraphic from "../../img/isometrica_expo.svg";
 import { NavLink } from 'react-router-dom';
-import About from './About';
-import Fotos from './Fotos';
-import Videos from './Videos';
+
+import LazyLoad from 'react-lazy-load';
 
 //logos 
 import CienciaPublica from "../../img/LogoConcurso_CP_trazoblanco.png";
@@ -163,11 +156,11 @@ export const smoothScroll = () => {
 };
 
 const Footer = props => (
-
-
+<LazyLoad>
   <Wrap>
-        <img className="heatBar"src={Bar} alt="Heat Bar"/>
-
+       
+          <img className="heatBar"src={Bar} alt="Heat Bar"/>
+        
    <Content>
 
       <General>
@@ -227,25 +220,36 @@ const Footer = props => (
         </Links>
       </General>
       <div className="logos-bar">
-      <p>Financiado por : </p>
+      <p>Financiado por : </p>        
+     
       <img className="logo-footer ciencia"src={CienciaPublica} alt="CienciaPublica" />
-      <p>Organiza por : </p>
+     
+      <p>Organiza por : </p>        
+     
       <img className="logo-footer lai"src={Lai} alt="Lai" />
+      
+     <img className="logo-footer vice" src={Vice} alt="Vicerrectoria de Investigacion y Doctorado" />
+        
 
-      <img className="logo-footer vice" src={Vice} alt="Vicerrectoria de Investigacion y Doctorado" />
+       <img className="logo-footer unab"src={Unab} alt="Universidad Andres Bello campus creativo" />
+     
 
-      <img className="logo-footer unab"src={Unab} alt="Universidad Andres Bello campus creativo" />
-
-
-      <p>Colaboran por : </p>
-      <img className="logo-footer parque"src={Parque} alt="CienciaPublica" />
-      <img className="logo-footer museo"src={Museo} alt="CienciaPublica" />
-      <img className="logo-footer tecno"src={Tecno} alt="CienciaPublica" />
-      <p className="lafabulosa">2023 | 28 de abril al 28 de julio | Explanada Central Parque Cultural de Valparaíso |  Sitio web  <a     rel='noopener noreferrer'
+      <p>Colaboran por : </p>       
+            
+              <img className="logo-footer parque"src={Parque} alt="CienciaPublica" />
+            
+            
+              <img className="logo-footer museo"src={Museo} alt="CienciaPublica" />      
+            
+            
+              <img className="logo-footer tecno"src={Tecno} alt="CienciaPublica" />
+            
+              <p className="lafabulosa">2023 | 28 de abril al 28 de julio | Explanada Central Parque Cultural de Valparaíso |  Sitio web  <a     rel='noopener noreferrer'
             target="_blank"href="https://www.lafabulosa.org">la fabulosa</a></p>
-      </div>
+            </div>
     </Content>
   </Wrap>
+  </LazyLoad>
 );
 
 
