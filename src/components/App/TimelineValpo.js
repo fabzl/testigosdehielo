@@ -283,20 +283,20 @@ const TimelineValpo = () => {
 	];
 	// Define timeline elements
 	const timelineElements = timelineData.map((item) => (
-    <div
-      key={item.year}
-      className="timeline-item"
-      title={item.tooltip}>
+	<div
+	  key={item.year+""+Math.random()}
+	  className="timeline-item"
+	  title={item.tooltip}>
 		
 	<div className='tooltip-wrapper'> 
-	{(item.tooltip)? <div className={"timeline-tooltip"+((item.down)?" down":'') }>{((!item.down)?"":<img className='timeline-arrow' src={TimelineArrow}></img>)} <h4>{item.year}</h4> <p>{item.tooltip}</p>{((item.down)?"":<img className='timeline-arrow' src={TimelineArrow}></img>)}   </div>: ""}	
+	{(item.tooltip)? <div className={"timeline-tooltip"+((item.down)?" down":'') }>{((!item.down)?"":<img alt="timeline-arrow" className='timeline-arrow' src={TimelineArrow}></img>)} <h4>{item.year}</h4> <p>{item.tooltip}</p>{((item.down)?"":<img className='timeline-arrow' alt="timeline-arrow" src={TimelineArrow}></img>)}   </div>: ""}	
 	</div>
 		<div className="timeline-color-block" 
-      style={{ backgroundColor: item.color }}>
+	  style={{ backgroundColor: item.color }}>
 		</div>
 	   <img className="timeline-triangle" src={TinyTriangle} alt="timeline-triangle"></img>
-       <p className='timeline-year'>{item.year}</p> 
-    </div >
+	   <p className='timeline-year'>{item.year}</p> 
+	</div >
   ));
 
 

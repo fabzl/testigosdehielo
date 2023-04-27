@@ -35,46 +35,6 @@ const InstaLink = styled.a`
 
   `;
 
-
-
-const Manifest = styled.p` 
-   font-size: 1rem;
-   align-self: center;
-   font-weight: 750;
-`;
-
-
-const Icons = styled.div`
-align-self: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-  a:not(:last-child) {
-    margin-right: 1.5rem;
-  }
-  .x {
-    margin: 1.5rem;
-    text-transform: uppercase;
-  }
-
-`;
-
-
-const Image = styled.img` 
-
-
-`;
-
-const Logo = styled.img`
-  width: 68%;
-  @media (min-width: 500px) {
-    min-width: 15rem;
-    width: 50%;
-  }
-  margin: 0 auto;
-  display: flex;
-  max-width: 30rem;
-`;
-
 const Wrap = styled.footer`
 display: flex;
 flex-direction: column;
@@ -119,28 +79,6 @@ const General = styled.div`
 const Links = styled.div`
   margin-top: 1rem;
 `;
-
-const ToTop = styled.a`
-  color:white;
-  font-size: 1rem;
-  display: inline-block;
-  overflow: hidden;
-  font-weight: 200;
-  text-align: center;
-  cursor: pointer;
-  margin: 2rem 0;
-  text-decoration: none;
-
-  > span {
-    display: block;
-  }
-
-  transition: 1s all;
-  &:hover {
-    color:blue;
-  }
-`;
-
 
 
 

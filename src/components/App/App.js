@@ -73,16 +73,16 @@ background-color:#EEE;
 
 
 const Menu = styled.div`
+
+	background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%), url(${Juncal});
 	background-size:cover;
 	background-position:top;
 	background-repeat: no-repeat;
-    z-index: 999;
+	z-index: 999;
 	width:100vw;
 	height:100vh;
 	top:0;
 	position:fixed;
-
-	background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%), url(${Juncal});
 
 
 `
@@ -339,7 +339,7 @@ class App extends React.Component {
 						
 				<Waypoint
 					onEnter={this.onSectionEnter(2)}
-			//		onLeave={this.onSectionLeave(2)}
+					onLeave={this.onSectionLeave(2)}
 					/>
 				<h2 className='sticky-text top-2'>2. Variabilidad e historia del clima</h2>
 				<p className='wideRead'>Uno de los efectos más tangibles del cambio climático en nuestra región, se está observando en la disminución de precipitaciones y el aumento de fenómenos extremos como sequías extensas y eventos de lluvias intensas. Estos fenómenos se encuentran asociados a procesos naturales como la corriente del Niño/a, pero desde inicios del siglo XX se ha observado una clara relación con el incremento de la concentración de gases de efecto invernadero, que ha modificado los patrones de circulación atmosférica <br/><span className="fuente">Fuente:  Morales et al., 2020. </span></p>
@@ -472,8 +472,7 @@ class App extends React.Component {
 			<div className="wrapperSection wrapper-4">
 				<Waypoint
 					onEnter={this.onSectionEnter(4)}
-					onLeave={this.
-						onSectionLeave(4)}
+					onLeave={this.onSectionLeave(4)}
 				/>
 				<h2 className='sticky-text top-4'>4. Glaciología: que estudia y cómo se estudia.
 				</h2>
@@ -520,8 +519,7 @@ class App extends React.Component {
 			<div className="wrapperSection wrapper-5">
 				<Waypoint
 					onEnter={this.onSectionEnter(5)}
-					onLeave={this.
-						onSectionLeave(5)}
+					onLeave={this.onSectionLeave(5)}
 				/>
 
 				<h2 className='sticky-text top-5'>5. Qué son los testigos de hielos y para qué sirven</h2>
@@ -754,7 +752,7 @@ class App extends React.Component {
 			
 				<div className='burgerWrap'>
 
-			<a className={`burger${this.state.menuVisible ? ' activeMenu' : ''}`} onClick={this.handleClick}><img src={lockupExpo}  className="lockupExpo" alt="Testigos de hielo" />
+			<a href="#" className={`burger${this.state.menuVisible ? ' activeMenu' : ''}`} onClick={this.handleClick}><img src={lockupExpo}  className="lockupExpo" alt="Testigos de hielo" />
 				</a>
 				</div>
 					<BrowserRouter>
@@ -803,16 +801,16 @@ class App extends React.Component {
 					
 				<Routes>
 						<Route exact path="/" element={<this.SectionIntro />} />
-        	            <Route exact path={this.routerBoy(1)} element={<this.Section1 />} />
-        	            <Route exact path={this.routerBoy(2)} element={<this.Section2 />} />
-        	            <Route exact path={this.routerBoy(3)} element={<this.Section3 />} />
-        	            <Route exact path={this.routerBoy(4)} element={<this.Section4 />} />
-        	            <Route exact path={this.routerBoy(5)} element={<this.Section5 />} />
-        	            <Route exact path={this.routerBoy(6)} element={<this.Section6 />} />
+						<Route exact path={this.routerBoy(1)} element={<this.Section1 />} />
+						<Route exact path={this.routerBoy(2)} element={<this.Section2 />} />
+						<Route exact path={this.routerBoy(3)} element={<this.Section3 />} />
+						<Route exact path={this.routerBoy(4)} element={<this.Section4 />} />
+						<Route exact path={this.routerBoy(5)} element={<this.Section5 />} />
+						<Route exact path={this.routerBoy(6)} element={<this.Section6 />} />
 						<Route path="/about" element={<About />} />
 						<Route path="/Fotos" element={<Fotos />} />
 						<Route path="/Videos" element={<Videos />} />
-                </Routes>
+				</Routes>
 
 				{ this.state.rootURL !== "/" && 
 				<EndNav>
