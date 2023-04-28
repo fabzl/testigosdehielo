@@ -31,19 +31,16 @@ $l-break: 1200px;
   }
 }
 
-
-
-
 .timeline-arrow {
 width: 30px;
 transform: translate(15px);
 }
 
 .timeline-tooltip {
-	flex-grow: 1;
+
 	z-index: 20;
 	width: auto;
-	height: 15vh;
+	height: 150px;
 	min-width: 150px;
 	max-width: 370px;
 	color: #1d1d1b;
@@ -51,80 +48,109 @@ transform: translate(15px);
 	position: absolute;
 	top:0;
 
-
-	&.down {
-		top:650px;
-		text-align: left;
-		justify-content:baseline;
-		
-		transform: translate(30px,230px);
-
-	h4  {
-		transform: translate(0px,-30px); 
-	}
-	p {
-		transform: translate(30px,-30px); 
-		white-space: normal;
-		max-width: 100%;
-	}
-
-
-	 .timeline-arrow {
-		transform:  translate(-15px,10px) rotate(180deg);
-	 }
-	}
-
 	h4 {
-		transform: translate(60px,60px); 
+	transform: translate(60px,60px); 
 	font-size: 1.8rem;
 	border-bottom: 5px solid #3D80C2;
 	font-weight: 900;
 	display: inline-block;
 	padding-bottom: 20px;
 	margin: 10px 0;
+	}
+		p  {
+			font-size: 1rem;
+			margin: 0;
+			padding: 0;
+			transform: translate(60px,60px); 
+		}
+}
 
-}
-p  {
-	font-size: 1rem;
-	margin: 0;
-	padding: 0;
-	transform: translate(60px,60px); 
-}
-
-}
 
 .tooltip-wrapper {
-	height:16vh;
-	min-height: 230px;
+	
+	height:50px;
+	border:1px solid red;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	position: relative;
+
+	@include small {
+		height:50px;
+
+	}
+	@include medium() {
+		height:150px;
+
+	}
+	@include large {
+		height: 150px;
+
+	}
+
+	&.down-wrapper {
+
+		border: 1px solid purple;
+		height:100px;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		flex-direction: column;
+	
+		padding: 0;
+		padding-top: 4px;
+
+		@include small {
+			height:100px;
+	
+		}
+		@include medium() {
+			height:200px;
+	
+		}
+		@include large {
+			height: 250px;
+	
+		}
+	}
 }
 .timeline-triangle {
 
 	width: 60%;
 	align-self: center;
-	margin: 0 20%;
+	margin: 10px 20%;
 }
 
 .wrap-timeline {
 	position: relative;
 	overflow: hidden;
-	padding:42px;
+	padding:0;
 }
-
 
 .timeline-item {
-	display: inline-block;
-	height: 53vh;
-	width: 60px;
-	align-items: center;
-	min-height: 600px;
 
-	@small {
+	display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+
+	margin: 0;
+	padding: 0;
+  
+	width: 40px;
+
+
+	@include small {
+		width: 45px;
+	} 
+	@include medium {
+		width: 50px;
 
 	}
-}
-
-.tooltip {
-
+	@include large {
+		width: 60px;
+	}
+	
 }
 
 .timeline-year {
@@ -135,11 +161,13 @@ p  {
 	font-size: 1.6rem;
 	flex-direction: row;
 	padding: 0;
-	margin: 10px auto;
+	margin: 0;
 	display: flex;
 	height: auto;
 	transform: rotate(180deg);
 	align-items: center;
+	align-self: center;
+	justify-content: flex-start;
 
 	p {
 		align-self: center;
@@ -150,20 +178,112 @@ p  {
 
 }
 
-.mobile-timeline-container {
-	display: flex;
-	flex-direction: row;
-	overflow-x: auto;
-	white-space: nowrap;
-	height: 1120px;
-	min-height: 650px;
-}
+
 
 
 .timeline-color-block {
 	width: 100%;
-	min-height: 530px;
+	height: 250px;
 	display: flex;
 	align-items: stretch;
-	margin-bottom:10px;
+
+	@include small {
+		height: 250px;
+	}
+
+	@include medium {
+		height: 350px;
+	}
+	@include large {
+		height: 450px;
+	}
 }
+
+
+.timeline-circle {
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    margin: auto;
+	top:43%;
+    left:50%;
+    transform: translate(-50%,-56%);
+    flex-direction: column;
+    justify-content: center;
+    white-space:normal;
+    display: flex;
+    z-index: 40;
+    h3 {
+        margin: 10px auto;
+		text-align: center;
+		max-width: 85%;
+    }
+
+    p {
+
+        margin: 10px auto;
+        font-size: 1rem;
+		text-align: center;
+		max-width: 92%;
+    }
+
+
+	height: 200px;
+    width: 200px;
+
+    @include small {
+		height: 300px;
+		width: 300px;
+		top:340px;
+
+	}
+	@include medium {
+		height: 350px;
+		width: 350px;
+		top:390px;
+
+	}
+	@include large {
+		height: 450px;
+		width: 450px;
+		top:490px;
+
+	} 
+}
+.mobile-timeline-container {
+   
+    display: flex;
+    align-items: center;
+    position: relative;
+	height: auto;
+	flex-direction: row;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+	justify-content: flex-start;
+
+	border: 1px solid blue;
+	height: auto;
+	width: 100vw;
+
+	@include small {
+
+	
+   }
+   @include medium {
+
+	
+   }
+   @include large {
+	
+	
+   } 
+  
+  }
+
+  .mobile-timeline-wrapper {
+	height: 100%;
+	display: flex;
+
+  }
+

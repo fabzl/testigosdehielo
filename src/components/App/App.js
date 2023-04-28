@@ -74,7 +74,7 @@ background-color:#EEE;
 
 const Menu = styled.div`
 
-	background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%), url(${Juncal});
+	background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.2) 100%), url(${Derretimiento});
 	background-size:cover;
 	background-position:top;
 	background-repeat: no-repeat;
@@ -102,9 +102,14 @@ const AudioPlayer = styled.div`
   width: 100%;
   background-color: #f1f3f4;
   position: sticky;
-  top:250px;
+  top:200px;
   text-align:center;
   z-index:60;
+  display:none;
+  
+@media screen and (max-width: 750px) {
+	top:150px;
+}
 
 `
 const EndNav = styled.div`
@@ -368,7 +373,7 @@ class App extends React.Component {
 
 				<MobileTimelineCalor></MobileTimelineCalor>
 
-				<p className='wideRead'>Gráfico de olas de calor de la zona central de Chile (Regiones de Valparaíso y Metropolitana) desde el año 1970 hasta 2022. <span className="fuente">Fuente: elaboración propia basada en datos de la dirección Meteorológica de Chile (DMC) (0)</span></p>
+				<p className='wideRead'>Gráfico de olas de calor de la zona central de Chile (Regiones de Valparaíso y Metropolitana) desde el año 1970 hasta 2022.<br></br> <span className="fuente">Fuente: elaboración propia basada en datos de la dirección Meteorológica de Chile (DMC) (0)</span></p>
 
 				<p className='wideRead'>De acuerdo con el informe anual de la Dirección Meteorológica de Chile (DMC): La temperatura media nacional en 2021 fue de 13.5 °C, 0.76°C más cálido que el promedio 1961- 1990 y 0.5°C respecto al promedio 1981-2010. El informe continúa aclarando que: La tendencia de la temperatura media es de 0.15°C por década. Se suman 11 años cálidos consecutivos y ha sido la más cálida desde hace 61 años, duplicando la década inmediatamente anterior (2000-2010).<br/> <span className='fuente'>Fuente Gutiérrez et al., 2022.</span></p>
 
@@ -752,7 +757,7 @@ class App extends React.Component {
 			
 				<div className='burgerWrap'>
 
-			<a href="#" className={`burger${this.state.menuVisible ? ' activeMenu' : ''}`} onClick={this.handleClick}><img src={lockupExpo}  className="lockupExpo" alt="Testigos de hielo" />
+			<a href className={`burger${this.state.menuVisible ? ' activeMenu' : ''}`} onClick={this.handleClick}><img src={lockupExpo}  className="lockupExpo" alt="Testigos de hielo" />
 				</a>
 				</div>
 					<BrowserRouter>
@@ -778,20 +783,20 @@ class App extends React.Component {
 						</ul>
 					<ul className={this.state.menuVisible ? 'nav-links show' : 'nav-links'}>
 						<li className='menu-link'>
-						<NavLink onClick={this.handleClick} to={this.routerBoy(1)} activeclassname="active">1.Cambio Climático</NavLink></li>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(1)} activeclassname="active">1.	Cambio Climático</NavLink></li>
 					<li className='menu-link'>
-						<NavLink onClick={this.handleClick}to={this.routerBoy(2)} activeclassname="active">2. Variabilidad e historia del Clima</NavLink></li>
+						<NavLink onClick={this.handleClick}to={this.routerBoy(2)} activeclassname="active">2.	Variabilidad e historia del Clima</NavLink></li>
 					<li className='menu-link'>
-						<NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.Importancia de la Montaña como reserva Hídrica</NavLink>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.	Importancia de la Montaña como reserva Hídrica</NavLink>
 					</li>
 					<li className='menu-link'>
-						<NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4. Glaciología: que estudia y cómo se estudia.</NavLink>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4.	Glaciología: que estudia y cómo se estudia.</NavLink>
 					</li>
 					<li className='menu-link'>
-						<NavLink onClick={this.handleClick} to={this.routerBoy(5)} activeclassname="active">5. Qué son los testigos de hielos y para qué sirven</NavLink>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(5)} activeclassname="active">5.	Qué son los testigos de hielos y para qué sirven</NavLink>
 					</li>
 					<li className='menu-link'>
-						<NavLink onClick={this.handleClick} to={this.routerBoy(6)} activeclassname="active">6. Modelamiento del futuro (presente próximo siglo)</NavLink>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(6)} activeclassname="active">6.	Modelamiento del futuro (presente próximo siglo)</NavLink>
 					</li>
 				</ul>
 

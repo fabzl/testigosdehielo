@@ -191,13 +191,29 @@ const Timeline = () => {
 	  title={item.tooltip}>
 		
 	<div className='tooltip-wrapper'> 
-	{(item.tooltip)? <div className={"timeline-tooltip"+((item.down)?" down":'') }>{((!item.down)?"":<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}></img>)} <h4>{item.year}</h4> <p>{item.tooltip}</p>{((item.down)?"":<img className='timeline-arrow' alt="timeline-arrow" src={TimelineArrow}></img>)}   </div>: ""}	
+
+	{(item.tooltip && !item.down)? <div className="timeline-tooltip">
+
+		<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
+		<h4>{item.year}</h4> 
+		<p>{item.tooltip}</p>
+	</div>: ""}
+
 	</div>
 		<div className="timeline-color-block" 
 	  style={{ backgroundColor: item.color }}>
 		</div>
-	   <img className="timeline-triangle" src={TinyTriangle} alt="timeline-triangle"></img>
-	   <p className='timeline-year'>{item.year}</p> 
+		<div className='tooltip-wrapper down-wrapper'> 
+	  	 <img className="timeline-triangle" src={TinyTriangle} alt="timeline-triangle"></img>
+	   	 <p className='timeline-year'>{item.year}</p>
+
+			{(item.tooltip && item.down)? <div className="timeline-tooltip down">
+
+				<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
+				<h4>{item.year}</h4> 
+				<p>{item.tooltip}</p>
+			</div>: ""}
+	   </div> 
 	</div >
   ));
 

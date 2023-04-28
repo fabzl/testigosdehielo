@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { ReactComponent as Bar } from '../../img/timeline01_bar_valpo.svg';
-import './MobileTimeline.scss';
+import './Timeline.scss';
 import styled from 'styled-components'
 import  Timeline  from './TimelineCalor';
 
