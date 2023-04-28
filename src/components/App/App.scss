@@ -325,18 +325,29 @@ p {
 
 .logoTestigos {
   position: absolute;
-  top:0;
-  right: 0;
+  top:120px;
+  right: 20px;
   width: auto;
-  height: 90vh;
+
   z-index: 55;
-  margin:5vh;
+  height: 50vh;
+
   &.logo-menu {
     z-index: 999;
   }
+
   transition: all 1s;
+
   @include small {
+    height: 50vh;
+  }
+  @include medium {
     height: 60vh;
+    right: 40px;
+  }
+  @include large {
+    height: 60vh;
+    right: 50px;
   }
   
 }

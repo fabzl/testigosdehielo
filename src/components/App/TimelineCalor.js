@@ -321,7 +321,7 @@ const TimelineCalor = () => {
 		
 		<div className='tooltip-wrapper'> 
 
-{(item.tooltip && !item.down)? <div className={(Number(item.year) > 1950)?"timeline-tooltip  reverse" : "timeline-tooltip"}>
+{(item.tooltip && !item.down)? <div className={(Number(item.year) > 2000)?"timeline-tooltip  reverse" : "timeline-tooltip"}>
 
 	<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
 	<h4>{item.year}</h4> 
