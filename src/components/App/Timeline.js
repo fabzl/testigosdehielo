@@ -192,7 +192,7 @@ const Timeline = () => {
 		
 	<div className='tooltip-wrapper'> 
 
-	{(item.tooltip && !item.down)? <div className="timeline-tooltip">
+	{(item.tooltip && !item.down)? <div className={(Number(item.year) > 1950)?"timeline-tooltip  reverse" : "timeline-tooltip"}>
 
 		<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
 		<h4>{item.year}</h4> 
@@ -207,7 +207,7 @@ const Timeline = () => {
 	  	 <img className="timeline-triangle" src={TinyTriangle} alt="timeline-triangle"></img>
 	   	 <p className='timeline-year'>{item.year}</p>
 
-			{(item.tooltip && item.down)? <div className="timeline-tooltip down">
+			{(item.tooltip && item.down)? <div className={(Number(item.year) > 1950)?"timeline-tooltip down reverse" : "timeline-tooltip down"}>
 
 				<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
 				<h4>{item.year}</h4> 

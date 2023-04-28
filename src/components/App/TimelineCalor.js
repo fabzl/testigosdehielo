@@ -8,7 +8,7 @@ const TimelineCalor = () => {
 	// Define timeline data
 	const timelineData = [
 	  {
-		 "year": 1970,"color": "#F7B9A1"
+		 "year": 1970,"color": "#F7B9A1",tooltip:"Plan de acción de Mar del Plata, donde se acordó el derecho al agua potable, en cantidad y calidad para todos los pueblos, independiente de su etapa de desarrollo"
 	   },
 	   {
 		 "year": 1971,"color": "#FDF4EF"
@@ -53,7 +53,7 @@ const TimelineCalor = () => {
 		 "year": 1984,"color": "#FBDFD2"
 	   },
 	   {
-		 "year": 1985,"color": "#FBDFD2"
+		 "year": 1985,"color": "#FBDFD2",tooltip:"Declaración de agotamiento de la primera sección del río Aconcagua, Chile. No pudiéndose adquirir nuevos derechos consuntivos de agua"
 	   },
 	   {
 		 "year": 1986,"color": "#F18F73"
@@ -110,7 +110,7 @@ const TimelineCalor = () => {
 		 "year": 2003,"color": "#F18F73"
 	   },
 	   {
-	   "year": 2004,   "color": "#FBDFD2"
+	   "year": 2004,   "color": "#FBDFD2",tooltip:"Declaración de agotamiento del río Putaendo y sus afluentes, Chile. No pudiéndose adquirir nuevos derechos consuntivos de agua"
    },
    {
 	  "year": 1970,
@@ -166,7 +166,8 @@ const TimelineCalor = () => {
 	},
 	{
 	  "year": 1983,
-	  "color": "#FDF4EF"
+	  "color": "#FDF4EF",
+	  tooltip:"Declaración de agotamiento de la primera sección del río Mapocho y sus afluentes, Chile. No pudiéndose adquirir nuevos derechos consuntivos de agua",
 	},
 	{
 	  "year": 1984,
@@ -222,7 +223,9 @@ const TimelineCalor = () => {
 	},
 	{
 	  "year": 1997,
-	  "color": "#F18F73"
+	  "color": "#F18F73",
+	  tooltip:"Se declara como agotada la cuenca de Petorca, Chile.",
+	  down: "true",
 	},
 	{
 	  "year": 1998,
@@ -262,16 +265,16 @@ const TimelineCalor = () => {
    "year": 2007,   "color": "#FBDFD2"
    },
    {
-   "year": 2008,   "color": "#F7B9A1"
+   "year": 2008,   "color": "#F7B9A1", down: "true", tooltip: "Declaración de zona de escasez hídrica, cuenca del río  Aconcagua, Chile" 
    },
    {
    "year": 2009,   "color": "#E63C2E"
    },
    {
-   "year": 2010,   "color": "#FDF4EF"
+   "year": 2010,   "color": "#FDF4EF",tooltip:"Se declara zona de escasez hídrica la comuna de Quilpué, cuencas de Ligua-Petorca y Aconcagua"
    },
    {
-   "year": 2011,   "color": "#F7B9A1"
+   "year": 2011, down: "true",  "color": "#F7B9A1",tooltip:"Declaración zona de escasez hídrica la comuna de Quilpué, Aconcagua, Til-Til y provincia de Petorca y la Ligua"
    },
    {
    "year": 2012,   "color": "#F18F73"
@@ -289,22 +292,22 @@ const TimelineCalor = () => {
    "year": 2016,   "color": "#E63C2E"
    },
    {
-   "year": 2017,   "color": "#F18F73"
+   "year": 2017,   "color": "#F18F73",tooltip:"Olas de calor, con temperaturas que sobrepasaron los 40°C, entre la región de Valparaíso y de O'Higgins, Chile"
    },
    {
-   "year": 2018,   "color": "#F7B9A1"
+   "year": 2018,   "color": "#F7B9A1",tooltip:"Se declara como zona de prohibición la cuenca de Petorca, Chile"
    },
    {
-   "year": 2019,   "color": "#671414"
+   "year": 2019,   "color": "#671414",tooltip:"2.000 millones de personas viven en países que sufren escasez de agua"
    },
    {
    "year": 2020,   "color": "#671414"
    },
    {
-   "year": 2021,   "color": "#FBDFD2"
+   "year": 2021, down: "true",  "color": "#FBDFD2",tooltip:"Déficit de precipitaciónde un 63% en Valparaíso, Chile"
    },
    {
-   "year": 2022,   "color": "#FBDFD2"
+   "year": 2022,   "color": "#FBDFD2",tooltip:"Declaración de zona de escasez en la gran parte de las comunas de Santiago y región de Valparaíso, entre ellas San José de maipo, Lo Barnechea, María Pinto, Til-til, Melipilla y Quilpué, Olmué, Limache, Quillota, San Felipe, Petorca"
    }
 
 		];
@@ -317,7 +320,7 @@ const TimelineCalor = () => {
 		
 		<div className='tooltip-wrapper'> 
 
-{(item.tooltip && item.down)? <div className="timeline-tooltip">
+{(item.tooltip && !item.down)? <div className={(Number(item.year) > 1950)?"timeline-tooltip  reverse" : "timeline-tooltip"}>
 
 	<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
 	<h4>{item.year}</h4> 
@@ -332,14 +335,14 @@ const TimelineCalor = () => {
 	   <img className="timeline-triangle" src={TinyTriangle} alt="timeline-triangle"></img>
 		<p className='timeline-year'>{item.year}</p>
 
-		{(item.tooltip && !item.down)? <div className="timeline-tooltip down">
+		{(item.tooltip && item.down)? <div className={(Number(item.year) > 1950)?"timeline-tooltip down reverse" : "timeline-tooltip down"}>
 
 			<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
 			<h4>{item.year}</h4> 
 			<p>{item.tooltip}</p>
 		</div>: ""}
-   </div>  
-	</div >
+   </div> 
+</div >
   ));
 
 
