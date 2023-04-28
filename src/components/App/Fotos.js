@@ -3,12 +3,32 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 
 
+import Juncal from '../../img/juncal-nor-oriente.jpg'
+import JuncalSurMapa from '../../img/juncalsurfoto.jpg'
+import JuncalSur from '../../img/juncal-sur-mapa-01.jpg'
+import Glaciofoto from '../../img/glaciologia_01.jpg'
+import Glaciofoto2 from '../../img/glaciologia_02.jpg'
+import Erupcion from '../../img/erupcion.png'
+import TestigoPedazo from '../../img/testigos_pedazo.png'
+import Derretimiento from '../../img/derretimiento01.jpg'
+import Derretimiento2 from '../../img/derretimiento02.jpg'
+
+
+
+
+
+
+
+
 const sliderImages = [
-  'https://picsum.photos/id/1018/1000/600/',
-  'https://picsum.photos/id/1015/1000/600/',
-  'https://picsum.photos/id/1019/1000/600/',
-  'https://picsum.photos/id/1020/1000/600/',
-  'https://picsum.photos/id/1021/1000/600/',
+  Juncal,
+  JuncalSur ,
+  Glaciofoto ,
+  Glaciofoto2 ,
+  Erupcion,
+  TestigoPedazo,
+  Derretimiento,
+  Derretimiento2,
 ];
 
 const Fotos = () => {
@@ -34,7 +54,6 @@ const Fotos = () => {
         interval={6000}
         buttons={true}
         bullets={false}
-        
         organicArrows={true}
         selected={selected}
         onTransitionRequest={handleTransitionRequest}

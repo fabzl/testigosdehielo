@@ -15,7 +15,7 @@ class Videos extends React.Component {
   render() {
     return (
       <div className="wrapperSection wrapper-2">
-        Videos
+       PRONTO __________
       </div>
     );
   }

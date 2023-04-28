@@ -375,22 +375,30 @@ p {
 .lockupText {
   
   position: absolute;
-  top:30px;
-  left: 190px;
+  top:7px;
+  left: 90px;
   width: auto;
-  height: 150px;
+  height: 75px;
   margin:0;
   z-index: 10;
 
-  @include small {
 
+  @include small {
+    height: 100px;
+    left: 130px;
+    top:12px;
   }
 
-  @include medium {
+  @include medium { 
+     height: 150px;
+     left: 190px;
+     top:20px;
 
   }
   @include large {
-
+    height: 150px;
+    left: 190px;
+    top:20px;
   }
 }
 
@@ -645,7 +653,7 @@ H1 {
 
 .sticky-text {
   position: sticky;
-  padding: 25px 25px 25px calc(20vw + 50px);
+  padding: 5px 5px 5px 120px;
   background-color: #FFFAC9;
   top:0;
   font-size: 2.5rem;
@@ -667,12 +675,16 @@ H1 {
    
       height: 120px;
       font-size: 2.5rem;
+      padding: 5px 5px 5px 150px;
+
     }
   
     @include large {
       // Add styles specific to the large burger menu
-      height: 150px;
+      height: 165px;
       font-size: 3rem;
+      padding: 12px 12px 12px 260px;
+
 
     }
 
@@ -759,5 +771,32 @@ H1 {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+
+
+.slider-controls {
+
+  background-color: #000;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0 ;
+
+  button {
+    background-color:#777;
+    border: none;
+    border-radius: 50%;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
+    font-family: "Fabriga";
+    font-weight: 900;
+    transition: all 1s;
+    cursor: pointer;
+    &.active {
+      background-color:white;
+
+    }
   }
 }

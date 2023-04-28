@@ -167,6 +167,7 @@ const TimelineCalor = () => {
 	{
 	  "year": 1983,
 	  "color": "#FDF4EF",
+	  down:"true",
 	  tooltip:"Declaración de agotamiento de la primera sección del río Mapocho y sus afluentes, Chile. No pudiéndose adquirir nuevos derechos consuntivos de agua",
 	},
 	{
