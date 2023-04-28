@@ -277,21 +277,34 @@ p {
 
 .cat-links {
   position: fixed;
-  top: 26vh;
+  top: 100px;
   margin:0;
-  left:0;
+  left:10px;
   z-index: 999;
   width: 80vw;
   display : inline-flex;
   justify-content: space-around; 
   padding: 30px 0;
   color: white;
-
+  flex-direction: column;
 
   li {
     list-style: none;
   }
-  
+  @include small {
+    padding: 10px 0;
+    top: 150px;
+  }
+  @include medium {
+    padding: 30px 0;
+    left:30vw;
+    top: 250px;
+
+  }
+  @include large {
+    padding: 30px 0;
+    top: 150px;
+  }
 }
 
 .linkCat {
@@ -790,9 +803,14 @@ H1 {
 .slider-controls {
 
   background-color: #000;
-  display: flex;
+ 
   justify-content: space-around;
   padding: 10px 0 ;
+
+  display: none; 
+  @include medium {
+    display: flex;
+  }
 
   button {
     background-color:#777;
