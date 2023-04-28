@@ -525,13 +525,16 @@ p {
  
 }
 .nav-links li {
-  width: 70vw;
+  width: 60vw;
   height: 8vh;
   display: flex;
   justify-content:flex-start;
   text-align: left;
   border-bottom: 3px solid white ;
-
+  @include  small {
+   width: 70vw;
+  }
+  
 }
 
 .nav-links li a {
@@ -541,7 +544,7 @@ p {
  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: flex;
   justify-content:flex-start;
   align-self: center;
@@ -550,6 +553,10 @@ p {
   flex-direction: column;
   text-transform: uppercase;
   color: white;
+
+  @include medium {
+    font-size: 1.6rem;
+  }
 }
 
 .audioguide-logo {
