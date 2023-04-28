@@ -4,8 +4,6 @@ import 'react-awesome-slider/dist/styles.css';
 
 
 import Juncal from '../../img/juncal-nor-oriente.jpg'
-import JuncalSurMapa from '../../img/juncalsurfoto.jpg'
-import JuncalSur from '../../img/juncal-sur-mapa-01.jpg'
 import Glaciofoto from '../../img/glaciologia_01.jpg'
 import Glaciofoto2 from '../../img/glaciologia_02.jpg'
 import Erupcion from '../../img/erupcion.png'
@@ -22,7 +20,6 @@ import Derretimiento2 from '../../img/derretimiento02.jpg'
 
 const sliderImages = [
   Juncal,
-  JuncalSur ,
   Glaciofoto ,
   Glaciofoto2 ,
   Erupcion,
