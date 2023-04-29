@@ -73,7 +73,7 @@ const TimelineCO2 = () => {
 	{"year": 1812, "color": "#98D4E1"},
 	{"year": 1813, "color": "#98D4E1"},
 	{"year": 1814, "color": "#98D4E1"},
-	{"year": 1815, "color": "#98D4E1", down:true, tooltip:"Erupción volcán Monte Tambora, Indonesia. La mayor erupción volcánica de la historia hasta la actualidad, las cenizas permanecieron por varios años en la atmósfera y logró disminuir la temperatura media global más de 2.5°C"},
+	{"year": 1815, "color": "#98D4E1", down:true, tooltip:"Erupción volcán Monte Tambora, Indonesia. La mayor erupción volcánica de la historia, las cenizas por varios años en la atmósfera y logró disminuir la temperatura media global más de 2.5°C"},
 	{"year": 1816, "color": "#98D4E1"},
 	{"year": 1817, "color": "#98D4E1"},
 	{"year": 1818, "color": "#98D4E1"},
@@ -190,7 +190,7 @@ const TimelineCO2 = () => {
 	{"year": 1929, "color": "#c0c172"},
 	{"year": 1930, "color": "#c0c172"},
 	{"year": 1931, "color": "#c0c172"},
-	{"year": 1932, "color": "#c0c172",tooltip:"Erupción volcán Quizapu, mayor erupción ocurrida en tiempos históricos de Chile. Caída de ceniza en Chile central, Argentina, Uruguay y el sur de Brasil."},
+	{"year": 1932, "color": "#c0c172",tooltip:"Erupción volcán Quizapu,caída de ceniza en Chile central, Argentina, Uruguay y Brasil."},
 	{"year": 1933, "color": "#c0c172"},
 	{"year": 1934, "color": "#c0c172"},
 	{"year": 1935, "color": "#c0c172"},
@@ -249,7 +249,7 @@ const TimelineCO2 = () => {
 	{"year": 1988, "color": "#ee7555"},
 	{"year": 1989, "color": "#ee7555"},
 	{"year": 1990, "color": "#ee7555"},
-	{"year": 1991, "color": "#ee7555",tooltip:"Erupción volcán Pinatubo, Filipinas. Una de las erupciones más violentas del siglo XX, se produjo una disminución de la temperatura media global de 0.5°C"},
+	{"year": 1991, "color": "#ee7555",tooltip:"Erupción volcán Pinatubo, Filipinas.Se produjo una disminución de la temperatura media global de 0.5°C"},
 	{"year": 1992, "color": "#ed6d53"},
 	{"year": 1993, "color": "#ed6d53", down:true,tooltip:"Erupción volcán Láscar, Chile"},
 	{"year": 1994, "color": "#ed6d53"},
@@ -269,7 +269,7 @@ const TimelineCO2 = () => {
 	{"year": 2008, "color": "#9f6256",tooltip:"Erupción volcán Chaitén"},
 	{"year": 2009, "color": "#9f6256"},
 	{"year": 2010, "color": "#5b5a5a"},
-	{"year": 2011, "color": "#5b5a5a", down: true,tooltip:"Erupción complejo volcánico Puyehue-Cordón Caulle, Chile. Cenizas llegan hasta Argentina y hay interrupción del tráfico aéreo en el hemisferio sur, incluyendo Sudáfrica y Australia"},
+	{"year": 2011, "color": "#5b5a5a", down: true,tooltip:"Erupción Puyehue-Cordón Caulle, Chile. Cenizas llegan hasta Argentina y hay interrupción del tráfico aéreo en el hemisferio sur."},
 	{"year": 2012, "color": "#5b5a5a"},
 	{"year": 2013, "color": "#5b5a5a"},
 	{"year": 2014, "color": "#2e2f2f"},
@@ -294,8 +294,10 @@ const TimelineCO2 = () => {
 {(item.tooltip && !item.down)? <div className={(Number(item.year) > 1950)?"timeline-tooltip  reverse" : "timeline-tooltip"}>
 
 	<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
-	<h4>{item.year}</h4> 
-	<p>{item.tooltip}</p>
+	<div className='info-tooltip-up'>
+			<h4>{item.year}</h4> 
+			<p>{item.tooltip}</p>
+		</div>
 </div>: ""}
 
 </div>
@@ -309,8 +311,10 @@ const TimelineCO2 = () => {
 		{(item.tooltip && item.down)? <div className={(Number(item.year) > 1950)?"timeline-tooltip down reverse" : "timeline-tooltip down"}>
 
 			<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
-			<h4>{item.year}</h4> 
-			<p>{item.tooltip}</p>
+			<div className='info-tooltip'>
+					<h4 >{item.year}</h4> 
+					<p>{item.tooltip}</p>
+				</div>
 		</div>: ""}
 	 </div> 
 </div >

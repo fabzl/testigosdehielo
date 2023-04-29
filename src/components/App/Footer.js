@@ -42,14 +42,14 @@ align-items: center;
 background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%), url(${Juncal});
 background-color: #282c34;
 background-size:cover;
-background-position: center left;
+background-position:  center;
 background-repeat: no-repeat;
 background-scale: 
 color: #ffffff;
 overflow:hidden;
-z-index: 50;
-  padding: 3.5rem 4rem 2rem;
-  min-height: 15rem;
+  z-index: 50;
+  padding: 4rem;
+  min-height: 100vh;
   display: block;
 `;
 
@@ -67,8 +67,9 @@ const General = styled.div`
   text-align: center;
   color: #1d1d1b;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  min-height: 40vh;
   flex-direction: column;
   a > svg {
     vertical-align: middle;
@@ -97,14 +98,13 @@ const Footer = props => (
 <LazyLoad>
   <Wrap>
        
-          <img className="heatBar"src={Bar} alt="Heat Bar"/>
+    <img className="heatBar"src={Bar} alt="Heat Bar"/>
         
-   <Content>
+    <Content>
 
       <General>
         <Links>		
         
-		
     <div className="menu-footer">
       <ul className="cat-links-footer">
         <li className='home-cat'>
@@ -182,7 +182,7 @@ const Footer = props => (
             
               <img className="logo-footer tecno"src={Tecno} alt="CienciaPublica" />
             
-              <p className="lafabulosa">2023 | 28 de abril al 28 de julio | Explanada Central Parque Cultural de Valparaíso |  Sitio web  <a     rel='noopener noreferrer'
+              <p className="lafabulosa">UNAB 2023 | 28 de abril al 28 de julio | Explanada Central Parque Cultural de Valparaíso |  Sitio web por <a rel='noopener noreferrer'
             target="_blank"href="https://www.lafabulosa.org">la fabulosa</a></p>
             </div>
     </Content>

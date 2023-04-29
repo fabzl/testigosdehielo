@@ -74,7 +74,7 @@ const TimelineValpo = () => {
 		{"year": 1814, "color": "#BCE1E9"},
 		{"year": 1815, "color": "#E5BD89"},
 		{"year": 1816, "color": "#D0AC7F"},
-		{"year": 1817, "color": "#D0AC7F",down: true,tooltip: "Cruce de los Andes del General San Martín junto al Ejército Libertador durante el periodo de la Independencia, Cordillera de Los Andes"},
+		{"year": 1817, "color": "#D0AC7F",down: true,tooltip: "Cruce de los Andes del General San Martín junto al Ejército Libertador, Cordillera de Los Andes"},
 		{"year": 1818, "color": "#D0AC7F",tooltip:"Declaración de la independencia de Chile"},
 		{"year": 1819, "color": "#BCE1E9"},
 		{"year": 1820, "color": "#E5BD89"},
@@ -144,7 +144,7 @@ const TimelineValpo = () => {
 		{"year": 1884, "color": "#BCE1E9"},
 		{"year": 1885, "color": "#FACF98"},
 		{"year": 1886, "color": "#FACF98"},
-		{"year": 1887, "color": "#BCE1E9", down: true, tooltip:"Egresan las primeras profesionales universitarias de Sudamérica: las chilenas Eloísa Díaz y Ernestina Pérez, tituladas de médico."},
+		{"year": 1887, "color": "#BCE1E9", down: true, tooltip:"Primeras profesionales universitarias de Sudamérica: las chilenas Eloísa Díaz y Ernestina Pérez, tituladas de médico."},
 		{"year": 1888, "color": "#E5BD89"},
 		{"year": 1889, "color": "#FFFFFF"},
 		{"year": 1890, "color": "#FFFFFF"},
@@ -293,8 +293,10 @@ const TimelineValpo = () => {
 {(item.tooltip && !item.down)? <div className={(Number(item.year) > 1950)?"timeline-tooltip  reverse" : "timeline-tooltip"}>
 
 	<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
-	<h4>{item.year}</h4> 
-	<p>{item.tooltip}</p>
+	<div className='info-tooltip-up'>
+			<h4>{item.year}</h4> 
+			<p>{item.tooltip}</p>
+		</div>
 </div>: ""}
 
 </div>
@@ -308,8 +310,10 @@ const TimelineValpo = () => {
 		{(item.tooltip && item.down)? <div className={(Number(item.year) > 1950)?"timeline-tooltip down reverse" : "timeline-tooltip down"}>
 
 			<img  alt='timeline-arrow' className='timeline-arrow' src={TimelineArrow}/>
-			<h4>{item.year}</h4> 
-			<p>{item.tooltip}</p>
+			<div className='info-tooltip'>
+					<h4 >{item.year}</h4> 
+					<p>{item.tooltip}</p>
+			</div>
 		</div>: ""}
    </div> 
 </div >

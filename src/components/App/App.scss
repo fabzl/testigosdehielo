@@ -154,9 +154,11 @@ p {
  
   text-transform: uppercase;
   color: white;
+  padding-top: 65px;
   & a {
     color: white;
   }
+
 }
 
 .heatBar {
@@ -235,9 +237,11 @@ p {
   padding: 20px;
   p {
     color:white;
-    text-align: left;
+    text-align: center;
     margin:0;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    width:100%;
+    
     }
 
 
@@ -475,10 +479,11 @@ p {
 }
 .menu-footer {
   z-index: 100;
-  width:100vw;
+  width:60vw;
   display: inline-flex;
   list-style-type: none;
   text-align: left;
+
   li  {
     list-style-type: none;
   }
@@ -490,7 +495,7 @@ p {
   li a {
   color: white;
 
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-decoration: none;
   text-transform: uppercase;
 }

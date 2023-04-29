@@ -828,7 +828,7 @@ class App extends React.Component {
 				</EndNav>
 				}
 
-<Footer routerBoy={this.routerBoy} SectionIntro={this.SectionIntro} Section1={this.Section1} Section2={this.Section2} Section3={this.Section3} Section4={this.Section4} Section5={this.Section5} Section6={this.Section6}   handleClickFooter={this.handleClickFooter}>
+				<Footer routerBoy={this.routerBoy} SectionIntro={this.SectionIntro} Section1={this.Section1} Section2={this.Section2} Section3={this.Section3} Section4={this.Section4} Section5={this.Section5} Section6={this.Section6}   handleClickFooter={this.handleClickFooter}>
 
 </Footer>
 			
