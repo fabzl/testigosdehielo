@@ -16,7 +16,6 @@ import About from './About';
 import Fotos from './Fotos';
 import Videos from './Videos';
 
-
 import sequiaValpo from '../../img/sequia_valpo.svg'
 import sequiaValpo2 from '../../img/sequia_valpo_02.svg'
 import Calent from '../../img/calent_2.svg'
@@ -56,7 +55,7 @@ import MobileTimelineCalor from './MobileTimelineCalor';
 const WrapQuote = styled.p`
 text-align: center;
 font-family: 'Fabriga', sans-serif;
-font-weigth: 900;
+font-weight: 900;
 color: #666;
 max-width: 70vw;
 text-align: center;
@@ -83,10 +82,7 @@ const Menu = styled.div`
 	height:100vh;
 	top:0;
 	position:fixed;
-
-
 `
-
 
 const MainBg = styled.div`
 	background-image:url("${Juncal}");
@@ -173,15 +169,15 @@ class App extends React.Component {
 		
 		switch (num) {
 			case 1: 
-			return "/CAMBIO-CLIMATICO-1";
+			return "/GLACIOLOGIA:-QUE-ESTUDIA-Y-COMO-SE-ESTUDIA-ADEMAS-DE-LA-IMPORTANCIA-DE-ESTA-CIENCIA-1";
 			case 2: 
-			return "/VARIABILIDAD-E-HISTORIA-DEL-CLIMA-2" ;
+			return "/QUE-SON-LOS-TESTIGOS-DE-HIELOS-Y-PARA-QUE-SIRVEN-2" ;
 			case 3: 
-			return "/IMPORTANCIA-DE-LA-MONTANA-COMO-RESERVA-HIDRICA-3" ;
+			return "/VARIABILIDAD-E-HISTORIA-DEL-CLIMA-3" ;
 			case 4: 
-			return "/GLACIOLOGIA:-QUE-ESTUDIA-Y-COMO-SE-ESTUDIA-ADEMAS-DE-LA-IMPORTANCIA-DE-ESTA-CIENCIA-4" ;
+			return "/CAMBIO-CLIMATICO-4" ;
 			case 5: 
-			return "/QUE-SON-LOS-TESTIGOS-DE-HIELOS-Y-PARA-QUE-SIRVEN-5";
+			return "/IMPORTANCIA-DE-LA-MONTANA-COMO-RESERVA-HIDRICA-5";
 			case 6: 
 			return "/MODELAMIENTO-DEL-FUTURO-PRESENTE-PROXIMO-SIGLO-6";
 		   default: 
@@ -275,9 +271,7 @@ class App extends React.Component {
 
 			</div>
 			);
-		};
-
-
+	  }
 	Section1 = () => {
 		
 		useEffect(() => {
@@ -289,25 +283,23 @@ class App extends React.Component {
 		
 		return (
 			<div className="wrapperSection wrapper-1">
-				<Waypoint
-				
+	
+			<Waypoint
 					onEnter={this.onSectionEnter(1)}
-				//	onLeave={this.onSectdioguideTextionLeave(1)}
+					onLeave={this.onSectionLeave(1)}
 				/>
-				<h2 className='sticky-text top-1'>1. Cambio climático</h2>
-				
-				<p className="wideRead">De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas”.<br/><span className='fuente'> Fuente: <a rel='noopener noreferrer' target="_blank"  href="https://www.un.org/es/climatechange/what-is-climate-change">https://www.un.org/es/climatechange/what-is-climate-change</a></span></p>
-				<img className="info-a4" src={A4} alt="Gráfico de concentración en partes por millón" />
-				
-				
-				<p className="wideRead">Gráfico de concentración en partes por millón (ppm) de moléculas de dióxido de carbono en la atmósfera global entre el año 0 y el año 2022 de la era actual. <br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations"> https://ourworldindata.org/atmospheric-concentrations</a></span></p>
-		
-				<h2 className="big-title gases" alt="Anomalias de tempratura a escala global" >CONCENTRACIÓN DE CO²* EN LA ATMÓSFERA A ESCALA GLOBAL <span>(desde 1750 a 2022)</span></h2>
-				<h3 className='wideRead subtitle gases'>*Dióxido de carbono = Gas de efecto invernadero</h3>
-				<MobileTimelineCO2></MobileTimelineCO2>
-				<p className="wideRead">Gráfico concentración de gases de efecto invernadero a escala global,  desde el año 1750 a 2022.<br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations">https://ourworldindata.org/atmospheric-concentrations</a></span></p>
+				<h2 className='sticky-text top-4'>1. Glaciología: que estudia y cómo se estudia.
+				</h2>
 
-				<AudioPlayer >
+				<img src={Glaciofoto} className="big-foto" alt="Glaciologos en Acción"/>
+				
+				<p className='wideRead'>La glaciología es una disciplina científica encargada de estudiar los glaciares, las glaciaciones y la criósfera en general, a través de monitoreos del comportamiento y formación, realizando mediciones en terreno o mediciones remotas.</p>
+
+				<p className='wideRead'>La criósfera se define como todos los componentes congelados naturales que se encuentran sobre o debajo de la superficie terrestre u oceánicas. Incluyendo nieve, glaciares, casquetes de hielo icebergs, hielo marino, lagos y ríos congelados, además de suelos congelados. Tiene un rol importante en la regulación del clima a escala local y global, influyendo en la hidrología, nubes, precipitaciones y la circulación de la atmósfera y los océanos. El cambio climático está ocasionando una gran pérdida de la criósfera, mediante el derretimiento de grandes extensiones de hielo.
+				</p>
+
+
+				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
 					
 					<ReactAudioPlayer src={TestAudio}
@@ -315,17 +307,13 @@ class App extends React.Component {
 						
 					/>
 				</AudioPlayer>
-		
-				<img src={A1} alt="Gases de Efecto Invernadero" />
-				
-				<img src={A2} alt="Gases de Efecto Invernadero" />
-				
-				<p className="wideRead">La quema de combustibles fósiles genera emisiones de gases de efecto invernadero que actúan como una manta que envuelve a la Tierra, atrapando el calor del sol y elevando las temperaturas
-				<br/><span className="fuente"> Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://antarctica.cl/divulgacion"> https://antarctica.cl/divulgacion</a></span></p>
-				<p className="wideRead">
-				El cambio climático es una variación de las condiciones ambientales del planeta, ocasionado directa o indirectamente por la actividad humana, el cual está alterando la composición de la atmósfera. Manifestándose en un aumento de las temperaturas medias y alteraciones del clima a escala mundial.</p>
 
-				<p  className="wideRead">El clima es un estado característico propio de una zona en un largo periodo de tiempo, incluyendo aspectos como la temperatura, precipitaciones, humedad y viento. Mientras que la atmósfera está formada por una mezcla de gases y participa en la regulación del clima.</p>
+				<p className='wideRead'>Los estudios en terreno incluyen normalmente expediciones en condiciones muy adversas, en donde investigadores hombres y mujeres deben exponerse a condiciones ambientales complejas. Una buena preparación de la expedición y buen equipamiento asegura que los científicos puedan trabajar de buena forma en la montaña o regiones polares. Muchas veces las expediciones ocurren en zonas muy remotas (zonas de acumulación de hielo), que deben ser accedidas caminando por largas rutas sobre glaciares o por medios de transporte como helicóptero o avión.
+				</p>
+				<img src={Glaciofoto2} className="big-foto" alt="Glaciologos en Acción 2"/>
+
+				<p className='wideRead'>Trabajo en terreno de un grupo de glaciólogos que están determinando las tasas de derretimiento de verano en una zona de ablación del glaciar Juncal Norte.<br></br> <span className='fuente' >Fuente: Elaboración propia.</span>
+				</p>
 
 			</div>
 		);
@@ -340,13 +328,29 @@ class App extends React.Component {
 
 		return (
 
-			<div className="wrapperSection wrapper-2">
-						
-				<Waypoint
-					onEnter={this.onSectionEnter(2)}
-					onLeave={this.onSectionLeave(2)}
+			<div className="wrapperSection wrapper-2">	
+	
+
+				
+			</div>
+
+		);
+	};
+	Section3 = () => {
+		useEffect(() => {
+			window.scrollTo(0, 0);
+			this.setLocation();
+
+		}, []);
+
+		return (
+
+			<div className="wrapperSection wrapper-3">
+								<Waypoint
+					onEnter={this.onSectionEnter(3)}
+					onLeave={this.onSectionLeave(3)}
 					/>
-				<h2 className='sticky-text top-2'>2. Variabilidad e historia del clima</h2>
+				<h2 className='sticky-text top-2'>3. Variabilidad e historia del clima</h2>
 				<p className='wideRead'>Uno de los efectos más tangibles del cambio climático en nuestra región, se está observando en la disminución de precipitaciones y el aumento de fenómenos extremos como sequías extensas y eventos de lluvias intensas. Estos fenómenos se encuentran asociados a procesos naturales como la corriente del Niño/a, pero desde inicios del siglo XX se ha observado una clara relación con el incremento de la concentración de gases de efecto invernadero, que ha modificado los patrones de circulación atmosférica <br/><span className="fuente">Fuente:  Morales et al., 2020. </span></p>
 				
 				<AudioPlayer>
@@ -399,11 +403,13 @@ class App extends React.Component {
 				<p className='wideRead'>De acuerdo con el reporte de la Dirección Meteorológica de Chile para el año 2021 (Gutiérrez et al., 2022): En Chile continental la temperatura media durante el 2021 fue de 13.5°C, lo que fue levemente más frío que el año anterior (-0.12°C) pero de igual forma se convirtió en el 4to año más cálido en 61 años, siendo +0.76°C más cálida que el promedio climatológico 1961-1990.</p>
 				<p className='wideRead'>Una de las consecuencias del aumento de las temperaturas máximas, es el incremento de eventos extremos de temperaturas que se denominan “olas de calor” que corresponden a eventos de altas temperaturas que persisten por tres días continuos o más (cuando la temperatura máxima del día está en el 10% superior de las temperaturas históricas registradas). De acuerdo con la DMC: “Los eventos meteorológicos extremos como las olas de calor han aumentado durante el último siglo de manera significativa, producto del evidente aumento de las temperaturas lo que representa un peligro para la salud de las personas, la agricultura y el medio ambiente” <span className='fuente'>Fuente:(Gutiérrez et al., 2022)
 				</span></p>
-			</div>
+							
 
+			</div>
 		);
 	};
-	Section3 = () => {
+
+	Section4 = () => {
 		useEffect(() => {
 			window.scrollTo(0, 0);
 			this.setLocation();
@@ -412,12 +418,62 @@ class App extends React.Component {
 
 		return (
 
-			<div className="wrapperSection wrapper-3">
+			<div className="wrapperSection wrapper-4">
 				<Waypoint
-					onEnter={this.onSectionEnter(3)}
-					onLeave={this.onSectionLeave(3)}
+				
+				onEnter={this.onSectionEnter(1)}
+			//	onLeave={this.onSectdioguideTextionLeave(1)}
+			/>
+			<h2 className='sticky-text top-1'>4. Cambio climático</h2>
+			
+			<p className="wideRead">De acuerdo con la Naciones Unidas, el cambio climático se define como:  “Los cambios a largo plazo de las temperaturas y los patrones climáticos. Estos cambios pueden ser naturales, por ejemplo, a través de las variaciones del ciclo solar. Pero desde el siglo XIX, las actividades humanas han sido el principal motor del cambio climático, debido principalmente a la quema de combustibles fósiles como el carbón, el petróleo y el gas”.<br/><span className='fuente'> Fuente: <a rel='noopener noreferrer' target="_blank"  href="https://www.un.org/es/climatechange/what-is-climate-change">https://www.un.org/es/climatechange/what-is-climate-change</a></span></p>
+			<img className="info-a4" src={A4} alt="Gráfico de concentración en partes por millón" />
+			
+			
+			<p className="wideRead">Gráfico de concentración en partes por millón (ppm) de moléculas de dióxido de carbono en la atmósfera global entre el año 0 y el año 2022 de la era actual. <br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations"> https://ourworldindata.org/atmospheric-concentrations</a></span></p>
+	
+			<h2 className="big-title gases" alt="Anomalias de tempratura a escala global" >CONCENTRACIÓN DE CO²* EN LA ATMÓSFERA A ESCALA GLOBAL <span>(desde 1750 a 2022)</span></h2>
+			<h3 className='wideRead subtitle gases'>*Dióxido de carbono = Gas de efecto invernadero</h3>
+			<MobileTimelineCO2></MobileTimelineCO2>
+			<p className="wideRead">Gráfico concentración de gases de efecto invernadero a escala global,  desde el año 1750 a 2022.<br/><span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank"  href="https://ourworldindata.org/atmospheric-concentrations">https://ourworldindata.org/atmospheric-concentrations</a></span></p>
+
+			<AudioPlayer >
+				<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
+				
+				<ReactAudioPlayer src={TestAudio}
+					controls
+					
 				/>
-				<h2 className='sticky-text top-3'>3.Importancia de la montaña como reserva hídrica</h2>	
+			</AudioPlayer>
+	
+			<img src={A1} alt="Gases de Efecto Invernadero" />
+			
+			<img src={A2} alt="Gases de Efecto Invernadero" />
+			
+			<p className="wideRead">La quema de combustibles fósiles genera emisiones de gases de efecto invernadero que actúan como una manta que envuelve a la Tierra, atrapando el calor del sol y elevando las temperaturas
+			<br/><span className="fuente"> Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://antarctica.cl/divulgacion"> https://antarctica.cl/divulgacion</a></span></p>
+			<p className="wideRead">
+			El cambio climático es una variación de las condiciones ambientales del planeta, ocasionado directa o indirectamente por la actividad humana, el cual está alterando la composición de la atmósfera. Manifestándose en un aumento de las temperaturas medias y alteraciones del clima a escala mundial.</p>
+
+			<p  className="wideRead">El clima es un estado característico propio de una zona en un largo periodo de tiempo, incluyendo aspectos como la temperatura, precipitaciones, humedad y viento. Mientras que la atmósfera está formada por una mezcla de gases y participa en la regulación del clima.</p>
+			</div>
+
+		);
+	};
+	Section5 = () => {
+		useEffect(() => {
+			window.scrollTo(0, 0);
+			this.setLocation();
+
+		}, []);
+
+		return (
+			<div className="wrapperSection wrapper-5">
+											<Waypoint
+					onEnter={this.onSectionEnter(5)}
+					onLeave={this.onSectionLeave(5)}
+				/>
+				<h2 className='sticky-text top-3'>5.Importancia de la montaña como reserva hídrica</h2>	
 
 				<AudioPlayer>
 					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
@@ -460,137 +516,8 @@ class App extends React.Component {
 
 				<div>
 
-				</div>
-			</div>
-		);
-	};
-
-	Section4 = () => {
-		useEffect(() => {
-			window.scrollTo(0, 0);
-			this.setLocation();
-
-		}, []);
-
-		return (
-
-			<div className="wrapperSection wrapper-4">
-				<Waypoint
-					onEnter={this.onSectionEnter(4)}
-					onLeave={this.onSectionLeave(4)}
-				/>
-				<h2 className='sticky-text top-4'>4. Glaciología: que estudia y cómo se estudia.
-				</h2>
-
-				<img src={Glaciofoto} className="big-foto" alt="Glaciologos en Acción"/>
-				
-				<p className='wideRead'>La glaciología es una disciplina científica encargada de estudiar los glaciares, las glaciaciones y la criósfera en general, a través de monitoreos del comportamiento y formación, realizando mediciones en terreno o mediciones remotas.</p>
-
-				<p className='wideRead'>La criósfera se define como todos los componentes congelados naturales que se encuentran sobre o debajo de la superficie terrestre u oceánicas. Incluyendo nieve, glaciares, casquetes de hielo icebergs, hielo marino, lagos y ríos congelados, además de suelos congelados. Tiene un rol importante en la regulación del clima a escala local y global, influyendo en la hidrología, nubes, precipitaciones y la circulación de la atmósfera y los océanos. El cambio climático está ocasionando una gran pérdida de la criósfera, mediante el derretimiento de grandes extensiones de hielo.
-				</p>
-
-
-				<AudioPlayer>
-					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
-					
-					<ReactAudioPlayer src={TestAudio}
-						controls
-						
-					/>
-				</AudioPlayer>
-{/* 
-
-				
-				<span className='fuente'>Fuente: “El Atlas de Glaciares y Aguas Andinos: el impacto del retroceso de los glaciares sobre los recursos hídricos”  Johansen et al., 2019,</span>
-				</p> */}
-				<p className='wideRead'>Los estudios en terreno incluyen normalmente expediciones en condiciones muy adversas, en donde investigadores hombres y mujeres deben exponerse a condiciones ambientales complejas. Una buena preparación de la expedición y buen equipamiento asegura que los científicos puedan trabajar de buena forma en la montaña o regiones polares. Muchas veces las expediciones ocurren en zonas muy remotas (zonas de acumulación de hielo), que deben ser accedidas caminando por largas rutas sobre glaciares o por medios de transporte como helicóptero o avión.
-				</p>
-				<img src={Glaciofoto2} className="big-foto" alt="Glaciologos en Acción 2"/>
-
-				<p className='wideRead'>Trabajo en terreno de un grupo de glaciólogos que están determinando las tasas de derretimiento de verano en una zona de ablación del glaciar Juncal Norte.<br></br> <span className='fuente' >Fuente: Elaboración propia.</span>
-				</p>
-			</div>
-
-		);
-	};
-	Section5 = () => {
-		useEffect(() => {
-			window.scrollTo(0, 0);
-			this.setLocation();
-
-		}, []);
-
-		return (
-			<div className="wrapperSection wrapper-5">
-				<Waypoint
-					onEnter={this.onSectionEnter(5)}
-					onLeave={this.onSectionLeave(5)}
-				/>
-
-				<h2 className='sticky-text top-5'>5. Qué son los testigos de hielos y para qué sirven</h2>
-				<h2 className="big-title anomalia" alt="Anomalias de tempratura a escala global"> Testigos de Hielo</h2>
-				<img className='big-foto' src={TestigosMain} alt="testigos de hielo"></img>
-				
-				<p className='wideRead'>Los testigos de hielo representan una verdadera diamante de las técnicas científicas, y son una herramienta importante para el estudio glaciar, estos son perforaciones hechas en un glaciar de forma cilíndrica en una capa de hielo o glaciar, realizadas en profundidad desde la superficie. Los glaciares acumulan capas de nieve, que lentamente se transforman en hielo por efecto de la presión y dinámica del glaciar.</p>
-
-
-				<AudioPlayer>
-					<img src={AudioGuideLogo} className="audioguide-logo" alt="AudioGuide" />
-					
-					<ReactAudioPlayer src={TestAudio}
-						controls
-						
-					/>
-				</AudioPlayer>
-			
-				<p className='wideRead'>Cada una de estas capas “captura” las condiciones ambientales del lugar donde el glaciar crece y avanza (temperatura del aire), pero también es un registro único de condiciones ambientales escala global (burbujas de aire que atrapan los gases de la atmósfera), también al ser como una verdadera sábana blanca, los glaciares acumulan impurezas (naturales y generadas por el hombre) que son transportadas desde grandes distancias y que se acumulan con cada nueva precipitación de nieve. Los eventos de erupciones volcánicas son identificados relativamente fácil a lo largo de los testigos de hielo y nos dan una idea de la edad del hielo.</p>
-
-
-				
-			<img className='big-foto' src={Erupcion} alt="erupcion"></img>
-			
-			<p className='wideRead'>Fotografía la erupción del volcán Calbuco, año 2015.<br></br> <span className="fuente">Fuente: <a  rel='noopener noreferrer' target="_blank" href="https://nuestroclima.com/la-erupcion-del-calbuco-en-4k/">https://nuestroclima.com/</a></span></p>
-
-			<img className='big-foto' src={TestigoPedazo} alt="Pedazo testigo de Hielo 2013 Alaska"></img>
-			
-			<p className='wideRead'>
-			Fotografía de una sección de testigo de hielo de 200 m de profundidad extraído en 2013, en un punto cercano a la cumbre del monte Hunter, Alaska, Estados Unidos.<br></br>  <span className='fuente'>Fuente: Lecavalier y Markle (2016)</span></p>
-
-
-
-
-			<p className='wideRead'>
-			De esta forma la metodología científica utilizada en el análisis de los testigos de hielo ha permitido reconstruir el clima y las condiciones ambientales de hasta 800 mil años (Wolf et al., 2010) que muestran la transición de ciclos glaciares (épocas de climas fríos) e interglaciares (épocas de climas cálidos) y que muestran que el proceso de calentamiento actual no tiene precedentes en el registro del clima del pasado y solo se compara al clima de hace millones de años </p>
-{/* 
-
-			<p className='wideRead'>
-			Figura resumen de la variación de CO2 reconstruida a partir de datos de testigos de hielo y observaciones actuales (Fuente: https://ourworldindata.org/atmospheric-concentrations )
-			</p>
-			
-			<p className='wideRead'>Figura panel superior: resumen de la variación de CO2 y Metano (CH4 reconstruida a partir de datos de testigos de hielo comparadas con observaciones actuales.</p>
-			
-			<p className='wideRead'>Figura panel inferior: resumen de la variación de CO2 comparada con la temperatura atmosférica del planeta reconstruida a partir de información de testigos de hielo y observaciones actuales.<br/>
-			<span clasName="fuente">Fuente: https://www.bas.ac.uk/data/our-data/publication/ice-cores-and-climate-change/ 
-			</span></p> */}
-
-			<p className='wideRead'>
-					Por lo tanto los testigos aportan información sobre las condiciones ambientales y sus variaciones en el tiempo en cada capa de hielo que compone un glaciar, plasmando información sobre la composición atmosférica y antecedentes de cómo era el ambiente en la época que cayeron las precipitaciones que formaron y forman parte del glaciar, pudiendo así modelar y reconstruir climas pasados.</p>
-
-		<img className='big-foto' src={Derretimiento} alt="Hielo del norte De Chile"></img>
+				</div>		
 		
-					<p className='wideRead'>
-					Fotografía a escala que muestra un evento de derretimiento en una sección de testigo de hielo de 20 cm de largo en total proveniente del Norte de Chile, representando eventos como olas de calor. Fuente: elaboración propia.</p>
-
-
-			<img className='big-foto' src={Derretimiento2} alt="Fotografía de una sección de testigo de hielo del Norte de Chile"></img>
-
-			<p className='wideRead'>
-					Fotografía de una sección de testigo de hielo del Norte de Chile, representando transformación o transición de nieve a neviza y finalmente a hielo. Fuente: elaboración propia.</p>
-
-
-
-{/* 					<p className='wideRead'>Ejemplo de infografía de un testigo de hielo de la Antártica relacionado a eventos históricos. Fuente: British Antarctic Survey (https://www.bas.ac.uk/)</p> */}
-				
 			</div>
 		);
 	};
@@ -763,7 +690,7 @@ class App extends React.Component {
 					<BrowserRouter>
 		
 			
-					{<Menu className={this.state.menuVisible ? 'menu active' : 'menu'} >
+					<Menu className={this.state.menuVisible ? 'menu active' : 'menu'} >
 
 					<img className="logoTestigos logo-menu" src={logoTestigos}  alt="Testigos de hielo" />
 
@@ -783,17 +710,17 @@ class App extends React.Component {
 						</ul>
 					<ul className={this.state.menuVisible ? 'nav-links show' : 'nav-links'}>
 						<li className='menu-link'>
-						<NavLink onClick={this.handleClick} to={this.routerBoy(1)} activeclassname="active">1.	Cambio Climático</NavLink></li>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(1)} activeclassname="active">1.	Glaciología: que estudia y cómo se estudia</NavLink></li>
 					<li className='menu-link'>
-						<NavLink onClick={this.handleClick}to={this.routerBoy(2)} activeclassname="active">2.	Variabilidad e historia del Clima</NavLink></li>
+						<NavLink onClick={this.handleClick}to={this.routerBoy(2)} activeclassname="active">2. Qué son los testigos de hielos y para qué sirven</NavLink></li>
 					<li className='menu-link'>
-						<NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.	Importancia de la Montaña como reserva Hídrica</NavLink>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(3)} activeclassname="active">3.	Variabilidad e historia del Clima</NavLink>
 					</li>
 					<li className='menu-link'>
-						<NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4.	Glaciología: que estudia y cómo se estudia.</NavLink>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(4)} activeclassname="active">4. Cambio Climático	</NavLink>
 					</li>
 					<li className='menu-link'>
-						<NavLink onClick={this.handleClick} to={this.routerBoy(5)} activeclassname="active">5.	Qué son los testigos de hielos y para qué sirven</NavLink>
+						<NavLink onClick={this.handleClick} to={this.routerBoy(5)} activeclassname="active">5. Importancia de la Montaña como reserva Hídrica</NavLink>
 					</li>
 					<li className='menu-link'>
 						<NavLink onClick={this.handleClick} to={this.routerBoy(6)} activeclassname="active">6.	Modelamiento del futuro (presente próximo siglo)</NavLink>
