@@ -1,6 +1,6 @@
 
 ## React Boilerplate Clean
- Here we have a clean boilerplate code for creating a React app without the unnecessary fluff - ready to go!
+ Codigo para testigos de Hielo - .com
 
 ## Installation
 
